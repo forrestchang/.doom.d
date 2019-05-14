@@ -2,4 +2,5 @@
 
 ;; Place your private configuration here
 
+(load! "+editor")
 (load! "+org")
