@@ -5,6 +5,4 @@
 (load! "+bindings")
 (load! "+editor")
 
-(after! org
-  (load! "+org")
-  )
+(after! org (load! "+org"))
