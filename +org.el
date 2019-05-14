@@ -14,13 +14,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org headlines face
-(after! org
-  (dolist (face '(org-level-1
-                  org-level-2 org-level-3
-                  org-level-4 org-level-5
-                  org-level-6 org-level-7
-                  org-level-8))
-    (set-face-attribute face nil :weight 'normal)))
+(dolist (face '(org-level-1
+                org-level-2 org-level-3
+                org-level-4 org-level-5
+                org-level-6 org-level-7
+                org-level-8))
+  (set-face-attribute face nil :weight 'normal))
 
 ;; Org todo keywords face
 (setq org-todo-keyword-faces
@@ -35,6 +34,10 @@
 ;;; Misc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Set org directory
+(setq org-directory "~/Dropbox/personal-site/workspace/org/")
+(setq org-default-notes-file "~/Dropbox/personal-site/workspace/org/inbox.org")
+
 ;; Org resize image
 (setq org-image-actual-width '(650))
 
@@ -45,13 +48,9 @@
 
 (setq org-agenda-files '("~/Dropbox/personal-site/workspace/org/"))
 
-(setq org-agenda-span 'day)
-
 (setq org-log-into-drawer t)
 
 (setq org-agenda-archives-mode t)
-
-(setq calendar-week-start-day 1)
 
 ;; Set todo Keyworkds
 (setq org-todo-keywords
