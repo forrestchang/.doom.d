@@ -30,7 +30,8 @@
               )))
 
 (custom-set-faces
- '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2")))))
+ '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
+ '(org-scheduled-today ((t (:inherit org-todo :foreground "#b0e0a8")))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -51,9 +52,19 @@
 
 (setq org-agenda-files '("~/Dropbox/personal-site/workspace/org/"))
 
+(setq org-agenda-span '1)
+(setq org-agenda-start-on-weekday nil)
+(setq org-agenda-start-day "0d")
+
 (setq org-log-into-drawer t)
 
 (setq org-agenda-archives-mode t)
+
+(setq org-agenda-time-grid
+      (quote
+       ((daily today remove-match)
+        (0800 1000 1200 1400 1600 1800 2000 2200)
+        "......" "----------------")))
 
 ;; Set todo Keyworkds
 (setq org-todo-keywords
