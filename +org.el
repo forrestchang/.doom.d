@@ -2,10 +2,10 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; UI Settings
+;;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Org headlines style
+;; Org headlines face
 (after! org
   (dolist (face '(org-level-1
                   org-level-2 org-level-3
@@ -13,6 +13,22 @@
                   org-level-6 org-level-7
                   org-level-8))
     (set-face-attribute face nil :weight 'normal)))
+
+;; Org todo keywords face
+(setq org-todo-keyword-faces
+      (quote (
+              ("TODO" :foreground "#d65a31" :weight bold)
+              ("STARTED" :foreground "#4285F4" :weight bold)
+              ("PROJ" :foreground "#5cc9f5" :weight bold)
+              )))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Misc
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Org resize image
+(setq org-image-actual-width '(650))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -26,6 +42,12 @@
 (setq org-log-into-drawer t)
 
 (setq org-agenda-archives-mode t)
+
+(setq calendar-week-start-day 1)
+
+;; Set todo Keyworkds
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "STARTED(s)" "PROJ(p)" "|" "DONE(d)"))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -51,3 +73,44 @@
         ("t" "Todo" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Todos")
          "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
         ))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Org Clock
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Reusme clocking task when emacs is restarted
+(org-clock-persistence-insinuate)
+
+;; Resume clocking task on clock-in if the clock is open
+(setq org-clock-in-resume t)
+
+;; Show lot of clocking history so it's easy to pick items off
+(setq org-clock-history-length 25)
+
+;; Separate drawers for clocking and logs
+(setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
+
+;; Save clock data and state changes to LOGBOOK drawer
+(setq org-clock-into-drawer t)
+
+;; Remove zero clock records
+(setq org-clock-out-remove-zero-time-clocks t)
+
+;; Save the running clock and all clock history when exiting Emacs, load it on startup
+(setq org-clock-persist t)
+
+;; Do not prompt to resume an active clock
+(setq org-clock-persist-query-resume t)
+
+;; - Agenda clock report parameters
+(setq org-agenda-clockreport-parameter-plist
+      (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Org Column
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Set default column view headings: Task Effort Clock_Summary
+(setq org-columns-default-format "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
