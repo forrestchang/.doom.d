@@ -29,6 +29,9 @@
               ("PROJ" :foreground "#5cc9f5" :weight bold)
               )))
 
+(custom-set-faces
+ '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2")))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Misc
