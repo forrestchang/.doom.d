@@ -2,5 +2,6 @@
 
 ;; Place your private configuration here
 
+(load! "+bindings")
 (load! "+editor")
 (load! "+org")
