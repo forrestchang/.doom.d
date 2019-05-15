@@ -34,8 +34,13 @@
                    :desc "Look up online"              "o" #'+lookup/online-select
                    )
 
+      (:prefix-map ("p" . "project")
+                   :desc "Find file in project"        "f" #'projectile-find-file
+                   )
+
       (:prefix-map ("g" . "git")
                    (:when (featurep! :tools magit)
-                     :desc "Magit status"              "s" #'magit-status)
+                     :desc "Magit status"              "s" #'magit-status
+                     )
                    )
       )

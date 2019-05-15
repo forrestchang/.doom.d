@@ -12,6 +12,8 @@
 
 (setq company-idle-delay 0.2)
 
+(setq confirm-kill-emacs nil)
+
 ;; Wakatime
 (global-wakatime-mode)
 
