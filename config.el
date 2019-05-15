@@ -14,3 +14,13 @@
 
 ;; Wakatime
 (global-wakatime-mode)
+
+;; Pyim
+(require 'pyim)
+(defun eh-company-dabbrev--prefix (orig-fun)
+    "取消中文补全"
+    (let ((string (pyim-char-before-to-string 0)))
+      (if (pyim-string-match-p "\\cc" string)
+          nil
+        (funcall orig-fun))))
+  (advice-add 'company-dabbrev--prefix :around #'eh-company-dabbrev--prefix)
