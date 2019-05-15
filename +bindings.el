@@ -4,7 +4,9 @@
 
 
 (map! :leader
-      :desc "M-x"                                    "SPC" #'execute-extended-command)
+      :desc "M-x"                                    "SPC" #'execute-extended-command
+      :desc "Find file in project"                     "." #'projectile-find-file
+      )
 
 (map! (:prefix-map ("b" . "buffer")
                    :desc "Previous buffer"           "TAB" #'previous-buffer
