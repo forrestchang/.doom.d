@@ -7,6 +7,9 @@
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ci" 'org-clock-in)
+(global-set-key "\C-co" 'org-clock-out)
+(global-set-key "\C-cg" 'org-clock-goto)
 
 (map! :leader
       :desc "Org Agenda" "A" #'org-agenda)
@@ -92,8 +95,6 @@
 
 (setq org-capture-templates
       '(
-        ("j" "Journal" entry (file+datetree "~/Dropbox/personal-site/workspace/org/journal.org")
-         "* %?\nCaptured on %U\n%i\n%a")
         ("t" "Todo" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Todos")
          "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
         ))
