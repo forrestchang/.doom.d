@@ -27,6 +27,16 @@
                    :desc "Comment line or region"      "l" #'evil-commentary-line
                    )
 
+      (:prefix-map ("e" . "error")
+                   :desc "Flycheck list errors"        "l" #'flycheck-list-errors
+                   :desc "Disable flycheck"            "d" #'flycheck-disable-checker
+                   :desc "Enable flycheck"             "C" #'flycheck-buffer
+                   :desc "Flycheck next error"         "n" #'flycheck-next-error
+                   :desc "Flycheck previous error"     "p" #'flycheck-previous-error
+                   :desc "Flycheck clear errors"       "c" #'flycheck-clear
+                   :desc "Flycheck which checker"      "w" #'flycheck-select-checker
+                   )
+
       (:prefix-map ("t" . "toggl")
                    :desc "Toggl truncate lines"        "t" #'toggle-truncate-lines
                    )
