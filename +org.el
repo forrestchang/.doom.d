@@ -51,6 +51,9 @@
 ;; Org resize image
 (setq org-image-actual-width '(650))
 
+;; Auto trancate lines
+(setq-hook! 'org-mode-hook truncate-lines t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
