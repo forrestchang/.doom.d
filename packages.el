@@ -8,3 +8,4 @@
 
 (package! wakatime-mode)
 (package! pyim)
+(package! cnfonts)
