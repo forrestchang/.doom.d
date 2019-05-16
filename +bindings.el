@@ -23,6 +23,14 @@
                    :desc "Split window below"          "-" #'split-window-below
                    )
 
+      (:prefix-map ("c" . "code")
+                   :desc "Comment line or region"      "l" #'evil-commentary-line
+                   )
+
+      (:prefix-map ("t" . "toggl")
+                   :desc "Toggl truncate lines"        "t" #'toggle-truncate-lines
+                   )
+
       (:prefix-map ("j" . "jump")
                    :desc "Jump to symbol"              "i" #'imenu
                    :desc "Jump to symbol across buffers" "I" #'imenu-anywhere
