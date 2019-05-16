@@ -1,12 +1,13 @@
 ;;; ~/.doom.d/+bindings.el -*- lexical-binding: t; -*-
 
-;;; Leader key
+
+;; Leader key
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
       :desc "Find file in project"                     "." #'projectile-find-file
       )
 
-;;; Prefix map
+;; Prefix map
 (map! (:prefix-map ("b" . "buffer")
                    :desc "Previous buffer"           "TAB" #'previous-buffer
                    :desc "Switch buffer"               "b" #'switch-to-buffer
