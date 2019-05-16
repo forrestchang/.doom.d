@@ -5,6 +5,8 @@
 (load! "+bindings")
 (load! "+editor")
 
+
+(after! python (load! "+python"))
 (after! org (load! "+org"))
 
 (setq user-full-name "Jiayuan Zhang"
@@ -26,3 +28,8 @@
           nil
         (funcall orig-fun))))
   (advice-add 'company-dabbrev--prefix :around #'eh-company-dabbrev--prefix)
+
+;; cnfonts
+(require 'cnfonts)
+(cnfonts-enable)
+(cnfonts-set-spacemacs-fallback-fonts)
