@@ -19,7 +19,7 @@
 (setq +wakatime-hid-filenames t)
 
 ;; Pyim
-(setq company-idle-delay 0)
+(setq company-idle-delay 0.1)
 (after! pyim
   (defun eh-company-dabbrev--prefix (orig-fun)
     "取消中文补全"
