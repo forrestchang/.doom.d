@@ -7,6 +7,12 @@
       :desc "Find file in project"                     "." #'projectile-find-file
       )
 
+(map!
+ (:when (featurep! :tools lookup)
+   :nv "gb" #'better-jumper-jump-backward
+   :nv "gf" #'better-jumper-jump-forward
+   ))
+
 ;; Prefix map
 (map! (:prefix-map ("b" . "buffer")
                    :desc "Previous buffer"           "TAB" #'previous-buffer
