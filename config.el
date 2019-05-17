@@ -30,6 +30,12 @@
   (advice-add 'company-dabbrev--prefix :around #'eh-company-dabbrev--prefix)
   )
 
+(after! text-mode
+  (set-company-backend! 'text-mode 'company-yasnippet))
+
+(after! org
+  (set-company-backend! 'org-mode 'company-yasnippet))
+
 ;; cnfonts
 (require 'cnfonts)
 (cnfonts-enable)
