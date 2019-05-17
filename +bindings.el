@@ -43,8 +43,10 @@
                    :desc "Flycheck which checker"      "w" #'flycheck-select-checker
                    )
 
-      (:prefix-map ("t" . "toggl")
-                   :desc "Toggl truncate lines"        "t" #'toggle-truncate-lines
+      (:prefix-map ("t" . "toggle")
+                   :desc "Toggle truncate lines"        "t" #'toggle-truncate-lines
+                   :desc "Toggle flycheck mode"         "f" #'global-flycheck-mode
+                   :desc "Toggle company mode"          "c" #'global-company-mode
                    )
 
       (:prefix-map ("j" . "jump")
