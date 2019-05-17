@@ -1,0 +1,61 @@
+#+TITLE: Doom Emacs
+
+* Misc
+** TODO 阅读 Doom Emacs 的 Module Document [0/54]
+*** TODO :feature [0/6]
+**** TODO eval
+**** TODO evil
+**** TODO file-templates
+**** TODO loopup
+**** TODO snippets
+**** TODO workspaces
+*** TODO :completion [0/2]
+**** TODO company
+**** TODO ivy
+*** TODO :ui [0/11]
+**** TODO doom
+**** TODO doom-dashboard
+**** TODO doom-quit
+**** TODO evil-goggles
+**** TODO hl-todo
+**** TODO modeline
+**** TODO treemacs
+**** TODO popup
+**** TODO vc-gutter
+**** TODO vi-tilde-fringe
+**** TODO window-select
+*** TODO :editor [0/4]
+**** TODO fold
+**** TODO format
+**** TODO multiple-cursors
+**** TODO rotate-text
+*** TODO :emacs [0/4]
+**** TODO dired
+**** TODO electric
+**** TODO imenu
+**** TODO vc
+*** TODO :tools [0/6]
+**** TODO flycheck
+**** TODO lsp
+**** TODO macos
+**** TODO magit
+**** TODO rgb
+**** TODO wakatime
+*** TODO :lang [0/10]
+**** TODO cc
+**** TODO data
+**** TODO emacs-lisp
+**** TODO go
+**** TODO javascript
+**** TODO markdown
+**** TODO org
+**** TODO python
+**** TODO sh
+**** TODO web
+*** TODO :app [0/0]
+*** TODO :collab [0/0]
+*** TODO :config [0/1]
+**** TODO default
+
+* UI
+* Python
