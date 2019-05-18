@@ -5,6 +5,7 @@
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
       :desc "Find file in project"                     "." #'projectile-find-file
+      :desc "Org capture"                              "I" #'org-capture
       )
 
 (map!
@@ -31,6 +32,10 @@
 
       (:prefix-map ("c" . "code")
                    :desc "Comment line or region"      "l" #'evil-commentary-line
+                   )
+
+      (:prefix-map ("i" . "insert")
+                   :desc "Insert org property"         "p" #'org-set-property
                    )
 
       (:prefix-map ("e" . "error")
