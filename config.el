@@ -35,12 +35,3 @@
 
 (after! org
   (set-company-backend! 'org-mode 'company-yasnippet))
-
-;; cnfonts
-(require 'cnfonts)
-(cnfonts-enable)
-(cnfonts-set-spacemacs-fallback-fonts)
-
-(after! hl-line-mode
-  (when (not window-system)
-    (set-face-attribute 'hl-line nil :inherit nil :background "#49beb7")))

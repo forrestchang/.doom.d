@@ -7,4 +7,4 @@
 ;; (package! builtin-package :disable t)
 
 (package! pyim)
-(package! cnfonts)
+(package! writeroom-mode)
