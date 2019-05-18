@@ -5,3 +5,7 @@
 
 ;; Use avy jump for all windows
 (setq avy-all-windows t)
+
+;; Terminal region color
+(when (not window-system)
+  (set-face-attribute 'region nil :inherit nil :background "#fff3a3"))
