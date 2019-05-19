@@ -7,6 +7,9 @@
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cI" 'jiayuan/org-clock-in)
+(global-set-key "\C-cO" 'org-clock-out)
+(global-set-key "\C-cG" 'org-clock-goto)
 
 (map! :map org-mode-map
       :localleader
@@ -140,6 +143,10 @@
 ;; - Agenda clock report parameters
 (setq org-agenda-clockreport-parameter-plist
       (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
+
+(defun jiayuan/org-clock-in ()
+  (interactive)
+  (org-clock-in '(4)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
