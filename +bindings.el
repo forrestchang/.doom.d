@@ -5,7 +5,7 @@
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
       :desc "Find file in project"                     "." #'projectile-find-file
-      :desc "Org capture"                              "I" #'org-capture
+      :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
       )
 
 (map!
