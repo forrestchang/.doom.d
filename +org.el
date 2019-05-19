@@ -63,6 +63,11 @@
 ;; Auto trancate lines
 (setq-hook! 'org-mode-hook truncate-lines t)
 
+;; Enable org-checklist
+(require 'org-checklist)
+
+;; Block tasks when have not done subtasks
+(setq org-enforce-todo-dependencies t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
