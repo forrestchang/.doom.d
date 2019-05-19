@@ -139,7 +139,7 @@
 (setq org-clock-into-drawer t)
 
 ;; Remove zero clock records
-;; (setq org-clock-out-remove-zero-time-clocks t)
+(setq org-clock-out-remove-zero-time-clocks t)
 
 ;; Save the running clock and all clock history when exiting Emacs, load it on startup
 (setq org-clock-persist t)
