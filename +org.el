@@ -42,6 +42,8 @@
               ("TODO" :foreground "#d65a31" :weight bold)
               ("STARTED" :foreground "#4285F4" :weight bold)
               ("PROJ" :foreground "#5cc9f5" :weight bold)
+              ("WAITING" :foreground "#7b88ff" :weight bold)
+              ("HOLD" :foreground "#ffe837" :weight bold)
               )))
 
 (custom-set-faces
