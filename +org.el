@@ -19,6 +19,7 @@
       :desc "Org pomodoro"                        "p" #'org-pomodoro
       :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
       :desc "Org unfocus subtree"                 "F" #'widen
+      :desc "Org clock report"                    "R" #'org-clock-report
       )
 
 
@@ -88,6 +89,12 @@
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "STARTED(s)" "PROJ(p)" "|" "DONE(d)"))))
 
+;; Log done date
+(setq org-log-done t)
+
+;; Non-nil means switching TODO states with S-cursor counts as state change.
+(setq org-treat-S-cursor-todo-selection-as-state-change nil)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Refile
@@ -132,7 +139,7 @@
 (setq org-clock-into-drawer t)
 
 ;; Remove zero clock records
-(setq org-clock-out-remove-zero-time-clocks t)
+;; (setq org-clock-out-remove-zero-time-clocks t)
 
 ;; Save the running clock and all clock history when exiting Emacs, load it on startup
 (setq org-clock-persist t)
@@ -140,9 +147,23 @@
 ;; Do not prompt to resume an active clock
 (setq org-clock-persist-query-resume t)
 
-;; - Agenda clock report parameters
+;; Clock out when moving task to a done state
+(setq org-clock-out-when-done t)
+
+;; Use pretty things for the clocktable
+(setq org-pretty-entities t)
+
+;; Agenda clock report parameters
 (setq org-agenda-clockreport-parameter-plist
       (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
+
+;; Change tasks to whatever when clocking in
+(setq org-clock-in-switch-to-state "STARTED")
+
+;; Global effort estimate values
+(setq org-global-properties
+      '(("Effort_ALL" .
+         "0:15 0:30 0:45 1:00 2:00 3:00 4:00 5:00 6:00 7:00")))
 
 (defun jiayuan/org-clock-in ()
   (interactive)
