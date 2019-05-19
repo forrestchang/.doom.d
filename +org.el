@@ -13,8 +13,8 @@
 
 (map! :map org-mode-map
       :localleader
-      :desc "Org clock in"                        "i" #'org-clock-in
-      :desc "Org clock out"                       "o" #'org-clock-out
+      :desc "Org clock in"                        "I" #'org-clock-in
+      :desc "Org clock out"                       "O" #'org-clock-out
       :desc "Org clock goto"                      "g" #'org-clock-goto
       :desc "Org pomodoro"                        "p" #'org-pomodoro
       :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
