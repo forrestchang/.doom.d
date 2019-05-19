@@ -20,6 +20,7 @@
       :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
       :desc "Org unfocus subtree"                 "F" #'widen
       :desc "Org clock report"                    "R" #'org-clock-report
+      :desc "Org set effort"                      "e" #'org-set-effort
       )
 
 
