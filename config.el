@@ -30,6 +30,10 @@
   (advice-add 'company-dabbrev--prefix :around #'eh-company-dabbrev--prefix)
   )
 
+;; Auto-generate custom variable definitions.
+(setq custom-file (expand-file-name "custom.el" "~/.doom.d/"))
+(load custom-file 'no-error 'no-message)
+
 (after! text-mode
   (set-company-backend! 'text-mode 'company-yasnippet))
 
