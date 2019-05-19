@@ -59,8 +59,9 @@
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-agenda-files '("~/Dropbox/personal-site/workspace/org/"
-                         "~/.doom.d/doom-emacs.org"))
+(setq org-agenda-files '("~/Dropbox/personal-site/workspace/org/inbox.org"
+                         "~/Dropbox/personal-site/workspace/org/todo.org"
+                         ))
 
 (setq org-agenda-span '1)
 (setq org-agenda-start-on-weekday nil)
