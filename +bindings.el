@@ -12,6 +12,7 @@
       :desc "Find file in project"                     "." #'projectile-find-file
       :desc "Org agenda view"                          "A" (lambda () (interactive) (org-agenda nil "a"))
       :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
+      :desc "Org clock goto"                           "G" #'org-clock-goto
       )
 
 (map!
