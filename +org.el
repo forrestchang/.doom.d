@@ -93,7 +93,8 @@
 
 ;; Set todo Keyworkds
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s)" "PROJ(p)" "|" "DONE(d)"))))
+      (quote ((sequence "TODO(t)" "STARTED(s)" "PROJ(p)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
 
 ;; Log done date
 (setq org-log-done t)
