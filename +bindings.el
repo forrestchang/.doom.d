@@ -1,10 +1,16 @@
 ;;; ~/.doom.d/+bindings.el -*- lexical-binding: t; -*-
 
 
+;; Unbind keys
+(map! :leader
+      "A" nil
+      )
+
 ;; Leader key
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
       :desc "Find file in project"                     "." #'projectile-find-file
+      :desc "Org agenda view"                          "A" (lambda () (interactive) (org-agenda nil "a"))
       :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
       )
 

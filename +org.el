@@ -11,9 +11,6 @@
 (global-set-key "\C-co" 'org-clock-out)
 (global-set-key "\C-cg" 'org-clock-goto)
 
-(map! :leader
-      :desc "Org Agenda" "A" #'org-agenda)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; UI
