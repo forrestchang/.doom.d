@@ -54,7 +54,9 @@
        javascript
        markdown
        (org +attach +babel +capture +export +present)
-       (python +lsp)
+       (python
+        ;; +lsp
+        )
        (sh +fish)
        web
 
