@@ -56,10 +56,10 @@
                    )
 
       (:prefix-map ("t" . "toggle")
-                   :desc "Toggle truncate lines"        "t" #'toggle-truncate-lines
-                   :desc "Toggle flycheck mode"         "f" #'global-flycheck-mode
-                   :desc "Toggle company mode"          "c" #'global-company-mode
-                   :desc "Toggle visual line mode"      "v" #'visual-line-mode
+                   :desc "Toggle truncate lines"       "t" #'toggle-truncate-lines
+                   :desc "Toggle flycheck mode"        "f" #'global-flycheck-mode
+                   :desc "Toggle company mode"         "c" #'global-company-mode
+                   :desc "Toggle visual line mode"     "v" #'visual-line-mode
                    )
 
       (:prefix-map ("j" . "jump")
