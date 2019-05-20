@@ -9,3 +9,4 @@
 (package! pyim)
 (package! writeroom-mode)
 (package! org-pomodoro)
+(package! py-isort)

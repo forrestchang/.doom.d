@@ -1,5 +1,13 @@
 ;;; ~/.doom.d/+python.el -*- lexical-binding: t; -*-
 
+
+;; Key bindings
+(map! :map python-mode-map
+      :localleader
+      :desc "Optimize import order"               "i" #'py-isort-buffer
+      )
+
+
 (setq python-shell-interpreter "~/venv/python3.7/bin/ipython"
       python-shell-interpreter-args "--simple-prompt -i"
       flycheck-python-pycompile-executable "~/venv/python3.7/bin/python"
