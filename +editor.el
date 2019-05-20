@@ -3,6 +3,10 @@
 ;; (setq doom-font
 ;;       (font-spec :family "Sarasa Mono SC" :size 17 :weight 'normal))
 
+(after! doom-big-font-mode
+  (setq doom-font
+        (font-spec :family "Sarasa Mono SC")))
+
 ;; https://blog.csdn.net/xh_acmagic/article/details/78939246
 (defun +my/better-font()
   (interactive)
