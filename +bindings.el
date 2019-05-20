@@ -67,6 +67,8 @@
                    :desc "Jump to symbol across buffers" "I" #'imenu-anywhere
                    :desc "Jump to link"                "l" #'ace-link
                    :desc "Avy jump work"               "j" #'avy-goto-char-timer
+                   :desc "Goto todo.org"               "t" (lambda () (interactive) (find-file "~/Dropbox/personal-site/workspace/org/todo.org"))
+                   :desc "Goto inbox.org"              "o" (lambda () (interactive) (find-file "~/Dropbox/personal-site/workspace/org/inbox.org"))
                    )
 
       (:prefix-map ("s" . "search")
