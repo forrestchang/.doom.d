@@ -5,7 +5,7 @@
        (company
         +childframe)
        (ivy
-        +fuzzy
+        ;; +fuzzy
         +childframe)
 
        :ui
@@ -13,9 +13,9 @@
        doom
        doom-dashboard
        doom-quit
-       fill-column
+       ;; fill-column
        hl-todo
-       indent-guides
+       ;; indent-guides
        modeline
        ;; nav-flash
        ;; neotree
