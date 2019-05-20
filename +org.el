@@ -128,6 +128,10 @@
       '(
         ("t" "Todo" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Todos")
          "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
+        ("P" "Protocol" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Captures")
+         "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?" :kill-buffer t)
+        ("L" "Protocol Link" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Links")
+         "* %? [[%:link][%:description]] \nCaptured On: %U" :kill-buffer t)
         ))
 
 
@@ -194,5 +198,35 @@
 ;;; Org Pomodoro
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-pomodoro-length '50)
+(setq org-pomodoro-length '1)
 (setq org-pomodoro-short-break-length '10)
+
+;; Org notification
+(defun notify-osx (title message)
+  (call-process "terminal-notifier"
+                nil 0 nil
+                "-group" "Emacs"
+                "-title" title
+                "-sender" "org.gnu.Emacs"
+                "-message" message
+                "-activate" "org.gnu.Emacs"))
+
+(after! org-pomodoro
+  (add-hook 'org-pomodoro-finished-hook
+            (lambda ()
+              (notify-osx "Pomodoro completed!" "Time for a break.")))
+
+  (add-hook 'org-pomodoro-break-finished-hook
+            (lambda ()
+              (notify-osx "Pomodoro Short Break Finished" "Ready for Another?")))
+
+  (add-hook 'org-pomodoro-long-break-finished-hook
+            (lambda ()
+              (notify-osx "Pomodoro Long Break Finished" "Ready for Another?")))
+
+  (add-hook 'org-pomodoro-killed-hook
+            (lambda ()
+              (notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
+  )
+
+(notify-osx "Fuck" "This is a fucker message")
