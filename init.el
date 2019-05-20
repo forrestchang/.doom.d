@@ -1,71 +1,130 @@
 ;;; init.el -*- lexical-binding: t; -*-
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
-(doom! :feature
-       eval
-       (evil +everywhere)
-       file-templates
-       (lookup +docsets)
-       snippets
-       workspaces
-
-       :completion
-       (company +auto +childframe)
-       (ivy +childframe)
+(doom! :completion
+       (company
+        +childframe)
+       (ivy
+        +fuzzy
+        +childframe)
 
        :ui
+       deft
        doom
        doom-dashboard
        doom-quit
-       evil-goggles
+       fill-column
        hl-todo
+       indent-guides
        modeline
+       ;; nav-flash
+       ;; neotree
+       ;; ophints
+       (popup
+        +all
+        +defaults)
+       pretty-code
        treemacs
-       (popup +all +defaults)
+       unicode
        vc-gutter
        vi-tilde-fringe
-       (window-select +switch-window +numbers)
+       (window-select
+        +switch-window
+        +numbers)
+       workspaces
 
        :editor
+       (evil
+        +everywhere)
+       file-templates
        fold
        format
+       lispy
        multiple-cursors
        rotate-text
+       snippets
 
        :emacs
-       dired
+       (dired
+        +ranger
+        +icons)
        electric
        imenu
        vc
 
+       :term
+       eshell
+       term
+       vterm
+
        :tools
-       (flycheck +childframe)
+       ansible
+       debugger
+       docker
+       editorconfig
+       ein
+       eval
+       (flycheck
+        +childframe)
+       flyspell
+       gist
+       (lookup
+        +docsets)
        lsp
        macos
        magit
+       make
+       pass
+       pdf
+       prodigy
        rgb
+       terraform
+       tmux
+       upload
        wakatime
 
        :lang
-       (cc +irony +rtags)
-       data
+       assembly
+       cc
+       clojure
+       common-lisp
+       erlang
+       elixir
+       elm
        emacs-lisp
+       ess
        go
+       haskell
+       java
        javascript
+       julia
+       kotlin
+       latex
+       lua
        markdown
-       (org +attach +babel +capture +export +present +protocol +habit)
-       (python
-        ;; +lsp
-        )
-       (sh +fish)
+       (org
+        +attach
+        +bable
+        +capture
+        +export
+        +present
+        +ipython
+        +protocol)
+       php
+       python
+       scala
+       sh
        web
 
-       ;; Applications are complex and opinionated modules that transform Emacs
-       ;; toward a specific purpose. They may have additional dependencies and
-       ;; should be loaded late.
-       :app
+       :email
+       (mu4e
+        +gmail)
+       ;; notmuch
+       ;; wanderlust
 
-       :collab
+       :app
+       ;; calendar
+       ;; irc
 
        :config
        ;; For literate config users. This will tangle+compile a config.org
@@ -75,4 +134,8 @@
        ;; The default module sets reasonable defaults for Emacs. It also
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
-       (default +bindings +smartparens))
+       (default
+         +bindings
+         +smartparens)
+       literate
+       )
