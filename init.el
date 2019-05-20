@@ -53,7 +53,7 @@
        go
        javascript
        markdown
-       (org +attach +babel +capture +export +present)
+       (org +attach +babel +capture +export +present +protocol +habit)
        (python
         ;; +lsp
         )
