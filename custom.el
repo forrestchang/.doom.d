@@ -22,4 +22,4 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-date-today ((t (:foreground "#ff8246" :weight ultra-bold :height 1.2))))
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
- '(org-scheduled-today ((t (:inherit org-todo :foreground "#b0e0a8")))))
+ '(org-scheduled-today ((t (:inherit org-todo :foreground "#32dbc6")))))
