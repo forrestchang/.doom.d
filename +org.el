@@ -48,7 +48,8 @@
 
 (custom-set-faces
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
- '(org-scheduled-today ((t (:inherit org-todo :foreground "#b0e0a8")))))
+ '(org-scheduled-today ((t (:foreground "#b0e0a8"))))
+ '(org-warning ((t (:foreground "#ee5a5a")))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
