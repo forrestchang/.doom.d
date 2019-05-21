@@ -228,5 +228,3 @@
             (lambda ()
               (notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
   )
-
-(notify-osx "Fuck" "This is a fucker message")

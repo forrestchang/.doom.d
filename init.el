@@ -41,7 +41,7 @@
        format
        lispy
        multiple-cursors
-       rotate-text
+       ;; rotate-text
        snippets
 
        :emacs
