@@ -137,5 +137,5 @@
        (default
          +bindings
          +smartparens)
-       literate
+       ;; literate
        )
