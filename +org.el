@@ -198,7 +198,7 @@
 ;;; Org Pomodoro
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-pomodoro-length '1)
+(setq org-pomodoro-length '50)
 (setq org-pomodoro-short-break-length '10)
 
 ;; Org notification
