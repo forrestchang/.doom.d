@@ -71,6 +71,9 @@
 ;; Block tasks when have not done subtasks
 (setq org-enforce-todo-dependencies t)
 
+;; Turn off auto fill
+(add-hook 'org-mode-hook 'turn-off-auto-fill)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
