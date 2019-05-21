@@ -131,10 +131,14 @@
       '(
         ("t" "Todo" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Todos")
          "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
+        ("m" "Morning Journal" entry (file+olp+datetree "~/Dropbox/personal-site/workspace/org/journal.org")
+         "* Morning Journal\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%?")
+        ("j" "Journal" entry (file+olp+datetree "~/Dropbox/personal-site/workspace/org/journal.org")
+         "* %<%F %H:%M:%S>\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%?")
         ("P" "Protocol" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Captures")
-         "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?" :kill-buffer t)
+         "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?" :immediate-finish t)
         ("L" "Protocol Link" entry (file+headline "~/Dropbox/personal-site/workspace/org/inbox.org" "Links")
-         "* %? [[%:link][%:description]] \nCaptured On: %U" :kill-buffer t)
+         "* %? [[%:link][%:description]] \nCaptured On: %U" :immediate-finish t)
         ))
 
 
