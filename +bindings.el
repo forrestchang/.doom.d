@@ -4,6 +4,7 @@
 ;; Unbind keys
 (map! :leader
       "A" nil
+      "X" nil
       )
 
 ;; Leader key
@@ -13,6 +14,7 @@
       :desc "Org agenda view"                          "A" (lambda () (interactive) (org-agenda nil "a"))
       :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
       :desc "Org clock goto"                           "G" #'org-clock-goto
+      :desc "Org capture"                              "C" #'org-capture
       )
 
 (map!
