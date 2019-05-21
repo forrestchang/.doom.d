@@ -46,8 +46,9 @@
 
        :emacs
        (dired
-        +ranger
-        +icons)
+        ;; +ranger
+        ;; +icons
+        )
        electric
        imenu
        vc
