@@ -36,3 +36,5 @@
 ;; Terminal region color
 (when (not window-system)
   (set-face-attribute 'region nil :inherit nil :background "#fff3a3"))
+;; Auto save
+(auto-save-visited-mode 1)
