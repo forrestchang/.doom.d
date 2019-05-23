@@ -44,6 +44,9 @@
        ;; rotate-text
        snippets
 
+       :input
+       chinese
+
        :emacs
        (dired
         ;; +ranger
