@@ -15,6 +15,7 @@
       :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
       :desc "Org clock goto"                           "G" #'org-clock-goto
       :desc "Org capture"                              "C" #'org-capture
+      :desc "Expand region"                            "<" #'er/expand-region
       )
 
 (map!
