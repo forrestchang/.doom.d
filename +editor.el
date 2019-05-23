@@ -36,5 +36,12 @@
 ;; Terminal region color
 (when (not window-system)
   (set-face-attribute 'region nil :inherit nil :background "#fff3a3"))
+
+;; Pyim
+(after! pyim
+  (setq pyim-isearch-mode 1
+        pyim-page-tooltip 'postframe
+        pyim-page-length 5))
+
 ;; Auto save
 (auto-save-visited-mode 1)
