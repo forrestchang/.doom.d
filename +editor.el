@@ -45,6 +45,7 @@
 
 ;; Auto save
 (auto-save-visited-mode 1)
+
 ;; Indent setup
 (setq c-basic-offset 4)
 (setq js-indent-level 2)
@@ -53,3 +54,7 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 (setq css-indent-offset 2)
+
+;; Set evil escape key
+(after! evil
+  (setq evil-escape-key-sequence "fd"))
