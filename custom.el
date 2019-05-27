@@ -21,6 +21,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(bold ((t (:foreground "orange1" :weight bold))))
  '(org-agenda-date-today ((t (:foreground "#ff8246" :weight ultra-bold :height 1.2))))
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
  '(org-scheduled-today ((t (:inherit org-todo :foreground "#32dbc6"))))
