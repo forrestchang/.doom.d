@@ -46,6 +46,26 @@
 ;; Auto save
 (auto-save-visited-mode 1)
 
+
+;; Smart inference of indentation style
+;; from https://www.emacswiki.org/emacs/NoTabs
+(defun infer-indentation-style ()
+  ;; if our source file uses tabs, we use tabs, if spaces spaces, and if
+  ;; neither, we use the current indent-tabs-mode
+  (let ((space-count (how-many "^  " (point-min) (point-max)))
+        (tab-count (how-many "^\t" (point-min) (point-max))))
+    (if (> space-count tab-count) (setq indent-tabs-mode nil))
+    (if (> tab-count space-count) (setq indent-tabs-mode t))))
+
+;; Use space instead of tabs
+(setq indent-tabs-mode nil)
+
+;; Use smart indents
+;; (infer-indentation-style)
+
+;; Set default indent to 4 space
+(setq tab-width 4)
+
 ;; Indent setup
 (setq c-basic-offset 4)
 (setq js-indent-level 2)
@@ -58,3 +78,4 @@
 ;; Set evil escape key
 (after! evil
   (setq evil-escape-key-sequence "fd"))
+
