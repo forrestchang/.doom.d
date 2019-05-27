@@ -56,9 +56,9 @@
       (quote (
               ("TODO" :foreground "#d65a31" :weight bold)
               ("STARTED" :foreground "#4285F4" :weight bold)
-              ("PROJ" :foreground "#5cc9f5" :weight bold)
+              ("PROJ" :foreground "#0ffd19a" :weight bold)
               ("WAITING" :foreground "#7b88ff" :weight bold)
-              ("HOLD" :foreground "#ffe837" :weight bold)
+              ("HOLD" :foreground "#71a0a5" :weight bold)
               )))
 
 (custom-set-faces
