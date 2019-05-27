@@ -23,6 +23,15 @@
       :desc "Org set effort"                      "e" #'org-set-effort
       )
 
+;; Org agenda key bindings, see:
+;; (find-file "~/.emacs.d/.local/packages/elpa/evil-org-20180323.2306/evil-org-agenda.el")
+
+(evil-define-key 'motion org-agenda-mode-map
+  ;; views
+  "vl" 'org-agenda-log-mode
+  "vc" 'org-agenda-clockreport-mode
+  )
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; UI
