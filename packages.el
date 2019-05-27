@@ -11,3 +11,4 @@
 (package! py-isort)
 (package! protobuf-mode)
 (package! py-yapf)
+(package! org-super-agenda)
