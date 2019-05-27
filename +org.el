@@ -96,6 +96,7 @@
 
 (setq org-agenda-files '("~/org/inbox.org"
                          "~/org/gtd.org"
+                         "~/org/gcal.org"
                          ))
 
 (setq org-agenda-span '1)
