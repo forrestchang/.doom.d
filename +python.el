@@ -1,5 +1,16 @@
 ;;; ~/.doom.d/+python.el -*- lexical-binding: t; -*-
 
+;; Formating hack
+;; Use format-all to format python code
+;;
+;; In ~format-all.el~
+;;
+;; (define-format-all-formatter black
+;;   (:executable "~/venv/python3.7/bin/black")  ; Use spefic black executable
+;;   (:install "pip install black")
+;;   (:modes python-mode)
+;;   (:format (format-all-buffer-easy executable "-q" "-S" "-")))
+
 
 ;; Key bindings
 (map! :map python-mode-map
@@ -29,3 +40,9 @@
           (lambda ()
             (flycheck-add-next-checker 'python-pylint 'python-mypy)))
 
+;; Set indent for python
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (setq tab-width 4)
+            (setq python-indent-offset 4)))

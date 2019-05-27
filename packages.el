@@ -9,3 +9,5 @@
 (package! writeroom-mode)
 (package! org-pomodoro)
 (package! py-isort)
+(package! protobuf-mode)
+(package! py-yapf)
