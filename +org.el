@@ -80,7 +80,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq org-agenda-files '("~/org/inbox.org"
-                         "~/org/todo.org"
+                         "~/org/gtd.org"
                          ))
 
 (setq org-agenda-span '1)
