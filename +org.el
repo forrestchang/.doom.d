@@ -168,6 +168,8 @@
          "* Morning Journal\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%?")
         ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
          "* %<%F %H:%M:%S>\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%?")
+        ("q" "Quick Notes" entry (file+olp+datetree "~/org/journal.org")
+         "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
         ("P" "Protocol" entry (file+headline "~/org/inbox.org" "Captures")
          "* [[%:link][%:description]]\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t)
         ("L" "Protocol Link" entry (file+headline "~/org/inbox.org" "Links")
