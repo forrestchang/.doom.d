@@ -28,3 +28,15 @@
 (after! org
   (set-company-backend! 'org-mode 'company-yasnippet))
 
+;; Swiper search
+(defun eh-ivy-cregexp (str)
+    (concat
+     (ivy--regex-plus str)
+     "\\|"
+     (pyim-cregexp-build str)))
+
+  (setq ivy-re-builders-alist
+        '((t . eh-ivy-cregexp)))
+
+;; calfw
+(require 'calfw)
