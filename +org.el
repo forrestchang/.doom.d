@@ -11,16 +11,22 @@
 (global-set-key "\C-cO" 'org-clock-out)
 (global-set-key "\C-cG" 'org-clock-goto)
 
-(map! :map org-mode-map
-      :localleader
-      :desc "Org clock in"                        "I" #'org-clock-in
-      :desc "Org clock out"                       "O" #'org-clock-out
-      :desc "Org clock goto"                      "g" #'org-clock-goto
-      :desc "Org pomodoro"                        "p" #'org-pomodoro
-      :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
-      :desc "Org unfocus subtree"                 "F" #'widen
-      :desc "Org clock report"                    "R" #'org-clock-report
-      :desc "Org set effort"                      "e" #'org-set-effort
+(map! (:map org-mode-map
+        :localleader
+        :desc "Org clock in"                        "I" #'org-clock-in
+        :desc "Org clock out"                       "O" #'org-clock-out
+        :desc "Org clock goto"                      "g" #'org-clock-goto
+        :desc "Org pomodoro"                        "p" #'org-pomodoro
+        :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
+        :desc "Org unfocus subtree"                 "F" #'widen
+        :desc "Org clock report"                    "R" #'org-clock-report
+        :desc "Org set effort"                      "e" #'org-set-effort
+        :desc "Sync Google Calendar"                "S" #'org-gcal-sync
+        )
+      (:map org-super-agenda-header-map
+        "j" #'evil-next-line
+        "k" #'evil-previous-line
+        )
       )
 
 ;; Org agenda key bindings, see:
@@ -120,6 +126,22 @@
 ;; Warning 30 days before deadline
 (setq org-deadline-warning-days 30)
 
+;; Org super agenda
+(org-super-agenda-mode)
+(setq org-agenda-custom-commands
+      '(("a" "Dashboard\n"
+         ((agenda ""
+                  ((org-super-agenda-groups
+                    '((:name "Due Today"
+                             :deadline today)
+                      (:name "For Today"
+                             :time-grid t
+                             :scheduled today)
+                      (:name "Overdue"
+                             :deadline past)
+                      (:name "Past Schedule"
+                             :scheduled past)
+                      (:discard (:anything t))))))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Refile

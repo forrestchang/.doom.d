@@ -12,3 +12,5 @@
 (package! protobuf-mode)
 (package! py-yapf)
 (package! org-super-agenda)
+(package! calfw)
+(package! org-gcal)
