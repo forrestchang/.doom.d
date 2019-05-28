@@ -144,6 +144,20 @@
                              :scheduled past)
                       (:discard (:anything t))))))))))
 
+;; Org gcal
+(require 'org-gcal)
+(after! org-gcal
+  (setq org-gcal-client-id "93021018604-omjsj3g7ci2pgvgnj22epu5u0ka9p33h.apps.googleusercontent.com"
+        org-gcal-client-secret "TuYRHD5T5DkmypdevKsh7enz"
+        org-gcal-file-alist '(("forrestchang7@gmail.com" . "~/Dropbox/org/calendars/gcal_default.org")
+                              ("addressbook#contacts@group.v.calendar.google.com" . "~/Dropbox/org/calendars/gcal_holidays.org")
+                              ("o2lcgjdtg3h441i6m1ddugiee4@group.calendar.google.com" . "~/Dropbox/org/calendars/gcal_hobby.org")
+                              ("b7tj496ae8b76pbfn1utoen58o@group.calendar.google.com" . "~/Dropbox/org/calendars/gcal_learning.org")
+                              ("8eahnd4d5p3avqfbnhn0cgcqq0@group.calendar.google.com" . "~/Dropbox/org/calendars/gcal_life.org")
+                              ("3j9ok2brthfbpdojuj4vtr0hq0@group.calendar.google.com" . "~/Dropbox/org/calendars/gcal_system.org")
+                              ("f39mckhr7gdtp2evivta86gvbk@group.calendar.google.com" . "~/Dropbox/org/calendars/gcal_work.org")
+                              )))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Refile
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

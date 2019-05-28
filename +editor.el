@@ -79,9 +79,3 @@
 (after! evil
   (setq evil-escape-key-sequence "fd"))
 
-;; Org gcal
-(require 'org-gcal)
-(after! org-gcal
-  (setq org-gcal-client-id "93021018604-omjsj3g7ci2pgvgnj22epu5u0ka9p33h.apps.googleusercontent.com"
-        org-gcal-client-secret "TuYRHD5T5DkmypdevKsh7enz"
-        org-gcal-file-alist '(("forrestchang7@gmail.com" . "~/org/gcal.org"))))
