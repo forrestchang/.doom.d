@@ -133,11 +133,10 @@
       '(("a" "Dashboard\n"
          ((agenda ""
                   ((org-super-agenda-groups
-                    '((:name "Due Today"
-                             :deadline today)
-                      (:name "For Today"
+                    '((:name "For Today"
                              :time-grid t
-                             :scheduled today)
+                             :scheduled today
+                             :deadline today)
                       (:name "Overdue"
                              :deadline past)
                       (:name "Past Schedule"
