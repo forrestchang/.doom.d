@@ -72,8 +72,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Set org directory
-(setq org-directory "~/org/")
-(setq org-default-notes-file "~/org/inbox.org")
+(setq org-directory "~/Dropbox/org/")
+(setq org-default-notes-file "~/Dropbox/org/inbox.org")
 
 ;; Org resize image
 (setq org-image-actual-width '(650))
@@ -94,9 +94,9 @@
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-agenda-files '("~/org/inbox.org"
-                         "~/org/gtd.org"
-                         "~/org/gcal.org"
+(setq org-agenda-files '("~/Dropbox/org/inbox.org"
+                         "~/Dropbox/org/gtd.org"
+                         "~/Dropbox/org/calendars"
                          ))
 
 (setq org-agenda-span '1)
@@ -176,17 +176,17 @@
 
 (setq org-capture-templates
       '(
-        ("t" "Todo" entry (file+headline "~/org/inbox.org" "Todos")
+        ("t" "Todo" entry (file+headline "~/Dropbox/org/inbox.org" "Todos")
          "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
-        ("m" "Morning Journal" entry (file+olp+datetree "~/org/journal.org")
+        ("m" "Morning Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* Morning Journal\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%?")
-        ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
+        ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %<%F %H:%M:%S>\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n%?")
-        ("q" "Quick Notes" entry (file+olp+datetree "~/org/journal.org")
+        ("q" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-        ("P" "Protocol" entry (file+headline "~/org/inbox.org" "Captures")
+        ("P" "Protocol" entry (file+headline "~/Dropbox/org/inbox.org" "Captures")
          "* [[%:link][%:description]]\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t)
-        ("L" "Protocol Link" entry (file+headline "~/org/inbox.org" "Links")
+        ("L" "Protocol Link" entry (file+headline "~/Dropbox/org/inbox.org" "Links")
          "* [[%:link][%:description]]\nCaptured On: %U" :immediate-finish t)
         ))
 
