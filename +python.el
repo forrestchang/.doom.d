@@ -23,9 +23,10 @@
       )
 
 
-(setq python-shell-interpreter "~/venv/python3.7/bin/ipython"
-      python-shell-interpreter-args "--simple-prompt -i"
-      flycheck-python-pycompile-executable "~/venv/python3.7/bin/python"
+;; (setq python-shell-interpreter "~/venv/python3.7/bin/ipython"
+;;       python-shell-interpreter-args "--simple-prompt -i")
+
+(setq flycheck-python-pycompile-executable "~/venv/python3.7/bin/python"
       flycheck-python-pylint-executable "~/venv/python3.7/bin/pylint"
       flycheck-python-mypy-executable "~/venv/python3.7/bin/mypy")
 
