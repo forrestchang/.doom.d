@@ -39,7 +39,8 @@
         '((t . eh-ivy-cregexp)))
 
 ;; calfw
-(require 'calfw)
+(def-package! calfw)
+
 ;; Beancount
 (def-package! beancount
   :load-path "~/.doom.d/lib/"
