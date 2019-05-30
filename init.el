@@ -23,7 +23,6 @@
        (popup
         +all
         +defaults)
-       ;; pretty-code
        treemacs
        unicode
        vc-gutter
