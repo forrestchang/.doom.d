@@ -59,7 +59,7 @@
        :term
        eshell
        term
-       vterm
+       ;; vterm
 
        :tools
        ansible
@@ -78,7 +78,6 @@
        macos
        magit
        make
-       pass
        pdf
        prodigy
        rgb
