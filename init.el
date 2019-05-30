@@ -53,7 +53,6 @@
         ;; +icons
         )
        electric
-       imenu
        vc
 
        :term
