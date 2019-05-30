@@ -40,5 +40,11 @@
 
 ;; calfw
 (require 'calfw)
+;; Beancount
+(def-package! beancount
+  :load-path "~/.doom.d/lib/"
+  :config
+  (add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
+  )
 ;; Applescript mode
 (def-package! applescript-mode)
