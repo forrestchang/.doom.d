@@ -28,6 +28,9 @@
 (after! org
   (set-company-backend! 'org-mode 'company-yasnippet))
 
+(after! company
+  (setq company-idle-delay 0))
+
 ;; Swiper search
 (defun eh-ivy-cregexp (str)
   (concat
