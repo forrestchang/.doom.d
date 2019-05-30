@@ -47,5 +47,14 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
   )
+
+;; Web mode
+(setq flycheck-javascript-eslint-executable "/usr/local/bin/eslint")
+
+(add-hook 'web-mode-hook
+          (lambda ()
+            (flycheck-add-next-checker 'javascript-eslint)))
+
+
 ;; Applescript mode
 (def-package! applescript-mode)

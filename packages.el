@@ -14,4 +14,5 @@
 (package! org-super-agenda)
 (package! calfw)
 (package! org-gcal)
+(package! rfc-mode)
 (package! applescript-mode)
