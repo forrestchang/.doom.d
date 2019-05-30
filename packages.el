@@ -16,3 +16,4 @@
 (package! org-gcal)
 (package! rfc-mode)
 (package! applescript-mode)
+(package! rainbow-identifiers)

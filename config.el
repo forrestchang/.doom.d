@@ -58,3 +58,7 @@
 
 ;; Applescript mode
 (def-package! applescript-mode)
+
+;; Rainbow identifiers
+(def-package! rainbow-identifiers
+  :config (add-hook 'prog-mode-hook 'rainbow-identifiers-mode))
