@@ -9,10 +9,14 @@
 ;;   (:executable "~/venv/python3.7/bin/black")  ; Use spefic black executable
 ;;   (:install "pip install black")
 ;;   (:modes python-mode)
-;;   (:format (format-all-buffer-easy executable "-q" "-S" "-")))
+;;   (:format (format-all-buffer-easy executable "-q" "-")))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Key bindings
+;;;
+;;; SPC m i    Optimize import order
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Key bindings
 (map! :map python-mode-map
       :localleader
       :desc "Optimize import order"               "i" #'py-isort-buffer
