@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Beancount Transaction
+# key: bc
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# type: snippet
+# binding: direct-keybinding
+# --
+`(format-time-string "%Y-%m-%d")` * "${1:Description}"
+  ${2:Account$$(yas-choose-value beancount-accounts)}    ${3:AMT} ${4:CUR$(yas-choose-value '("USD" "HKD" "CNY"))}
+  ${5:Account$$(yas-choose-value beancount-accounts)}   -$3 $4
