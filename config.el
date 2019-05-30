@@ -40,3 +40,5 @@
 
 ;; calfw
 (require 'calfw)
+;; Applescript mode
+(def-package! applescript-mode)
