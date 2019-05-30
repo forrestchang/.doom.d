@@ -28,6 +28,7 @@
 (after! org
   (set-company-backend! 'org-mode 'company-yasnippet))
 
+;; Company
 (after! company
   (setq company-idle-delay 0))
 
