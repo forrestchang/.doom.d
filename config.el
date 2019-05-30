@@ -30,13 +30,13 @@
 
 ;; Swiper search
 (defun eh-ivy-cregexp (str)
-    (concat
-     (ivy--regex-plus str)
-     "\\|"
-     (pyim-cregexp-build str)))
+  (concat
+   (ivy--regex-plus str)
+   "\\|"
+   (pyim-cregexp-build str)))
 
-  (setq ivy-re-builders-alist
-        '((t . eh-ivy-cregexp)))
+(setq ivy-re-builders-alist
+      '((t . eh-ivy-cregexp)))
 
 ;; calfw
 (def-package! calfw)
