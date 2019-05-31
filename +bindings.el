@@ -24,6 +24,7 @@
  (:when (featurep! :tools lookup)
    :nv "gb" #'better-jumper-jump-backward
    :nv "gf" #'better-jumper-jump-forward
+   :nv "B"  #'switch-to-buffer
    ))
 
 ;; Prefix map
