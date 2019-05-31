@@ -66,3 +66,7 @@
 ;; Rainbow identifiers
 (def-package! rainbow-identifiers
   :config (add-hook 'prog-mode-hook 'rainbow-identifiers-mode))
+
+;; Cursor color
+(setq +evil--default-cursor-color "#ffa323")
+(setq +evil--emacs-cursor-color "#ffa323")
