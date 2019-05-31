@@ -66,3 +66,8 @@
 ;; Rainbow identifiers
 (def-package! rainbow-identifiers
   :config (add-hook 'prog-mode-hook 'rainbow-identifiers-mode))
+
+;; Key frequences
+(def-package! keyfreq
+  :config (progn (keyfreq-mode 1)
+                (keyfreq-autosave-mode 1)))

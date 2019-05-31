@@ -17,3 +17,4 @@
 (package! rfc-mode)
 (package! applescript-mode)
 (package! rainbow-identifiers)
+(package! keyfreq)
