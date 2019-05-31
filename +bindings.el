@@ -1,11 +1,13 @@
 ;;; ~/.doom.d/+bindings.el -*- lexical-binding: t; -*-
 
-
 ;; Unbind keys
 (map! :leader
       "A" nil
       "X" nil
       )
+
+;; Bind local leader
+(setq doom-localleader-key ",")
 
 ;; Leader key
 (map! :leader
