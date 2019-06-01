@@ -139,4 +139,7 @@
          +bindings
          +smartparens)
        ;; literate
+
+       :private
+       my-org
        )
