@@ -6,9 +6,6 @@
       "X" nil
       )
 
-;; Bind local leader
-(setq doom-localleader-key ",")
-
 ;; Leader key
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
