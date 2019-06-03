@@ -66,6 +66,13 @@
  '(org-scheduled-today ((t (:foreground "#b0e0a8"))))
  '(org-warning ((t (:foreground "#ee5a5a")))))
 
+;; Popup rules
+(set-popup-rules!
+  '(
+    ("^\\*Org Agenda"    :size 0.5 :select t :ttl nil)
+    ("^\\*Org Src"       :size 0.4 :quit nil :select t :autosave t :ttl nil)
+    ("^CAPTURE.*\\.org$" :size 0.4 :quit nil :select t :autosave t)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Misc
