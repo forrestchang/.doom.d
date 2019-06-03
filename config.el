@@ -30,7 +30,8 @@
 
 ;; Company
 (after! company
-  (setq company-idle-delay 0))
+  (setq company-idle-delay 0
+        company-box-doc-enable nil))
 
 ;; Swiper search
 (defun eh-ivy-cregexp (str)
