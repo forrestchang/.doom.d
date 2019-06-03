@@ -5,15 +5,17 @@
   :init (setq org-pomodoro-length '50
               org-pomodoro-short-break-length '10)
   :config
+  (defvar terminal-notifier-command
+    (executable-find "terminal-notifier") "/usr/local/bin/terminal-notifier")
   ;; Org notification
   (defun notify-osx (title message)
-    (call-process "terminal-notifier"
-                  nil 0 nil
-                  "-group" "Emacs"
-                  "-title" title
-                  "-sender" "org.gnu.Emacs"
-                  "-message" message
-                  "-activate" "org.gnu.Emacs"))
+    (start-process "terminal-notifier"
+                   "*terminal-notifier*"
+                   terminal-notifier-command
+                   "-title" title
+                   "-message" message
+                   "-sender" "org.gnu.Emacs"
+                   "-activate" "org.gnu.Emacs"))
 
   (add-hook 'org-pomodoro-finished-hook
             (lambda ()
