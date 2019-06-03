@@ -105,7 +105,7 @@
        markdown
        (org
         +attach
-        +bable
+        +babel
         +capture
         +export
         +present
