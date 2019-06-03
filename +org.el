@@ -219,6 +219,9 @@
   (interactive)
   (org-clock-in '(4)))
 
+;; Set org clock report time format
+(setq org-duration-format (quote h:mm))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Column
