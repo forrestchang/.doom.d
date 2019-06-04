@@ -156,8 +156,6 @@
       '(
         ("t" "Todo" entry (file+headline "~/Dropbox/org/inbox.org" "Todos")
          "* TODO %?\nCREATED: %U\n")
-        ("m" "Morning Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
-         "* Morning Journal\nCREATED: %U\n\n%?")
         ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %<%F %H:%M:%S>\nCREATED: %U\n\n%?")
         ("q" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
