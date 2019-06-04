@@ -85,6 +85,7 @@
        wakatime
 
        :lang
+       rust
        assembly
        cc
        clojure
