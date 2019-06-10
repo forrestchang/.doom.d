@@ -26,8 +26,6 @@
 
 ;;; Commentary:
 
-;; TODO: Add a flymake rule, using bean-check
-
 ;;; Code:
 
 (autoload 'ido-completing-read "ido")
@@ -141,7 +139,7 @@
     (define-key map (vconcat p [(\;)]) #'beancount-align-to-previous-number)
     (define-key map (vconcat p [(\:)]) #'beancount-align-numbers)
 
-    ;; FIXME: Binding TAB breaks expected org-mode behavior to fold/unfold. We
+    ;; fixme: Binding TAB breaks expected org-mode behavior to fold/unfold. We
     ;; need to find a better solution.
     ;;(define-key map [?\t] #'beancount-tab)
     map))
@@ -178,7 +176,7 @@ is great for sectioning large files with many transactions.
   (set (make-local-variable 'comment-start-skip)
        "\\(\\(^\\|[^\\\\\n]\\)\\(\\\\\\\\\\)*\\);+ *")
   ;; Font lock mode uses this only when it KNOWS a comment is starting.
-  ;; FIXME: Why bother?
+  ;; fixme: Why bother?
   (set (make-local-variable 'font-lock-comment-start-skip) ";+ *")
   ;; Default to `;;' in comment-region.
   (set (make-local-variable 'comment-add) 1)
@@ -280,7 +278,7 @@ Excludes tags appearing on the current line."
   "^[0-9-/]+ +\\(?:txn +\\)?[^ [:lower:]]\\($\\| \\)")
 
 (defun beancount-inside-txn-p ()
-  ;; FIXME: The doc doesn't actually say how the legs of a transaction can be
+  ;; fixme: The doc doesn't actually say how the legs of a transaction can be
   ;; layed out.  We assume that they all start with some space on the line.
   (save-excursion
     (forward-line 0)
