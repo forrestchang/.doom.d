@@ -110,7 +110,7 @@
 (setq org-agenda-files '("~/Dropbox/org/inbox.org"
                          "~/Dropbox/org/gtd.org"
                          "~/Dropbox/org/someday.org"
-                         "~/Dropbox/org/calendars"
+                         "~/Dropbox/org/personal-site/blog/content-org/post.org"
                          ))
 
 (setq org-agenda-span '1)
