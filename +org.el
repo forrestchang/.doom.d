@@ -86,8 +86,12 @@
 ;; Org resize image
 (setq org-image-actual-width '(650))
 
-;; Auto trancate lines
-(setq-hook! 'org-mode-hook truncate-lines t)
+;; Auto wrap line
+(remove-hook 'org-mode-hook 'auto-fill-mode)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq truncate-lines nil)
+            (visual-line-mode 1)))
 
 ;; Enable org-checklist
 (require 'org-checklist)
@@ -95,8 +99,9 @@
 ;; Block tasks when have not done subtasks
 (setq org-enforce-todo-dependencies t)
 
-;; Turn off auto fill
-(add-hook 'org-mode-hook 'turn-off-auto-fill)
+;; Remove hack in chinese layer: remove blanks when export
+(advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
