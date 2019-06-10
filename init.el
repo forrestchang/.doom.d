@@ -106,6 +106,7 @@
        markdown
        (org
         +attach
+        +habit
         +babel
         +capture
         +export
