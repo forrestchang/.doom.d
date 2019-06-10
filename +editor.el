@@ -79,3 +79,5 @@
 (after! evil
   (setq evil-escape-key-sequence "fd"))
 
+;; Ligatures
+(mac-auto-operator-composition-mode)
