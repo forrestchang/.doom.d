@@ -54,3 +54,10 @@
                                :scheduled past)
                         (:discard (:anything t))))))))))
   )
+
+;; Hugo blog
+(def-package! ox-hugo
+  :after ox
+  )
+
+(def-package! org-hugo-auto-export-mode)

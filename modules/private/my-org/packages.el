@@ -4,3 +4,4 @@
 (package! org-pomodoro)
 (package! org-gcal)
 (package! org-super-agenda)
+(package! ox-hugo)

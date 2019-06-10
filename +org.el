@@ -22,6 +22,7 @@
         :desc "Org clock report"                    "R" #'org-clock-report
         :desc "Org set effort"                      "e" #'org-set-effort
         :desc "Sync Google Calendar"                "S" #'org-gcal-sync
+        :desc "Generage Hugo blog post"             "h" #'org-hugo-export-wim-to-md
         )
       (:map org-super-agenda-header-map
         "j" #'evil-next-line
