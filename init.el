@@ -5,7 +5,7 @@
        (company
         +childframe)
        (ivy
-        ;; +fuzzy
+        +fuzzy
         +childframe)
 
        :ui
@@ -144,4 +144,5 @@
 
        :private
        my-org
+       my-python
        )
