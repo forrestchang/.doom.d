@@ -163,7 +163,7 @@
         ("t" "Todo" entry (file+headline "~/Dropbox/org/inbox.org" "Todos")
          "* TODO %?\nCREATED: %U\n")
         ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
-         "* %<%F %H:%M:%S>\nCREATED: %U\n\n%?")
+         "* %?\nEntered on %U\n%i\n%a")
         ("q" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nCREATED: %U\n")
         ("P" "Protocol" entry (file+headline "~/Dropbox/org/inbox.org" "Captures")
@@ -241,6 +241,7 @@
 ;;; https://orgmode.org/worg/org-hacks.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Pick random org entry
 ;; https://gist.github.com/tonyday567/4343164
 (defun org-random-entry (&optional arg)
   "Select and goto a random todo item from the global agenda"
