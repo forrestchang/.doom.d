@@ -71,4 +71,20 @@
 ;; Key frequences
 (def-package! keyfreq
   :config (progn (keyfreq-mode 1)
-                (keyfreq-autosave-mode 1)))
+                 (keyfreq-autosave-mode 1)))
+
+
+;; Hack for ox-hugo
+(after! ox-hugo
+  (defadvice org-hugo-paragraph (before org-hugo-paragraph-advice
+                                        (paragraph contents info) activate)
+    "Join consecutive Chinese lines into a single long line without
+unwanted space when exporting org-mode to hugo markdown."
+    (let* ((origin-contents (ad-get-arg 1))
+           (fix-regexp "[[:multibyte:]]")
+           (fixed-contents
+            (replace-regexp-in-string
+             (concat
+              "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" origin-contents)))
+      (ad-set-arg 1 fixed-contents)))
+  )
