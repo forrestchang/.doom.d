@@ -48,6 +48,7 @@
 
       (:prefix ("i" . "insert")
         :desc "Insert org property"         "p" #'org-set-property
+        :desc "Insert last org stored link" "l" #'org-insert-last-stored-link
         )
 
       (:prefix ("e" . "error")
