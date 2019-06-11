@@ -40,8 +40,10 @@
 ;; Pyim
 (after! pyim
   (setq pyim-isearch-mode 1
-        pyim-page-tooltip 'postframe
+        pyim-page-tooltip 'posframe
         pyim-page-length 5))
+
+(setq redisplay-dont-pause nil)
 
 ;; Auto save
 (auto-save-visited-mode 1)
