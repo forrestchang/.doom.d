@@ -87,20 +87,20 @@
 (setq org-image-actual-width '(650))
 
 ;; Auto wrap line
-(remove-hook 'org-mode-hook 'auto-fill-mode)
-(add-hook 'org-mode-hook
-          (lambda ()
-            (setq truncate-lines nil)
-            (visual-line-mode 1)))
+;; (remove-hook 'org-mode-hook 'auto-fill-mode)
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (setq truncate-lines nil)
+;;             (visual-line-mode 1)))
 
 ;; Enable org-checklist
-(require 'org-checklist)
+(def-package! org-checklist)
 
 ;; Block tasks when have not done subtasks
 (setq org-enforce-todo-dependencies t)
 
 ;; Remove hack in chinese layer: remove blanks when export
-(advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
+;; (advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
