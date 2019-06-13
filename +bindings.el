@@ -10,7 +10,8 @@
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
       :desc "Find file in project"                     "." #'projectile-find-file
-      :desc "Org agenda view"                          "A" (lambda () (interactive) (org-agenda nil "a"))
+      :desc "Org agenda"                               "a" #'org-agenda
+      :desc "Org agenda today"                         "A" (lambda () (interactive) (org-agenda nil "a"))
       :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
       :desc "Org Journal"                              "J" (lambda () (interactive) (org-capture nil "j"))
       :desc "Org clock goto"                           "G" #'org-clock-goto
