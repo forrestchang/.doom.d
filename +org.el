@@ -136,7 +136,7 @@
 ;; Log done date
 (setq org-log-done t)
 
-;; Non-nil means switching TODO states with S-cursor counts as state change.
+;; Non-nil means switching todo states with S-cursor counts as state change.
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
 ;; Warning 30 days before deadline
