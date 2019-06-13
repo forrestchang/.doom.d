@@ -88,3 +88,6 @@ unwanted space when exporting org-mode to hugo markdown."
               "\\(" fix-regexp "\\) *\n *\\(" fix-regexp "\\)") "\\1\\2" origin-contents)))
       (ad-set-arg 1 fixed-contents)))
   )
+
+(after! git-gutter
+  (setq git-gutter:disabled-modes '(org-mode image-mode)))
