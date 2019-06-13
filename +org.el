@@ -167,6 +167,8 @@
          "* %?\nEntered on %U\n%i\n%a")
         ("q" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nCREATED: %U\n")
+        ("b" "Blog Timeline" entry (file+olp+datetree "~/Dropbox/personal-site/blog/content-org/timeline.org")
+         "* %?\nCREATED: %U\n")
         ("P" "Protocol" entry (file+headline "~/Dropbox/org/inbox.org" "Captures")
          "* [[%:link][%:description]]\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t)
         ("L" "Protocol Link" entry (file+headline "~/Dropbox/org/inbox.org" "Links")
