@@ -93,5 +93,6 @@ unwanted space when exporting org-mode to hugo markdown."
       (ad-set-arg 1 fixed-contents)))
   )
 
+;; git-gutter
 (after! git-gutter
   (setq git-gutter:disabled-modes '(org-mode image-mode)))
