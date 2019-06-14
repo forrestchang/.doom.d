@@ -2,6 +2,10 @@
 
 ;; Place your private configuration here
 
+;; Load system environment variables
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (load! "+ui")
 (load! "+bindings")
 (load! "+editor")

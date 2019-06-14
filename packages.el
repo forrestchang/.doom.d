@@ -15,3 +15,4 @@
 (package! applescript-mode)
 (package! rainbow-identifiers)
 (package! keyfreq)
+(package! exec-path-from-shell)
