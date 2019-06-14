@@ -101,3 +101,9 @@ unwanted space when exporting org-mode to hugo markdown."
 (after! deft
   (setq deft-directory "~/Dropbox/org/notes")
   )
+
+;; Rust
+(after! rust
+  (setq flycheck-rust-cargo-executable "~/.cargo/bin/cargo")
+  )
+
