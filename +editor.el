@@ -99,3 +99,6 @@
 
 ;; Ligatures
 (mac-auto-operator-composition-mode)
+
+;; Magit todo prefix
+(setq magit-todos-keyword-suffix "TODO:")
