@@ -101,4 +101,6 @@
 (mac-auto-operator-composition-mode)
 
 ;; Magit todo prefix
-(setq magit-todos-keyword-suffix "TODO:")
+(after! magit
+  (setq magit-todos-keyword-suffix "TODO:")
+  )
