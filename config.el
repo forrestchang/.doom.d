@@ -96,3 +96,8 @@ unwanted space when exporting org-mode to hugo markdown."
 ;; git-gutter
 (after! git-gutter
   (setq git-gutter:disabled-modes '(org-mode image-mode)))
+
+;; Deft
+(after! deft
+  (setq deft-directory "~/Dropbox/org/notes")
+  )
