@@ -41,6 +41,10 @@
         :desc "Other window"                "w" #'other-window
         :desc "Split window right"          "|" #'split-window-right
         :desc "Split window below"          "-" #'split-window-below
+        :desc "Move window up"              "K" #'evil-window-up
+        :desc "Move window down"            "J" #'evil-window-down
+        :desc "Move window left"            "H" #'evil-window-left
+        :desc "Move window right"           "L" #'evil-window-right
         )
 
       (:prefix ("c" . "code")
