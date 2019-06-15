@@ -44,7 +44,12 @@
         '(("a" "Dashboard\n"
            ((agenda ""
                     ((org-super-agenda-groups
-                      '((:name "For Today"
+                      '(
+                        (:name "GOAL"
+                               :tag ("goal"))
+                        (:name "Most Important Tasks"
+                               :priority "A")
+                        (:name "For Today"
                                :time-grid t
                                :scheduled today
                                :deadline today)
