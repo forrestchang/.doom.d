@@ -37,27 +37,6 @@
 (when (not window-system)
   (set-face-attribute 'region nil :inherit nil :background "#fff3a3"))
 
-;; Pyim
-(after! pyim
-  ;; 激活 basedict 拼音词库
-  (pyim-basedict-enable)
-  (setq pyim-isearch-mode 1
-        pyim-default-scheme 'quanpin
-        pyim-page-tooltip 'posframe
-        pyim-page-length 6)
-
-  ;; 让 Emacs 启动时自动加载 pyim 词库
-  (add-hook 'emacs-startup-hook
-            #'(lambda () (pyim-restart-1 t)))
-  (setq-default pyim-english-input-switch-functions
-                '(pyim-probe-isearch-mode
-                  pyim-probe-program-mode))
-
-  ;; 使用其他字符来进行翻页
-  (define-key map "." 'pyim-page-next-page)
-  (define-key map "," 'pyim-page-previous-page)
-  )
-
 ;; Fix input blinking ?
 ;; (setq redisplay-dont-pause nil)
 
