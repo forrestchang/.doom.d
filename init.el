@@ -9,13 +9,14 @@
         +childframe)
 
        :ui
+       nav-flash
        deft
        doom
        doom-dashboard
        doom-quit
        ;; fill-column
        hl-todo
-       ;; indent-guides
+       indent-guides
        modeline
        ;; nav-flash
        ;; neotree
@@ -144,5 +145,5 @@
 
        :private
        my-org
-       my-python
+       ;; my-python
        )
