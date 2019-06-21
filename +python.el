@@ -1,6 +1,7 @@
 ;;; ~/.doom.d/+python.el -*- lexical-binding: t; -*-
 
 ;; Formating hack
+
 ;; Use format-all to format python code
 ;;
 ;; In ~format-all.el~

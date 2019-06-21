@@ -107,5 +107,5 @@ unwanted space when exporting org-mode to hugo markdown."
   (setq flycheck-rust-cargo-executable "~/.cargo/bin/cargo")
   )
 
-;; turn off line numbers in org-mode
+;; Turn off line numbers in org-mode
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
