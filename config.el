@@ -109,3 +109,10 @@ unwanted space when exporting org-mode to hugo markdown."
 
 ;; Turn off line numbers in org-mode
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
+
+;; Alternate-buffer
+(defun jiayuan/alternate-buffer ()
+  (interactive)
+  (if (evil-alternate-buffer)
+      (switch-to-buffer (car (evil-alternate-buffer)))
+    (switch-to-buffer (other-buffer (current-buffer) t))))
