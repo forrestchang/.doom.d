@@ -34,12 +34,6 @@
 (setq anaconda-mode-localhost-address "localhost")
 
 (setenv "WORKON_HOME" "/Users/jiayuan/venv")
-(setq python-shell-extra-pythonpaths '("/Users/jiayuan/Developer/iqiyi/xiu_xianzhi/backend"))
-(add-to-list 'python-shell-extra-pythonpaths "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src")
-(add-to-list 'python-shell-extra-pythonpaths "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/api")
-(add-to-list 'python-shell-extra-pythonpaths "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/wap")
-(add-to-list 'python-shell-extra-pythonpaths "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/job")
-(add-to-list 'python-shell-extra-pythonpaths "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/test")
 
 ;; pylint check
 (add-hook 'python-mode-hook
