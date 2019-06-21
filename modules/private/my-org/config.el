@@ -49,12 +49,12 @@
                                :tag ("goal"))
                         (:name "Most Important Tasks"
                                :priority "A")
+                        (:name "Overdue"
+                               :deadline past)
                         (:name "For Today"
                                :time-grid t
                                :scheduled today
                                :deadline today)
-                        (:name "Overdue"
-                               :deadline past)
                         (:name "Past Schedule"
                                :scheduled past)
                         (:discard (:anything t))))))))))
