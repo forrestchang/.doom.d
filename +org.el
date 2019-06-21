@@ -100,7 +100,7 @@
 (setq org-enforce-todo-dependencies t)
 
 ;; Remove hack in chinese layer: remove blanks when export
-;; (advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
+(advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
