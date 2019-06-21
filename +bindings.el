@@ -6,6 +6,10 @@
       "X" nil
       )
 
+;; Unbind functions
+(map! [remap swiper] nil)
+(map! [remap org-capture] nil)
+
 ;; Leader key
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
