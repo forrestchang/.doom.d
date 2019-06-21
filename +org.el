@@ -111,6 +111,7 @@
                          "~/Dropbox/org/gtd.org"
                          "~/Dropbox/org/someday.org"
                          "~/Dropbox/org/planning.org"
+                         "~/Dropbox/org/calendar.org"
                          "~/Dropbox/org/personal-site/blog/content-org/post.org"
                          ))
 
