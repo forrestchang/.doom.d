@@ -27,7 +27,7 @@
  (:when (featurep! :tools lookup)
    :nv "gb" #'better-jumper-jump-backward
    :nv "gf" #'better-jumper-jump-forward
-   :nv "B"  #'switch-to-buffer
+   :nv "B"  #'jiayuan/alternate-buffer
    ))
 
 ;; Prefix map
@@ -37,6 +37,11 @@
         :desc "Switch buffer"               "b" #'switch-to-buffer
         :desc "Delete buffer"               "d" #'kill-this-buffer
         :desc "Recent files"                "r" #'recentf-open-files
+        )
+
+      (:prefix ("f" . "file")
+        :desc "Save all files"              "S" #'evil-write-all
+        :desc "Dired jump"                  "j" #'dired-jump
         )
 
       (:prefix ("w" . "window")
