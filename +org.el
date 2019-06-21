@@ -56,7 +56,7 @@
 (setq org-todo-keyword-faces
       (quote (
               ("TODO" :foreground "#d65a31" :weight bold)
-              ("STARTED" :foreground "#94fc13" :weight bold)
+              ("STARTED" :foreground "#67c23a" :weight bold)
               ("PROJ" :foreground "#0ffd19a" :weight bold)
               ("WAITING" :foreground "#7b88ff" :weight bold)
               ("HOLD" :foreground "#71a0a5" :weight bold)
