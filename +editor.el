@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/+editor.el -*- lexical-binding: t; -*-
 
-;; (setq doom-font
-;;       (font-spec :family "Sarasa Mono SC" :size 17 :weight 'normal))
+(setq doom-font
+      (font-spec :family "Sarasa Mono SC" :size 18 :weight 'normal))
 
 (after! doom-big-font-mode
   (setq doom-font
