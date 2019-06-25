@@ -20,7 +20,7 @@
 
 (map! :map python-mode-map
       :localleader
-      :desc "Optimize import order"               "i" #'py-isort-buffer
+      :desc "Optimize import order"               "o" #'py-isort-buffer
       )
 
 
