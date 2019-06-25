@@ -41,19 +41,7 @@
             (setq tab-width 4)
             (setq python-indent-offset 4)))
 
-;; PYTHONPATH for lsp-mode
-(after! lsp-python-ms
-  (setq lsp-python-ms-extra-paths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
-                                    "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api"
-                                    "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job"))
-  (setq lsp-ui-doc-enable nil
-        lsp-ui-peek-enable nil
-        lsp-ui-sideline-enable nil
-        lsp-ui-imenu-enable nil
-        lsp-ui-flycheck-enable t)
-  )
 
 (setq python-shell-extra-pythonpaths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
                                        "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/api"
-                                       "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/job"
-                                       ))
+                                       "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/job"))
