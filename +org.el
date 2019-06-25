@@ -235,6 +235,8 @@
 ;; Set org clock report time format
 (setq org-duration-format (quote h:mm))
 
+;; Clock mode line
+(setq org-clock-mode-line-total 'current)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Column
