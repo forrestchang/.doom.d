@@ -111,12 +111,12 @@
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-agenda-files '("~/Dropbox/org/inbox.org"
+(setq org-agenda-files '("~/Dropbox/org/phone.org"
                          "~/Dropbox/org/gtd.org"
                          "~/Dropbox/org/someday.org"
                          "~/Dropbox/org/planning.org"
                          "~/Dropbox/org/calendar.org"
-                         "~/Dropbox/org/personal-site/blog/content-org/post.org"
+                         "~/Dropbox/org/personal-site/blog/content-org/readings.org"
                          ))
 
 (setq org-agenda-span '1)
