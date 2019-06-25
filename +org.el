@@ -167,18 +167,18 @@
 
 (setq org-capture-templates
       '(
-        ("t" "Todo" entry (file+headline "~/Dropbox/org/inbox.org" "Todos")
+        ("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
          "* TODO %?\nCREATED: %U\n")
         ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nEntered on %U\n%i\n")
         ("r" "Reading" entry (file+olp+datetree "~/Dropbox/personal-site/blog/content-org/readings.org")
          "* %?\nEntered on %U\n%i\n" :tree-type week)
-        ("q" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
+        ("n" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nCREATED: %U\n")
-        ("P" "Protocol" entry (file+headline "~/Dropbox/org/inbox.org" "Captures")
+        ("P" "Protocol" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
          "* [[%:link][%:description]]\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t)
-        ("L" "Protocol Link" entry (file+headline "~/Dropbox/org/inbox.org" "Links")
-         "* [[%:link][%:description]]\nCaptured On: %U" :immediate-finish t)
+        ("L" "Protocol Link" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
+         "* TODO [[%:link][%:description]]\nCaptured On: %U" :immediate-finish t)
         ))
 
 
