@@ -24,21 +24,15 @@
       )
 
 
-;; (setq python-shell-interpreter "~/venv/python3.7/bin/ipython"
-;;       python-shell-interpreter-args "--simple-prompt -i")
+(setq python-shell-interpreter "/usr/local/bin/python3")
 
-(setq flycheck-python-pycompile-executable "~/venv/python3.7/bin/python"
-      flycheck-python-pylint-executable "~/venv/python3.7/bin/pylint"
-      flycheck-python-mypy-executable "~/venv/python3.7/bin/mypy")
+;; (setq flycheck-python-pylint-executable "/usr/local/bin/pylint"
+;;       flycheck-pylintrc "~/.pylintrc"
+;;       flycheck-python-mypy-executable "/usr/local/bin/mypy")
 
 (setq anaconda-mode-localhost-address "localhost")
 
 (setenv "WORKON_HOME" "/Users/jiayuan/venv")
-
-;; pylint check
-(add-hook 'python-mode-hook
-          (lambda ()
-            (flycheck-add-next-checker 'python-pylint 'python-mypy)))
 
 ;; Set indent for python
 (add-hook 'python-mode-hook
@@ -46,3 +40,20 @@
             (setq indent-tabs-mode nil)
             (setq tab-width 4)
             (setq python-indent-offset 4)))
+
+;; PYTHONPATH for lsp-mode
+(after! lsp-python-ms
+  (setq lsp-python-ms-extra-paths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
+                                    "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api"
+                                    "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job"))
+  (setq lsp-ui-doc-enable nil
+        lsp-ui-peek-enable nil
+        lsp-ui-sideline-enable nil
+        lsp-ui-imenu-enable nil
+        lsp-ui-flycheck-enable t)
+  )
+
+(setq python-shell-extra-pythonpaths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
+                                       "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/api"
+                                       "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/job"
+                                       ))
