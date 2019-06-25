@@ -116,3 +116,7 @@ unwanted space when exporting org-mode to hugo markdown."
   (if (evil-alternate-buffer)
       (switch-to-buffer (car (evil-alternate-buffer)))
     (switch-to-buffer (other-buffer (current-buffer) t))))
+
+;; Disable company icons
+(after! company
+  (setq company-box-enable-icon nil))
