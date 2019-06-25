@@ -23,9 +23,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bold ((t (:foreground "orange1" :weight bold))))
+ '(ivy-posframe-border ((t (:inherit default))))
  '(org-agenda-current-time ((t (:inherit org-time-grid :foreground "#ec722e"))))
  '(org-agenda-date-today ((t (:foreground "#ff8246" :weight ultra-bold :height 1.2))))
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
- '(org-scheduled-today ((t (:foreground "#67c23a"))))
+ '(org-scheduled-today ((t (:foreground "#b0e0a8"))))
  '(org-super-agenda-header ((t (:inherit org-agenda-structure :foreground "#5cc9f5"))))
  '(org-warning ((t (:foreground "#ee5a5a")))))
