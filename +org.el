@@ -37,6 +37,8 @@
   ;; views
   "vl" 'org-agenda-log-mode
   "vc" 'org-agenda-clockreport-mode
+  "ds" 'org-agenda-schedule
+  "dd" 'org-agenda-deadline
   )
 
 
