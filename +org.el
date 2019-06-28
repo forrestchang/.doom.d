@@ -106,6 +106,8 @@
 ;; Remove hack in chinese layer: remove blanks when export
 (advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
 
+;; org-checklist
+(add-to-list 'org-modules 'org-checklist)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
