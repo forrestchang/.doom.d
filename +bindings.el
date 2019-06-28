@@ -30,6 +30,11 @@
    :nv "B"  #'jiayuan/alternate-buffer
    ))
 
+(map! (:map web-mode-map
+        :localleader
+        :desc "Instant rename tag"                        "r" #'instant-rename-tag
+        ))
+
 ;; Prefix map
 (map! :leader
       (:prefix ("b" . "buffer")

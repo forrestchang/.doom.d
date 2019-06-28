@@ -120,3 +120,7 @@ unwanted space when exporting org-mode to hugo markdown."
 ;; Disable company icons
 (after! company
   (setq company-box-enable-icon nil))
+
+;; Instant Rename Web-mode tag
+(def-package! instant-rename-tag
+  :load-path "~/.doom.d/lib/")
