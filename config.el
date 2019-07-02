@@ -122,10 +122,31 @@ unwanted space when exporting org-mode to hugo markdown."
       (switch-to-buffer (car (evil-alternate-buffer)))
     (switch-to-buffer (other-buffer (current-buffer) t))))
 
-;; Disable company icons
-(after! company
-  (setq company-box-enable-icon nil))
-
 ;; Instant Rename Web-mode tag
 (def-package! instant-rename-tag
   :load-path "~/.doom.d/lib/")
+
+;; lsp-ui
+(after! lsp-ui
+  (setq lsp-ui-doc-enable nil
+        lsp-ui-doc-use-webkit nil
+        lsp-ui-doc-delay 0.5
+        lsp-ui-doc-include-signature t
+        lsp-ui-doc-position 'at-point
+        lsp-ui-doc-border "#fdf5b1"
+        lsp-ui-doc-max-width 65
+        lsp-ui-doc-max-height 70
+        lsp-ui-sideline-enable nil
+        lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-peek-enable t
+        lsp-ui-flycheck-enable t)
+
+  (add-to-list 'lsp-ui-doc-frame-parameters '(left-fringe . 0))
+
+  ;; `C-g' to close doc
+  (advice-add #'keyboard-quit :before #'lsp-ui-doc-hide))
+
+
+;; company-lsp
+(after! company-lsp
+  (setq company-lsp-cache-candidates 'auto))
