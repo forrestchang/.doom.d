@@ -39,7 +39,8 @@
 ;; Company
 (after! company
   (setq company-idle-delay 0
-        company-box-doc-enable nil))
+        company-box-doc-enable nil
+        company-box-enable-icon nil))
 
 ;; Swiper search
 (defun eh-ivy-cregexp (str)
