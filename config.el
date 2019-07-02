@@ -4,7 +4,11 @@
 
 ;; Load system environment variables
 (when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
+  (setq exec-path-from-shell-check-startup-files nil)
+  (setq exec-path-from-shell-variables '("PATH" "PYTHONPATH" "MANPATH" "GOPATH" "MYPYPATH"))
+  (setq exec-path-from-shell-arguments '("-l"))
+  (exec-path-from-shell-initialize)
+  )
 
 (load! "+ui")
 (load! "+bindings")
