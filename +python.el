@@ -23,25 +23,27 @@
       :desc "Optimize import order"               "o" #'py-isort-buffer
       )
 
+(setq indent-tabs-mode nil
+      tab-width 4
+      python-indent-offset 4)
 
-(setq python-shell-interpreter "/usr/local/bin/python3")
+;; Setup default python executable
+(setq python-shell-interpreter "python3")
 
-;; (setq flycheck-python-pylint-executable "/usr/local/bin/pylint"
-;;       flycheck-pylintrc "~/.pylintrc"
-;;       flycheck-python-mypy-executable "/usr/local/bin/mypy")
+;; Setup PYTHONPATH
+(add-hook! python-mode
+  (setenv "PYTHONPATH" (concat "/Users/jiayuan/Developer/iqiyi/topic_admin/backend:"
+                               "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api:"
+                               "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job:"
+                               (getenv "PYTHONPATH")
+                               )))
+
+(add-hook! python-mode
+  (setenv "MYPYPATH" (concat "/Users/jiayuan/Developer/iqiyi/topic_admin/backend:"
+                             "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api:"
+                             "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job")))
+
 
 (setq anaconda-mode-localhost-address "localhost")
 
 (setenv "WORKON_HOME" "/Users/jiayuan/venv")
-
-;; Set indent for python
-(add-hook 'python-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode nil)
-            (setq tab-width 4)
-            (setq python-indent-offset 4)))
-
-
-(setq python-shell-extra-pythonpaths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
-                                       "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/api"
-                                       "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/job"))
