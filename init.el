@@ -145,5 +145,5 @@
 
        :private
        my-org
-       ;; my-python
+       my-python
        )
