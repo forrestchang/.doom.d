@@ -139,13 +139,23 @@ unwanted space when exporting org-mode to hugo markdown."
         lsp-ui-sideline-enable nil
         lsp-ui-sideline-ignore-duplicate t
         lsp-ui-peek-enable t
-        lsp-ui-flycheck-enable t)
+        lsp-ui-flycheck-enable -1)
 
   (add-to-list 'lsp-ui-doc-frame-parameters '(left-fringe . 0))
 
   ;; `C-g' to close doc
   (advice-add #'keyboard-quit :before #'lsp-ui-doc-hide))
 
+(after! flycheck
+  (defun my-python-flycheck-setup ()
+    (setq-default flycheck-disabled-checkers '(
+                                               python-pylint python-mypy
+                                               python-flake8 python-pycompile
+                                               ))
+    (setq-default flycheck-checker 'python-pycheckers))
+
+  (add-hook 'python-mode-hook 'my-python-flycheck-setup)
+  )
 
 ;; company-lsp
 (after! company-lsp

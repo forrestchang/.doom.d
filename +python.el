@@ -24,8 +24,7 @@
       )
 
 (setq indent-tabs-mode nil
-      tab-width 4
-      python-indent-offset 4)
+      tab-width 4)
 
 ;; Setup default python executable
 (setq python-shell-interpreter "python3")
@@ -43,7 +42,18 @@
                              "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api:"
                              "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job")))
 
-
 (setq anaconda-mode-localhost-address "localhost")
 
 (setenv "WORKON_HOME" "/Users/jiayuan/venv")
+
+(defun lsp-python-flycheck-setup ()
+  (run-with-timer "5sec" nil (lambda ()
+                               (message "!!! Set up flycheck for lsp-python")
+                               (after! lsp-ui
+                                 (setq flycheck-disabled-checkers '(lsp-ui python-pylint python-mypy
+                                                                           python-pycompile python-flake8))
+                                 )
+                               (setq-default flycheck-checker 'python-pycheckers)))
+  )
+
+(add-hook 'python-mode-hook 'lsp-python-flycheck-setup)
