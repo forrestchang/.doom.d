@@ -5,3 +5,4 @@
 (package! org-gcal)
 (package! org-super-agenda)
 (package! ox-hugo)
+(package! org-journal)

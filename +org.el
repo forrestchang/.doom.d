@@ -119,6 +119,7 @@
                          "~/Dropbox/org/planning.org"
                          "~/Dropbox/org/calendar.org"
                          "~/Dropbox/org/personal-site/blog/content-org/readings.org"
+                         "~/Dropbox/org/journal/"
                          ))
 
 (setq org-agenda-span '1)

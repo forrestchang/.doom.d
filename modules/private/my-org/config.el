@@ -139,3 +139,11 @@
   )
 
 (def-package! org-hugo-auto-export-mode)
+
+
+;; org-journal
+(def-package! org-journal
+  :custom
+  (org-journal-dir "~/Dropbox/org/journal/")
+  (org-journal-file-format "%Y-%m-%d.org")
+  )
