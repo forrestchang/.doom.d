@@ -21,6 +21,7 @@
       :desc "Org clock goto"                           "G" #'org-clock-goto
       :desc "Org capture"                              "C" #'org-capture
       :desc "Expand region"                            "<" #'er/expand-region
+      :desc "Toggle popup window"                      "`" #'+popup/toggle
       )
 
 (map!
