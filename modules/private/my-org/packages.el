@@ -6,3 +6,4 @@
 (package! org-super-agenda)
 (package! ox-hugo)
 (package! org-journal)
+(package! org-attach-screenshot)

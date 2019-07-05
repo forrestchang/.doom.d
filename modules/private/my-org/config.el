@@ -147,3 +147,8 @@
   (org-journal-dir "~/Dropbox/org/journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
+
+(def-package! org-attach-screenshot
+  :config
+  (setq org-attach-screenshot-command-line "screencapture -i %f")
+  )
