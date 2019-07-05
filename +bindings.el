@@ -7,7 +7,7 @@
       )
 
 ;; Unbind functions
-(map! [remap swiper] nil)
+(map! [remap swiper] #'swiper-isearch)
 (map! [remap org-capture] nil)
 
 ;; Leader key
