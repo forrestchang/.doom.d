@@ -34,7 +34,8 @@
   (set-company-backend! 'text-mode 'company-yasnippet))
 
 (after! org
-  (set-company-backend! 'org-mode 'company-yasnippet))
+  (set-company-backend! 'org-mode 'company-yasnippet)
+  )
 
 ;; Company
 (after! company
