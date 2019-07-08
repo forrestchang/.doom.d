@@ -121,7 +121,7 @@
                          "~/Dropbox/org/someday.org"
                          "~/Dropbox/org/planning.org"
                          "~/Dropbox/org/calendar.org"
-                         "~/Dropbox/org/personal-site/blog/content-org/readings.org"
+                         "~/Dropbox/personal-site/blog/content-org/post.org"
                          "~/Dropbox/org/journal/"
                          ))
 
