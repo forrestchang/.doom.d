@@ -1,0 +1,13 @@
+#+TITLE: Personal Time Management System
+
+* Notes
+** SCHEDULED and DEADLINE
+
+- Scheduled: 一个任务的开始时间，分配到什么时间来做；
+- Deadline: 一个任务的真实截止时间，没有截止时间的任务不应该设定 Deadline，防止
+  滥用。
+
+* Workflow
+
+https://www.idalko.com/jira-workflow-best-practices/
+
