@@ -1,5 +1,17 @@
 ;;; private/my-org/config.el -*- lexical-binding: t; -*-
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Package Definition
+;;;
+;;; - org-pomodoro
+;;; - org-super-agendsa
+;;; - ox-hugo
+;;; - org-hugo-auto-export-mode
+;;; - org-journal
+;;; - org-attach-screenshot
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Org pomodoro
 (def-package! org-pomodoro
   :init (setq org-pomodoro-length '50
@@ -34,103 +46,146 @@
               (notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
   )
 
-;; (defmacro target-date ()
-;;   (let (((sec minute hour day month year dow dst utcoff) (decode-time))
-;;         (last-day-of-month (calendar-last-day-of-month month year)))
-;;     (format "%d-%02d-%02d" year month (1+ last-day-of-month))))
-
-;; (defconst jiayuan/org-completed-date-regexp
-;;   (concat " \\("
-;;           "CLOSED: \\[%Y-%m-%d"
-;;           ;; "\\|"
-;;           ;; "- State \"\\(DONE\\)\" * from .* \\[%Y-%m-%d"
-;;           ;; "\\|"
-;;           ;; "- State .* ->  *\"\\(DONE\\)\" * \\[%Y-%m-%d"
-;;           "\\) ")
-;;   "Matches any completion time stamp.")
-
 ;; Org Super Agenda
 (def-package! org-super-agenda
   :config
   (org-super-agenda-mode)
 
-  (setq org-agenda-custom-commands
-        '(
-          ;; Dashboard
-          ("a" "Dashboard" agenda ""
-           ((org-super-agenda-groups
-             '(
-               (:name "MIT"
-                      :tag "mit")
-               (:name "Day Plan"
-                      :time-grid t)
-               (:name "Important"
-                      :priority "A"
-                      :deadline today)
-               (:name "For Today"
-                      :scheduled today)
-               (:name "Deadline Past"
-                      :deadline past)
-               (:name "Scheduled past"
-                      :scheduled past)))
-            (org-agenda-span 1)))
+  ;;; Org Agenda Views
 
-          ;; Goals
-          ("g" "Goals"
-           ((tags-todo "DEADLINE<\"<+0d>\"+TODO={PROJ}"
-                       ((org-agenda-overriding-header "Past Deadline")))
-            (tags-todo "DEADLINE>=\"<+0d>\"+DEADLINE<=\"<+7d>\"+TODO={PROJ}"
-                       ((org-agenda-overriding-header "Focus This Week")))
-            (tags-todo "DEADLINE>\"<+7d>\"+DEADLINE<=\"<+1m>\"+TODO={PROJ}"
-                       ((org-agenda-overriding-header "Focus This Month")))
-            (tags-todo "DEADLINE>\"<+1m>\"+DEADLINE<=\"<+3m>\"+TODO={PROJ}"
-                       ((org-agenda-overriding-header "Focus This Quarter")))
-            (tags-todo "DEADLINE>\"<+3m>\"+DEADLINE<=\"<+1m>\"+TODO={PROJ}"
-                       ((org-agenda-overriding-header "Focus This Year")))
-            ))
+  ;; Inbox
+  (add-to-list 'org-agenda-custom-commands
+               '("i" "inbox" tags-todo "+CATEGORY=\"inbox\""
+                 ((org-super-agenda-groups
+                   '((:name "TODO"
+                            :todo "TODO")
+                     (:discard (:anything)))))))
 
-          ;; Quarter OKR
-          ("o" "Quarter OKR"
-           ((tags-todo "DEADLINE>=\"[2019-07-01]\"+DEADLINE<=\"[2019-09-30]\"+TODO={PROJ}"
-                       ((org-agenda-overriding-header "2019 Quarter 3 OKRs")))))
+  ;; Dashboard
+  (add-to-list 'org-agenda-custom-commands
+               '("a" "Dashboard" agenda ""
+                 ((org-super-agenda-groups
+                   '(
+                     (:name "Most Important"
+                            :priority "A")
+                     (:name "Daily View"
+                            :time-grid t)
+                     (:name "Scheduled Today"
+                            :scheduled today)
+                     (:name "Over Schedule"
+                            :scheduled past)
+                     (:name "Due Today"
+                            :deadline today)
+                     (:name "Overdue"
+                            :deadline past)
+                     (:discard (:anything))))
+                  (org-agenda-span 1))) t)
 
-          ;; Stuck
-          ("s" "Stuck"
-           ((tags-todo "TODO={WAITING}"
-                       ((org-agenda-overriding-header "WAITING Tasks")))
-            (tags-todo "TODO={HOLD}"
-                       ((org-agenda-overriding-header "HOLD Tasks")))))
+  ;; Goals
+  ;;
+  ;; All tasks include scheduled items.
+  (add-to-list 'org-agenda-custom-commands
+               '("g" "Goals" todo ""
+                 ((org-super-agenda-groups
+                   '((:name "Focus This Week"
+                            :tag "this_week")
+                     (:name "Focus This Month"
+                            :tag "this_month")
+                     (:name "Focus This Quarter"
+                            :tag "this_quarter")
+                     (:name "Focus This Year"
+                            :tag "this_year")
+                     (:discard (:anything)))))) t)
 
-          ;; Planning
-          ("p" "Planning"
-           ((tags-todo "SCHEDULED<\"<+0d>\""
-                       ((org-agenda-overriding-header "Past Schedule")))
-            (tags-todo "SCHEDULED>=\"<+0d>\"+SCHEDULED<=\"<+7d>\""
-                       ((org-agenda-overriding-header "Scheduled This Week")))
-            (tags-todo "SCHEDULED>\"<+7d>\"+SCHEDULED<=\"<+1m>\""
-                       ((org-agenda-overriding-header "Scheduled This Month")))
-            (tags-todo "SCHEDULED>\"<+1m>\"+SCHEDULED<=\"<+3m>\""
-                       ((org-agenda-overriding-header "Scheduled This Quarter")))
-            (tags-todo "SCHEDULED>\"<+3m>\"+SCHEDULED<=\"<+1m>\""
-                       ((org-agenda-overriding-header "Scheduled This Year")))
-            ))
+  ;; Planning
+  ;;
+  ;; Same to Goals filter, but not include scheduled items, just for daily planning.
+  (add-to-list 'org-agenda-custom-commands
+               '("p" "Planning"
+                 ((todo ""
+                        ((org-super-agenda-groups
+                          '((:name "Not Scheduled This Week"
+                                   :tag "this_week")
+                            (:discard (:anything))))
+                         (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled)))))) t)
 
-          ;; Easy Stuff
-          ("e" "Easy Stuff" todo ""
-           ((org-super-agenda-groups
-             '((:name "When Your Are Tired"
-                      :tag "easy")
-               (:name "Small Things, Less Than 15 min"
-                      :effort< "00:15")
-               (:discard (:anything))))))
+  ;; Review
+  (add-to-list 'org-agenda-custom-commands
+               '("r" . "Review...") t)
 
-          ;; Forecast
-          ;; ("f" "Forecast" todo ""
-          ;;  ((org-super-agenda-groups
-          ;;    `((:deadline (before ,target-date))
-          ;;      (:discard (:anything t))))))
+  ;; Review by Deadline
+  (add-to-list 'org-agenda-custom-commands
+               '("rd" "Review by Deadline"
+                 ((tags-todo "DEADLINE<\"<+0d>\""
+                             ((org-agenda-overriding-header "Overdue")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'notdeadline))))
+                  (tags-todo "DEADLINE=\"<+0d>\""
+                             ((org-agenda-overriding-header "Due Today")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'notdeadline))))
+                  (tags-todo "DEADLINE=\"<+1d>\""
+                             ((org-agenda-overriding-header "Due Tomorrow")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'notdeadline))))
+                  (tags-todo "DEADLINE>\"<+1d>\"+DEADLINE<=\"<+7d>\""
+                             ((org-agenda-overriding-header "Due Within A Week")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'notdeadline))))
+                  (tags-todo "DEADLINE>\"<+7d>\"+DEADLINE<=\"<+28d>\""
+                             ((org-agenda-overriding-header "Due Within A Month")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'notdeadline))))
+                  (tags-todo "DEADLINE>\"<+28d>\""
+                             ((org-agenda-overriding-header "Due Later")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'notdeadline))))
 
-          ))
+                  (tags-todo "TODO={STARTED}"
+                             ((org-agenda-overriding-header "No Due Date & STARTED")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline))))
+                  (tags-todo "TODO={HOLD}"
+                             ((org-agenda-overriding-header "No Due Date & HOLD")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline))))
+                  (tags-todo "TODO={WAITING}"
+                             ((org-agenda-overriding-header "No Due Date & WAITING")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline))))
+                  )) t)
+
+  ;; Review by Priority
+  (add-to-list 'org-agenda-custom-commands
+               '("rp" "Review by Priority (Unscheduled)"
+                 ((tags-todo "PRIORITY={A}"
+                             ((org-agenda-overriding-header "High PRIORITY")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
+                 (tags-todo "PRIORITY={B}"
+                             ((org-agenda-overriding-header "Medium PRIORITY")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
+                 (tags-todo "PRIORITY=\"\""
+                             ((org-agenda-overriding-header "None PRIORITY")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
+                 (tags-todo "PRIORITY={C}"
+                             ((org-agenda-overriding-header "Low PRIORITY")
+                              (org-agenda-skip-function
+                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
+                  )) t)
+
+  ;; Easy Stuff
+  (add-to-list 'org-agenda-custom-commands
+               '("e" "Easy Stuff" todo ""
+                 ((org-super-agenda-groups
+                   '((:name "When You Are Tired"
+                            :tag "easy")
+                     (:name "Small Stuff, Less Than 15 min"
+                            :effort< "00:15")
+                     (:discard (:anything)))))) t)
+
   )
 
 ;; Hugo blog
@@ -138,16 +193,17 @@
   :after ox
   )
 
+;; Org hugo auto export mode
 (def-package! org-hugo-auto-export-mode)
 
-
-;; org-journal
+;; Org journal
 (def-package! org-journal
   :custom
   (org-journal-dir "~/Dropbox/org/journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
+;; Org attach screenshot
 (def-package! org-attach-screenshot
   :config
   (setq org-attach-screenshot-command-line "screencapture -i %f")
