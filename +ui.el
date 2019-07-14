@@ -1,3 +1,3 @@
 ;;; ~/.doom.d/+ui.el -*- lexical-binding: t; -*-
 
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-one)
