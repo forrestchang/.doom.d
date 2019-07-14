@@ -5,9 +5,12 @@
 ;; Load system environment variables
 (when (memq window-system '(mac ns x))
   (setq exec-path-from-shell-check-startup-files nil)
-  (setq exec-path-from-shell-variables '("PATH" "PYTHONPATH" "MANPATH" "GOPATH" "MYPYPATH"))
+  (setq exec-path-from-shell-variables '("PATH" "PYTHONPATH" "MANPATH" "GOPATH" "MYPYPATH" "RUST_SRC_PATH"))
   (setq exec-path-from-shell-arguments '("-l"))
   (exec-path-from-shell-initialize)
+  )
+(after! racer
+  (setq racer-rust-src-path "/Users/jiayuan/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
   )
 
 (load! "+ui")
