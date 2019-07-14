@@ -246,7 +246,7 @@
 (setq org-duration-format (quote h:mm))
 
 ;; Clock mode line
-(setq org-clock-mode-line-total 'current)
+(setq org-clock-mode-line-total 'auto)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Column
