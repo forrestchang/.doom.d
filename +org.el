@@ -119,10 +119,6 @@
 ;; The notes will be ordered according to time
 (setq org-log-states-order-reversed nil)
 
-;; Heading for state change added to entries
-(message "[... Progress logging]")
-(setcdr (assq 'state org-log-note-headings)
-        "State %-12S  ->  %-12s %t") ; "State old -> new + timestamp"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
