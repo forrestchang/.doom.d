@@ -95,6 +95,16 @@
                             :todo "STARTED")
                      (:discard (:anything)))))))
 
+  ;; OKRs
+  (add-to-list 'org-agenda-custom-commands
+               '("o" "OKRs" todo ""
+                 ((org-super-agenda-groups
+                   '((:name "Objectives"
+                            :todo "OBJECTIVE")
+                     (:name "Key Results"
+                            :todo "KEYR")
+                     (:discard (:anything)))))))
+
   ;; Goals
   ;;
   ;; All tasks include scheduled items.
