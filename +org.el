@@ -104,6 +104,9 @@
 ;; Block tasks when have not done subtasks
 (setq org-enforce-todo-dependencies t)
 
+;; Block tasks when have not done checkobx
+(setq org-enforce-todo-checkbox-dependencies t)
+
 ;; Remove hack in chinese layer: remove blanks when export
 (advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
 
