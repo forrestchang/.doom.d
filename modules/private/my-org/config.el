@@ -78,8 +78,22 @@
                             :deadline today)
                      (:name "Overdue"
                             :deadline past)
+                     (:name "Due Future"
+                            :deadline future)
                      (:discard (:anything))))
                   (org-agenda-span 1))) t)
+
+  ;; Weekly Overview
+  (add-to-list 'org-agenda-custom-commands
+               '("w" "Weekly Overview" todo ""
+                 ((org-super-agenda-groups
+                   '((:name "This Week's Tasks"
+                            :todo "NEXT")
+                     (:name "Delayed Tasks"
+                            :todo "DELAYED")
+                     (:name "In Progress"
+                            :todo "STARTED")
+                     (:discard (:anything)))))))
 
   ;; Goals
   ;;
