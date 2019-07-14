@@ -36,7 +36,7 @@
        :editor
        (evil
         +everywhere)
-       file-templates
+       ;; file-templates
        fold
        format
        ;; lispy
@@ -86,7 +86,7 @@
        wakatime
 
        :lang
-       rust
+       (rust +lsp)
        assembly
        cc
        clojure
@@ -147,3 +147,6 @@
        my-org
        my-python
        )
+
+ (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                           ("melpa" . "http://elpa.emacs-china.org/melpa/")))
