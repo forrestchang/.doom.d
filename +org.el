@@ -65,6 +65,8 @@
               ("HOLD" :foreground "#71a0a5" :weight bold)
               ("MAYBE" :foreground "#f78ae0" :weight bold)
               ("DELAYED" :foreground "#ff0000" :weight bold)
+              ("OBJECTIVE" :foreground "#4af2a1" :weight bold)
+              ("KEYR" :foreground "#6638f0" :weight bold)
               )))
 
 (custom-set-faces
@@ -151,6 +153,7 @@
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "DELAYED(x@/!)" "STARTED(s)" "MAYBE(m)" "WAIT(w@/!)" "HOLD(h@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               (sequence "PROJ(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+              (sequence "OBJECTIVE(o)" "KEYR(k)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               )))
 
 ;; Log done date
