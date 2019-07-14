@@ -112,7 +112,7 @@ unwanted space when exporting org-mode to hugo markdown."
   )
 
 ;; Rust
-(after! rust
+(after! flycheck
   (setq flycheck-rust-cargo-executable "~/.cargo/bin/cargo")
   )
 
