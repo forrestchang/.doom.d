@@ -16,3 +16,4 @@
 (package! rainbow-identifiers)
 (package! keyfreq)
 (package! exec-path-from-shell)
+(package! anki-editor)
