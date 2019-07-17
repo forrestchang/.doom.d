@@ -111,6 +111,7 @@
           :desc "Magit status"              "s" #'magit-status
           (:prefix "f"
             "l"                                 #'magit-log-buffer-file
+            "p"                                 #'my-put-file-name-on-clipboard
             )
           )
         )
