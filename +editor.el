@@ -41,7 +41,7 @@
 ;; (setq redisplay-dont-pause nil)
 
 ;; Auto save
-(auto-save-visited-mode 1)
+;; (auto-save-visited-mode 1)
 
 
 ;; Smart inference of indentation style
