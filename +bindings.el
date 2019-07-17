@@ -109,6 +109,9 @@
       (:prefix ("g" . "git")
         (:when (featurep! :tools magit)
           :desc "Magit status"              "s" #'magit-status
+          (:prefix "f"
+            "l"                                 #'magit-log-buffer-file
+            )
           )
         )
       )
