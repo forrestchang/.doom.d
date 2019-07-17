@@ -35,6 +35,8 @@
   (setenv "PYTHONPATH" (concat "/Users/jiayuan/Developer/iqiyi/topic_admin/backend:"
                                "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api:"
                                "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job:"
+                               "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src"
+                               "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/api"
                                (getenv "PYTHONPATH")
                                )))
 
