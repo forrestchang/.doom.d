@@ -182,3 +182,7 @@ unwanted space when exporting org-mode to hugo markdown."
           (replace-match (format (concat "%0" (int-to-string field-width) "d")
                                  answer)))))))
 (global-set-key (kbd "C-c +") 'my-increment-number-decimal)
+
+
+;; Anki
+(def-package! anki-editor)
