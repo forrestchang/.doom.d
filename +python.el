@@ -20,7 +20,8 @@
 
 (map! :map python-mode-map
       :localleader
-      :desc "Optimize import order"               "o" #'py-isort-buffer
+      :desc "Sort import"               "o" #'py-isort-buffer
+      :desc "Import missing package"    "i" #'pyimport-insert-missing
       )
 
 (setq indent-tabs-mode nil
