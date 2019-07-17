@@ -39,7 +39,7 @@
        ;; file-templates
        fold
        format
-       ;; lispy
+       lispy
        multiple-cursors
        ;; rotate-text
        snippets
