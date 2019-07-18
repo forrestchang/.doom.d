@@ -199,3 +199,7 @@ unwanted space when exporting org-mode to hugo markdown."
         (insert filename)
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
+
+
+;; Smart align
+(def-package! smart-align)
