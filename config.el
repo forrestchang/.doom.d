@@ -71,7 +71,6 @@
           (lambda ()
             (flycheck-add-next-checker 'javascript-eslint)))
 
-
 ;; Applescript mode
 (def-package! applescript-mode)
 
@@ -131,7 +130,6 @@ unwanted space when exporting org-mode to hugo markdown."
 ;; lsp-ui
 (after! lsp-ui
   (setq lsp-ui-doc-enable nil
-        lsp-ui-doc-use-webkit nil
         lsp-ui-doc-delay 0.5
         lsp-ui-doc-include-signature t
         lsp-ui-doc-position 'at-point
@@ -148,21 +146,9 @@ unwanted space when exporting org-mode to hugo markdown."
   ;; `C-g' to close doc
   (advice-add #'keyboard-quit :before #'lsp-ui-doc-hide))
 
-(after! flycheck
-  (defun my-python-flycheck-setup ()
-    (setq-default flycheck-disabled-checkers '(
-                                               python-pylint python-mypy
-                                               python-flake8 python-pycompile
-                                               ))
-    (setq-default flycheck-checker 'python-pycheckers))
-
-  (add-hook 'python-mode-hook 'my-python-flycheck-setup)
-  )
-
 ;; company-lsp
 (after! company-lsp
   (setq company-lsp-cache-candidates 'auto))
-
 
 (defun my-increment-number-decimal (&optional arg)
   "Increment the number forward from point by 'arg'."
