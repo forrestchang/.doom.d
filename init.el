@@ -115,7 +115,7 @@
         +ipython
         +protocol)
        php
-       python
+       (python +lsp)
        scala
        sh
        web
