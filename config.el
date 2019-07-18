@@ -17,8 +17,6 @@
 (load! "+bindings")
 (load! "+editor")
 
-
-(after! python (load! "+python"))
 (after! org (load! "+org"))
 
 (setq user-full-name "Jiayuan Zhang"
