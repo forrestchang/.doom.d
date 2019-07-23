@@ -36,7 +36,7 @@
        :editor
        (evil
         +everywhere)
-       ;; file-templates
+       file-templates
        fold
        format
        lispy
