@@ -172,10 +172,6 @@ unwanted space when exporting org-mode to hugo markdown."
       (message filename))))
 
 
-;; Smart align
-(def-package! smart-align)
-
-
 ;; Magit assum unchanged
 (after! magit
   (defun magit-skip-assume-unchanged-files ()
