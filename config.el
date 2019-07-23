@@ -229,6 +229,11 @@ unwanted space when exporting org-mode to hugo markdown."
         leetcode-prefer-sql "mysql")
   )
 
+
 (def-package! snails
   :load-path "~/.doom.d/site-lisp/snails"
+  )
+
+(def-package! smart-align
+  :load-path "~/.doom.d/site-lisp/smart-align"
   )
