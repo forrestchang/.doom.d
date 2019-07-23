@@ -110,10 +110,6 @@ unwanted space when exporting org-mode to hugo markdown."
       (switch-to-buffer (car (evil-alternate-buffer)))
     (switch-to-buffer (other-buffer (current-buffer) t))))
 
-;; Instant Rename Web-mode tag
-(def-package! instant-rename-tag
-  :load-path "~/.doom.d/lib/")
-
 ;; lsp-ui
 (after! lsp-ui
   (setq lsp-ui-doc-enable nil
