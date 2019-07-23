@@ -17,3 +17,4 @@
 (package! keyfreq)
 (package! exec-path-from-shell)
 (package! anki-editor)
+(package! leetcode)

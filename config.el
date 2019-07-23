@@ -228,3 +228,11 @@ unwanted space when exporting org-mode to hugo markdown."
   (magit-define-section-jumper magit-jump-to-assume-unchanged "Assume-unchanged files" assume-unchanged)
   (define-key magit-status-mode-map "ga" 'magit-jump-to-assume-unchanged)
   )
+
+
+;; Leetcode
+(def-package! leetcode
+  :init
+  (setq leetcode-prefer-language "python3"
+        leetcode-prefer-sql "mysql")
+  )
