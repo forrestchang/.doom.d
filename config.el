@@ -51,13 +51,6 @@
 ;; calfw
 (def-package! calfw)
 
-;; Beancount
-(def-package! beancount
-  :load-path "~/.doom.d/lib/"
-  :config
-  (add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
-  )
-
 ;; Web mode
 (setq flycheck-javascript-eslint-executable "/usr/local/bin/eslint")
 
