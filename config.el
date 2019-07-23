@@ -228,3 +228,7 @@ unwanted space when exporting org-mode to hugo markdown."
   (setq leetcode-prefer-language "python3"
         leetcode-prefer-sql "mysql")
   )
+
+(def-package! snails
+  :load-path "~/.doom.d/site-lisp/snails"
+  )

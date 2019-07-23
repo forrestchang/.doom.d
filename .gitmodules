@@ -1,0 +1,3 @@
+[submodule "site-lisp/snails"]
+	path = site-lisp/snails
+	url = https://github.com/manateelazycat/snails.git
