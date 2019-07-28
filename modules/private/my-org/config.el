@@ -186,15 +186,15 @@
                              ((org-agenda-overriding-header "High PRIORITY")
                               (org-agenda-skip-function
                                '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                 (tags-todo "PRIORITY={B}"
+                  (tags-todo "PRIORITY={B}"
                              ((org-agenda-overriding-header "Medium PRIORITY")
                               (org-agenda-skip-function
                                '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                 (tags-todo "PRIORITY=\"\""
+                  (tags-todo "PRIORITY=\"\""
                              ((org-agenda-overriding-header "None PRIORITY")
                               (org-agenda-skip-function
                                '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                 (tags-todo "PRIORITY={C}"
+                  (tags-todo "PRIORITY={C}"
                              ((org-agenda-overriding-header "Low PRIORITY")
                               (org-agenda-skip-function
                                '(org-agenda-skip-entry-if 'deadline 'schedule))))
