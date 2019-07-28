@@ -23,6 +23,8 @@
         :desc "Org set effort"                      "e" #'org-set-effort
         :desc "Generage Hugo blog post"             "h" #'org-hugo-export-wim-to-md
         :desc "Org attach image"                    "c" #'org-attach-screenshot
+        :desc "Org add note"                        "n" #'org-add-note
+        :desc "Org archive default"                 "a" #'org-archive-subtree-default
         )
       (:map org-super-agenda-header-map
         "j" #'evil-next-line
