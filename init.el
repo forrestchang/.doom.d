@@ -45,7 +45,7 @@
        snippets
 
        :input
-       chinese
+       ;; chinese
 
        :emacs
        (dired
