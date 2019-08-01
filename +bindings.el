@@ -22,6 +22,7 @@
       :desc "Org capture"                              "C" #'org-capture
       :desc "Expand region"                            "<" #'er/expand-region
       :desc "Toggle popup window"                      "`" #'+popup/toggle
+      :desc "Reload buffer from disc"                  "R" #'revert-buffer-no-confirm
       )
 
 (map!
