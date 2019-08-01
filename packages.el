@@ -18,3 +18,4 @@
 (package! exec-path-from-shell)
 (package! anki-editor)
 (package! leetcode)
+(package! pyim)
