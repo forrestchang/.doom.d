@@ -244,3 +244,11 @@ unwanted space when exporting org-mode to hugo markdown."
   (interactive)
   (revert-buffer :ignore-auto :noconfirm))
 
+;; Devonthink support
+(org-add-link-type "x-devonthink-item" 'org-devonthink-open)
+
+(defun org-devonthink-open (link)
+  "Open the devonthink link"
+  (start-process (concat "open " link) nil "open"
+                 (concat "x-devonthink-item:" link))
+  )
