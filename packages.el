@@ -19,3 +19,4 @@
 (package! anki-editor)
 (package! leetcode)
 (package! pyim)
+(package! ace-pinyin)

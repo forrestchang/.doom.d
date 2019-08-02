@@ -83,3 +83,9 @@
 (after! magit
   (setq magit-todos-keyword-suffix "TODO:")
   )
+
+;; Ace-pinyin
+(def-package! ace-pinyin
+  :init
+  (ace-pinyin-global-mode +1)
+  )
