@@ -104,7 +104,7 @@
         :desc "Jump to symbol"              "i" #'imenu
         :desc "Jump to symbol across buffers" "I" #'imenu-anywhere
         :desc "Jump to link"                "l" #'ace-link
-        :desc "Avy jump work"               "j" #'avy-goto-char-timer
+        :desc "Avy jump work"               "j" #'ace-pinyin-jump-word
         )
 
       (:prefix ("s" . "search")
