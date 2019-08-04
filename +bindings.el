@@ -55,6 +55,7 @@
         :desc "Switch buffer"               "b" #'switch-to-buffer
         :desc "Delete buffer"               "d" #'kill-this-buffer
         :desc "Recent files"                "r" #'recentf-open-files
+        :desc "Swith to home"               "h" #'+doom-dashboard/open
         )
 
       (:prefix ("f" . "file")
