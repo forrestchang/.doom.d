@@ -242,6 +242,9 @@ killring."
 ;;; Org Clock
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Include current clocking item
+(setq org-clock-report-include-clocking-task t)
+
 ;; Reusme clocking task when emacs is restarted
 (org-clock-persistence-insinuate)
 
