@@ -206,6 +206,14 @@ killring."
 (setq org-refile-targets
       '((org-agenda-files . (:maxlevel . 4))))
 
+;; Exclude completed tasks from refile targets
+;; https://michael.englehorn.com/config.html
+(defun bh/verify-refile-target ()
+  "Exclude todo keywords with a done state from refile targets"
+  (not (member (nth 2 (org-heading-components)) org-done-keywords)))
+
+(setq org-refile-target-verify-function 'bh/verify-refile-target)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Capture
