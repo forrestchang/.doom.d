@@ -121,7 +121,7 @@
 (add-to-list 'org-modules 'org-checklist)
 
 ;; org-buttlets
-(setq org-bullets-bullet-list '("◉" "◉" "◉" "◉"))
+(setq org-bullets-bullet-list '("◉" "⋆" "○" "‣"))
 
 ;; The notes will be ordered according to time
 (setq org-log-states-order-reversed nil)
