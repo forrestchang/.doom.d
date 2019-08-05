@@ -49,10 +49,24 @@
   ;; Disable readline based native completion, don't know what it is
   (setq python-shell-completion-native-enable nil)
 
+  ;; Setup PYTHONPATH
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/topic_admin/backend"))
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/topic_admin/backend/app/api"))
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/topic_admin/backend/app/job"))
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src"))
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src/app/api"))
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src/app/wap"))
+  (add-to-list 'python-shell-extra-pythonpaths (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src/app/job"))
+
   ;; Init MYPYPATH
   (setenv "MYPYPATH" (concat (expand-file-name "~/Developer/iqiyi/topic_admin/backend:")
                              (expand-file-name "~/Developer/iqiyi/topic_admin/backend/app/api:")
-                             (expand-file-name "~/Developer/iqiyi/topic_admin/backend/app/job")))
+                             (expand-file-name "~/Developer/iqiyi/topic_admin/backend/app/job:")
+                             (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src:")
+                             (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src/app/api:")
+                             (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src/app/wap:")
+                             (expand-file-name "~/Developer/iqiyi/xiu_main_flask/src/app/job:")
+                             ))
 
   ;; Fix anaconda mode can't read localhost bug
   (setq anaconda-mode-localhost-address "localhost")
