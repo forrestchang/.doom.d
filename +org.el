@@ -92,6 +92,9 @@
 (setq org-directory "~/Dropbox/org/")
 (setq org-default-notes-file "~/Dropbox/org/inbox.org")
 
+;; Export ignore `_`
+(setq org-export-with-sub-superscripts nil)
+
 ;; Org resize image
 (setq org-image-actual-width '(650))
 
