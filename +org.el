@@ -223,6 +223,8 @@ killring."
       '(
         ("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
          "* TODO %?\nCREATED: %U\n")
+        ("p" "New Project" entry (file+headline "~/Dropbox/org/gtd.org" "Project")
+         (file "~/.doom.d/templates/new-project-template.org"))
         ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nEntered on %U\n%i\n")
         ("r" "Reading" entry (file+olp+datetree "~/Dropbox/personal-site/blog/content-org/readings.org")
