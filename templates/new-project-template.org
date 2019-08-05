@@ -1,0 +1,17 @@
+* PROJ %^{Project name} [0%]
+DEADLINE: %^t
+:PROPERTIES:
+:CREATED: %u
+:END:
+%^{OUTCOME}p
+%^{AREA}p
+%?
+
+*Time Report*
+
+** NEXT 项目初始化 [0/4]
+SCHEDULED: %t
+- [ ] 在 Devonthink 中建立对应的 Group
+- [ ] 确定项目的优先级
+- [ ] 分解项目，确定下一步行动
+- [ ] 分配一个下一步行动的 Scheduled 时间
