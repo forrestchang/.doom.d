@@ -126,6 +126,9 @@
 ;; The notes will be ordered according to time
 (setq org-log-states-order-reversed nil)
 
+;; Using unique ID's for links in Org-mode
+(setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
+      org-clone-delete-id t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
