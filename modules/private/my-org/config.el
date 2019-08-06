@@ -232,3 +232,10 @@
   :config
   (setq org-attach-screenshot-command-line "screencapture -i %f")
   )
+
+;; org-mru-clock
+(def-package! org-mru-clock
+  :init
+  (setq org-mru-clock-how-many 100
+        org-mru-clock-completing-read #'ivy-completing-read)
+  )

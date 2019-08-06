@@ -7,3 +7,4 @@
 (package! ox-hugo)
 (package! org-journal)
 (package! org-attach-screenshot)
+(package! org-mru-clock)

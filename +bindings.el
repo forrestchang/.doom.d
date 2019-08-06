@@ -30,7 +30,8 @@
    :nv "gb" #'better-jumper-jump-backward
    :nv "gf" #'better-jumper-jump-forward
    :nv "B"  #'jiayuan/alternate-buffer
-   ))
+   )
+ )
 
 ;; Mode specific key map
 
@@ -106,6 +107,7 @@
         :desc "Jump to symbol across buffers" "I" #'imenu-anywhere
         :desc "Jump to link"                "l" #'ace-link
         :desc "Avy jump work"               "j" #'ace-pinyin-jump-word
+        :desc "Recently clock items"        "c" #'org-mru-clock-in
         )
 
       (:prefix ("s" . "search")
