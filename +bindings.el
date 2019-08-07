@@ -13,7 +13,7 @@
 ;; Leader key
 (map! :leader
       :desc "M-x"                                    "SPC" #'execute-extended-command
-      :desc "Find file in project"                     "." #'projectile-find-file
+      :desc "Find file in project"                     "." #'snails
       :desc "Org agenda"                               "a" #'org-agenda
       :desc "Org agenda today"                         "A" (lambda () (interactive) (org-agenda nil "a"))
       :desc "Capture Inbox"                            "I" (lambda () (interactive) (org-capture nil "t"))
