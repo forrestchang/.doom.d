@@ -67,7 +67,9 @@
                  ((org-super-agenda-groups
                    '(
                      (:name "Most Important"
-                            :priority "A")
+                            :and (:priority "A"
+                                            :todo ("TODO" "NEXT" "STARTED"))
+                            )
                      (:name "Daily View"
                             :time-grid t)
                      (:name "Scheduled Today"
@@ -87,12 +89,12 @@
   (add-to-list 'org-agenda-custom-commands
                '("w" "Weekly Overview" todo ""
                  ((org-super-agenda-groups
-                   '((:name "This Week's Tasks"
+                   '((:name "In Progress"
+                            :todo "STARTED")
+                     (:name "This Week's Tasks"
                             :todo "NEXT")
                      (:name "Delayed Tasks"
                             :todo "DELAYED")
-                     (:name "In Progress"
-                            :todo "STARTED")
                      (:discard (:anything)))))))
 
   ;; OKRs
