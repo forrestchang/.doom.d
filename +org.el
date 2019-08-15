@@ -88,9 +88,8 @@
 ;;; Misc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Set org directory
-(setq org-directory "~/Dropbox/org/")
-(setq org-default-notes-file "~/Dropbox/org/inbox.org")
+;; org-default-notes-file
+(setq org-default-notes-file "~/Dropbox/X_GTD/inbox.org")
 
 ;; Export ignore `_`
 (setq org-export-with-sub-superscripts nil)
@@ -155,13 +154,11 @@ killring."
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-agenda-files '("~/Dropbox/org/phone.org"
-                         "~/Dropbox/org/gtd.org"
-                         "~/Dropbox/org/someday.org"
-                         "~/Dropbox/org/planning.org"
-                         "~/Dropbox/org/calendar.org"
-                         "~/Dropbox/personal-site/blog/content-org/post.org"
-                         "~/Dropbox/org/journal/"
+(setq org-agenda-files '(
+                         "~/Dropbox/X_GTD/inbox.org"
+                         "~/Dropbox/X_GTD/todo.org"
+                         "~/Dropbox/X_GTD/someday.org"
+                         "~/Dropbox/X_GTD/calendar.org"
                          ))
 
 (setq org-agenda-span '1)
