@@ -92,7 +92,7 @@ unwanted space when exporting org-mode to hugo markdown."
 
 ;; Deft
 (after! deft
-  (setq deft-directory "~/Dropbox/org/notes")
+  (setq deft-directory "~/Dropbox/X_GTD/notes")
   )
 
 ;; Rust
