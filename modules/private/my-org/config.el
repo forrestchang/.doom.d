@@ -225,7 +225,7 @@
 ;; Org journal
 (def-package! org-journal
   :custom
-  (org-journal-dir "~/Dropbox/org/journal/")
+  (org-journal-dir "~/Dropbox/X_GTD/journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
