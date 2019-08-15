@@ -4,14 +4,22 @@ DEADLINE: %^t
 :CREATED: %u
 :END:
 %^{OUTCOME}p
-%^{AREA}p
+%^{OKR}p
 %?
 
-*Time Report*
+** Time Report
+#+BEGIN: clocktable :scope subtree :maxlevel 3
+#+CAPTION: Clock summary at [2019-08-14 Wed 22:45]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
 
-** NEXT 项目初始化 [0/4]
-SCHEDULED: %t
-- [ ] 在 Devonthink 中建立对应的 Group
-- [ ] 确定项目的优先级
-- [ ] 分解项目，确定下一步行动
-- [ ] 分配一个下一步行动的 Scheduled 时间
+** NEXT 项目初始化 [0/5]
+SCHEDULED: %^t
+
+- [ ] 设定项目的截止时间
+- [ ] 设定项目的 Outcome
+- [ ] 设定项目对应的 OKR
+- [ ] 在 Dropbox 中创建对应的文件夹
+- [ ] 设定项目的下一步行动
