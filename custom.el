@@ -12,7 +12,7 @@
  '(doom-big-font-mode nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control))))
- '(org-journal-dir "~/Dropbox/org/journal/")
+ '(org-journal-dir "~/Dropbox/X_GTD/journal/")
  '(org-journal-file-format "%Y-%m-%d.org")
  '(pyim-isearch-mode t nil (pyim))
  '(wakatime-api-key "e871f2f3-27db-43a6-9861-c157315e3e24")
