@@ -216,24 +216,32 @@ killring."
 ;;; Org Capture
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-capture-templates
-      '(
-        ("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
-         "* TODO %?\nCREATED: %U\n")
-        ("p" "New Project" entry (file+headline "~/Dropbox/org/gtd.org" "Project")
-         (file "~/.doom.d/templates/new-project-template.org"))
-        ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
-         "* %?\nEntered on %U\n%i\n")
-        ("r" "Reading" entry (file+olp+datetree "~/Dropbox/personal-site/blog/content-org/readings.org")
-         "* %?\nEntered on %U\n%i\n" :tree-type week)
-        ("n" "Quick Notes" entry (file+olp+datetree "~/Dropbox/org/journal.org")
-         "* %?\nCREATED: %U\n")
-        ("P" "Protocol" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
-         "* [[%:link][%:description]]\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t)
-        ("L" "Protocol Link" entry (file+headline "~/Dropbox/org/gtd.org" "Inbox")
-         "* TODO [[%:link][%:description]]\nCaptured On: %U" :immediate-finish t)
-        ))
+(setq org-capture-templates nil)
 
+;; Quick capture todo item to inbox
+(add-to-list 'org-capture-templates
+             '("t" "Todo" entry (file "~/Dropbox/X_GTD/inbox.org")
+               "* TODO %?\nCREATED: %U\n")
+             )
+
+;; Projects
+(add-to-list 'org-capture-templates
+             '("p" "Project" entry (file "~/Dropbox/X_GTD/inbox.org")
+               (file "~/.doom.d/templates/new-project-template.org")))
+
+;; Protocal
+(add-to-list 'org-capture-templates '("!" "Protocal"))
+(add-to-list 'org-capture-templates
+             '("!h" "Highlight" entry (file "~/Dropbox/X_GTD/inbox.org")
+               "* 摘录：%:description\n%:link\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t))
+(add-to-list 'org-capture-templates
+             '("!l" "Link" entry (file "~/Dropbox/X_GTD/inbox.org")
+               "* TODO 阅读：%:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
+
+;; Quick note for clocking item
+(add-to-list 'org-capture-templates
+             '("q" "Quick note for clocking item" item (clock)
+               "Note taken on %U \\\ \n%?" :prepend t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Clock
