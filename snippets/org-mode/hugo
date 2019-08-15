@@ -2,7 +2,7 @@
 # name: hugo
 # key: h
 # --
-#+HUGO_BASE_DIR: ~/Dropbox/personal-site/blog
+#+HUGO_BASE_DIR:
 #+HUGO_SECTION: post
 #+TITLE: $1
 #+DATE: `(format-time-string "%Y-%m-%d")`
