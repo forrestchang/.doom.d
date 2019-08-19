@@ -178,7 +178,7 @@ killring."
 
 ;; Set todo Keyworkds
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "DELAYED(x@/!)" "STARTED(s)" "MAYBE(m)" "WAIT(w@/!)" "HOLD(h@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+      (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "WAIT(w@/!)" "HOLD(h@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               (sequence "PROJ(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               (sequence "OBJECTIVE(o)" "KEYR(k)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               )))
