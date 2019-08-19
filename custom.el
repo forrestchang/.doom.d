@@ -31,6 +31,6 @@
  '(org-agenda-date-today ((t (:foreground "#ff8246" :weight ultra-bold :height 1.2))))
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
  '(org-headline-done ((t (:foreground "gray50"))))
- '(org-scheduled-today ((t (:foreground "#b0e0a8"))))
+ '(org-scheduled-today ((t (:foreground "#83b582"))))
  '(org-super-agenda-header ((t (:inherit org-agenda-structure :foreground "#5cc9f5"))))
  '(org-warning ((t (:foreground "#ee5a5a")))))
