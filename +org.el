@@ -159,6 +159,7 @@ killring."
                          "~/Dropbox/X_GTD/todo.org"
                          "~/Dropbox/X_GTD/someday.org"
                          "~/Dropbox/X_GTD/calendar.org"
+                         "~/Documents/personal-site/blog/content-org/post.org"
                          ))
 
 (setq org-agenda-span '1)
