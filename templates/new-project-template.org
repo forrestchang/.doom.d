@@ -7,7 +7,7 @@ DEADLINE: %^t
 %^{OKR}p
 %?
 
-** Time Report
+*Time Report*
 #+BEGIN: clocktable :scope subtree :maxlevel 3
 #+CAPTION: Clock summary at [2019-08-14 Wed 22:45]
 | Headline     | Time   |
@@ -15,7 +15,7 @@ DEADLINE: %^t
 | *Total time* | *0:00* |
 #+END:
 
-** NEXT 项目初始化 [0/5]
+** TODO 项目初始化 [0/5]
 SCHEDULED: %^t
 
 - [ ] 设定项目的截止时间
