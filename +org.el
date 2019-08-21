@@ -191,7 +191,7 @@ killring."
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
 ;; Warning 30 days before deadline
-(setq org-deadline-warning-days 30)
+(setq org-deadline-warning-days 14)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
