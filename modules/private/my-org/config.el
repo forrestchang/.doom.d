@@ -66,10 +66,7 @@
   (add-to-list 'org-agenda-custom-commands
                '("a" "Today Dashboard"
                  ((agenda "" ((org-super-agenda-groups
-                               '((:name "Done Today"
-                                        :todo "DONE"
-                                        :order 99)
-                                 (:name "Overdue"
+                               '((:name "Overdue"
                                         :deadline past)
                                  (:name "Over Scheduled"
                                         :scheduled past)
@@ -78,23 +75,36 @@
                                  (:name "Scheduled Today"
                                         :time-grid t
                                         :scheduled today)
-                                 (:name "Due Future"
+                                 (:name "Due in 2 Weeks"
                                         :deadline future)
-                                 (:discard (:anything))))))
-                  )
-                 ))
+                                 (:discard (:anything))))
+                              (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("DONE")))))
+                  )))
 
   ;; Weekly Dashboard
   (add-to-list 'org-agenda-custom-commands
                '("w" "Weekly Dashboard"
-                 ((todo "STARTED" ((org-agenda-overriding-header "In Progress")))
-                  (tags-todo "this_week+SCHEDULED<\"<+0d>\"" ((org-agenda-overriding-header "Delayed")))
-                  (tags-todo "this_week" ((org-agenda-overriding-header "Planned to do, but unscheduled")
-                                          (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled))))
-                  (tags-todo "this_week" ((org-agenda-overriding-header "Already Scheduled")
-                                          (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
-                                          (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("STARTED")))
-                                          (org-agenda-sorting-strategy '(todo-state-up time-up category-keep priority-down))))
+                 ((todo "STARTED" ((org-super-agenda-groups
+                                    '((:name "In Progress"
+                                             :todo "STARTED")))))
+                  (tags-todo "this_week+SCHEDULED<\"<+0d>\"" ((org-super-agenda-groups
+                                                               '((:name "Delayed Projects"
+                                                                        :todo "PROJ")
+                                                                 (:name "Delayed Tasks"
+                                                                        :todo ("TODO" "STARTED" "HOLD" "WAITING"))))))
+                  (tags-todo "this_week" ((org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled))
+                                          (org-super-agenda-groups
+                                           '((:name "Projects Need to be Scheduled"
+                                                    :todo "PROJ")
+                                             (:name "Tasks Need to be Scheduled"
+                                                    :todo ("TODO" "STARTED" "HOLD" "WAITING"))))))
+                  (tags-todo "this_week" ((org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
+                                          (org-agenda-sorting-strategy '(time-up category-keep priority-down))
+                                          (org-super-agenda-groups
+                                           '((:name "Projects Scheduled This Week"
+                                                    :todo "PROJ")
+                                             (:name "Tasks Scheduled This Week"
+                                                    :todo ("TODO" "STARTED" "HOLD" "WAITING"))))))
                   )))
 
 
