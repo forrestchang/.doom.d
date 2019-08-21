@@ -51,166 +51,52 @@
   :config
   (org-super-agenda-mode)
 
-  ;;; Org Agenda Views
+
+;;; Agenda filters
 
   ;; Inbox
   (add-to-list 'org-agenda-custom-commands
-               '("i" "inbox" tags-todo "+CATEGORY=\"inbox\""
-                 ((org-super-agenda-groups
-                   '((:name "TODO"
-                            :todo "TODO")
-                     (:discard (:anything)))))))
+               '("i" "inbox"
+                 ((tags-todo "+CATEGORY=\"inbox\"" ((org-super-agenda-groups
+                                                     '((:name "Inbox items"
+                                                              :todo "TODO")
+                                                       (:discard (:anything)))))))))
 
-  ;; Dashboard
+  ;; Today Dashboard
   (add-to-list 'org-agenda-custom-commands
-               '("a" "Dashboard" agenda ""
-                 ((org-super-agenda-groups
-                   '(
-                     (:name "Most Important"
-                            :and (:priority "A"
-                                            :todo ("TODO" "NEXT" "STARTED"))
-                            )
-                     (:name "Daily View"
-                            :time-grid t)
-                     (:name "Scheduled Today"
-                            :scheduled today)
-                     (:name "Over Schedule"
-                            :scheduled past)
-                     (:name "Due Today"
-                            :deadline today)
-                     (:name "Overdue"
-                            :deadline past)
-                     (:name "Due Future"
-                            :deadline future)
-                     (:discard (:anything))))
-                  (org-agenda-span 1))) t)
+               '("a" "Today Dashboard"
+                 ((agenda "" ((org-super-agenda-groups
+                               '((:name "Done Today"
+                                        :todo "DONE"
+                                        :order 99)
+                                 (:name "Overdue"
+                                        :deadline past)
+                                 (:name "Over Scheduled"
+                                        :scheduled past)
+                                 (:name "Deadline Today"
+                                        :deadline today)
+                                 (:name "Scheduled Today"
+                                        :time-grid t
+                                        :scheduled today)
+                                 (:name "Due Future"
+                                        :deadline future)
+                                 (:discard (:anything))))))
+                  )
+                 ))
 
-  ;; Weekly Overview
+  ;; Weekly Dashboard
   (add-to-list 'org-agenda-custom-commands
-               '("w" "Weekly Overview" todo ""
-                 ((org-super-agenda-groups
-                   '((:name "In Progress"
-                            :todo "STARTED")
-                     (:name "This Week's Tasks"
-                            :todo "NEXT")
-                     (:name "Delayed Tasks"
-                            :todo "DELAYED")
-                     (:discard (:anything)))))))
+               '("w" "Weekly Dashboard"
+                 ((todo "STARTED" ((org-agenda-overriding-header "In Progress")))
+                  (tags-todo "this_week+SCHEDULED<\"<+0d>\"" ((org-agenda-overriding-header "Delayed")))
+                  (tags-todo "this_week" ((org-agenda-overriding-header "Planned to do, but unscheduled")
+                                          (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled))))
+                  (tags-todo "this_week" ((org-agenda-overriding-header "Already Scheduled")
+                                          (org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
+                                          (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("STARTED")))
+                                          (org-agenda-sorting-strategy '(todo-state-up time-up category-keep priority-down))))
+                  )))
 
-  ;; OKRs
-  (add-to-list 'org-agenda-custom-commands
-               '("o" "OKRs" todo ""
-                 ((org-super-agenda-groups
-                   '((:name "Objectives"
-                            :todo "OBJECTIVE")
-                     (:name "Key Results"
-                            :todo "KEYR")
-                     (:discard (:anything)))))))
-
-  ;; Goals
-  ;;
-  ;; All tasks include scheduled items.
-  (add-to-list 'org-agenda-custom-commands
-               '("g" "Goals" todo ""
-                 ((org-super-agenda-groups
-                   '((:name "Focus This Week"
-                            :tag "this_week")
-                     (:name "Focus This Month"
-                            :tag "this_month")
-                     (:name "Focus This Quarter"
-                            :tag "this_quarter")
-                     (:name "Focus This Year"
-                            :tag "this_year")
-                     (:discard (:anything)))))) t)
-
-  ;; Planning
-  ;;
-  ;; Same to Goals filter, but not include scheduled items, just for daily planning.
-  (add-to-list 'org-agenda-custom-commands
-               '("p" "Planning"
-                 ((todo ""
-                        ((org-super-agenda-groups
-                          '((:name "Not Scheduled This Week"
-                                   :tag "this_week")
-                            (:discard (:anything))))
-                         (org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled)))))) t)
-
-  ;; Review
-  (add-to-list 'org-agenda-custom-commands
-               '("r" . "Review...") t)
-
-  ;; Review by Deadline
-  (add-to-list 'org-agenda-custom-commands
-               '("rd" "Review by Deadline"
-                 ((tags-todo "DEADLINE<\"<+0d>\""
-                             ((org-agenda-overriding-header "Overdue")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'notdeadline))))
-                  (tags-todo "DEADLINE=\"<+0d>\""
-                             ((org-agenda-overriding-header "Due Today")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'notdeadline))))
-                  (tags-todo "DEADLINE=\"<+1d>\""
-                             ((org-agenda-overriding-header "Due Tomorrow")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'notdeadline))))
-                  (tags-todo "DEADLINE>\"<+1d>\"+DEADLINE<=\"<+7d>\""
-                             ((org-agenda-overriding-header "Due Within A Week")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'notdeadline))))
-                  (tags-todo "DEADLINE>\"<+7d>\"+DEADLINE<=\"<+28d>\""
-                             ((org-agenda-overriding-header "Due Within A Month")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'notdeadline))))
-                  (tags-todo "DEADLINE>\"<+28d>\""
-                             ((org-agenda-overriding-header "Due Later")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'notdeadline))))
-
-                  (tags-todo "TODO={STARTED}"
-                             ((org-agenda-overriding-header "No Due Date & STARTED")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline))))
-                  (tags-todo "TODO={HOLD}"
-                             ((org-agenda-overriding-header "No Due Date & HOLD")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline))))
-                  (tags-todo "TODO={WAITING}"
-                             ((org-agenda-overriding-header "No Due Date & WAITING")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline))))
-                  )) t)
-
-  ;; Review by Priority
-  (add-to-list 'org-agenda-custom-commands
-               '("rp" "Review by Priority (Unscheduled)"
-                 ((tags-todo "PRIORITY={A}"
-                             ((org-agenda-overriding-header "High PRIORITY")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                  (tags-todo "PRIORITY={B}"
-                             ((org-agenda-overriding-header "Medium PRIORITY")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                  (tags-todo "PRIORITY=\"\""
-                             ((org-agenda-overriding-header "None PRIORITY")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                  (tags-todo "PRIORITY={C}"
-                             ((org-agenda-overriding-header "Low PRIORITY")
-                              (org-agenda-skip-function
-                               '(org-agenda-skip-entry-if 'deadline 'schedule))))
-                  )) t)
-
-  ;; Easy Stuff
-  (add-to-list 'org-agenda-custom-commands
-               '("e" "Easy Stuff" todo ""
-                 ((org-super-agenda-groups
-                   '((:name "When You Are Tired"
-                            :tag "easy")
-                     (:name "Small Stuff, Less Than 15 min"
-                            :effort< "00:15")
-                     (:discard (:anything)))))) t)
 
   )
 
@@ -241,3 +127,6 @@
   (setq org-mru-clock-how-many 100
         org-mru-clock-completing-read #'ivy-completing-read)
   )
+
+;; org-effectiveness
+(def-package! org-effectiveness)
