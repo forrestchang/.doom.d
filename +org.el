@@ -56,20 +56,27 @@
                 org-level-8))
   (set-face-attribute face nil :weight 'normal))
 
+;; Set todo Keyworkds
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "BLOCKED(b@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+              )))
+
 ;; Org todo keywords face
 (setq org-todo-keyword-faces
       (quote (
-              ("TODO" :foreground "#d65a31" :weight bold)
-              ("NEXT" :foreground "#f9b95c" :weight bold)
-              ("STARTED" :foreground "#67c23a" :weight bold)
-              ("PROJ" :foreground "#f36886" :weight bold)
-              ("WAITING" :foreground "#7b88ff" :weight bold)
-              ("HOLD" :foreground "#71a0a5" :weight bold)
-              ("MAYBE" :foreground "#f78ae0" :weight bold)
-              ("DELAYED" :foreground "#ff0000" :weight bold)
-              ("OBJECTIVE" :foreground "#4af2a1" :weight bold)
-              ("KEYR" :foreground "#6638f0" :weight bold)
+              ("TODO" :foreground "#47e4bb" :weight bold)
+              ("STARTED" :foreground "#fec771" :weight bold)
+              ("BLOCKED" :foreground "#ab72c0" :weight bold)
+              ("MAYBE" :foreground "#fae3d9" :weight bold)
               )))
+
+;; Org tags face
+(setq org-tag-faces
+      '(
+        ("PROJ"
+         (:weight bold :slant italic
+                  :foreground "#E6AC00"))
+        ))
 
 (custom-set-faces
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
@@ -176,13 +183,6 @@ killring."
        ((daily today remove-match)
         (0800 1000 1200 1400 1600 1800 2000 2200)
         "......" "----------------")))
-
-;; Set todo Keyworkds
-(setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "WAIT(w@/!)" "HOLD(h@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-              (sequence "PROJ(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-              (sequence "OBJECTIVE(o)" "KEYR(k)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-              )))
 
 ;; Log done date
 (setq org-log-done t)
