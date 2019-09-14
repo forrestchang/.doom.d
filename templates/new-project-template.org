@@ -1,10 +1,10 @@
-* PROJ %^{Project name} [0%]
+* TODO %^{Project name} [0%] :PROJ:
 DEADLINE: %^t
 :PROPERTIES:
 :CREATED: %u
 :END:
 %^{OUTCOME}p
-%^{OKR}p
+%^{CATEGORY}p
 %?
 
 *Time Report*
@@ -20,6 +20,4 @@ SCHEDULED: %^t
 
 - [ ] 设定项目的截止时间
 - [ ] 设定项目的 Outcome
-- [ ] 设定项目对应的 OKR
-- [ ] 在 Dropbox 中创建对应的文件夹
 - [ ] 设定项目的下一步行动
