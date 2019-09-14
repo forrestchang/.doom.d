@@ -253,5 +253,4 @@ unwanted space when exporting org-mode to hugo markdown."
                  (concat "x-devonthink-item:" link))
   )
 
-(def-package! org-analyzer
-  :load-path "~/.doom.d/site-lisp/org-analyzer")
+(def-package! org-analyzer)
