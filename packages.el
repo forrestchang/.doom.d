@@ -20,3 +20,4 @@
 (package! leetcode)
 (package! pyim)
 (package! ace-pinyin)
+(package! org-analyzer)
