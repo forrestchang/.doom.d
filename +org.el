@@ -136,6 +136,9 @@
 (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
       org-clone-delete-id t)
 
+;; Exclude some tags inheritance
+(setq org-tags-exclude-from-inheritance '("PROJ"))
+
 ;; Copy org item link in org agenda mode
 ;; Source: https://koenig-haunstetten.de/2018/02/17/improving-my-orgmode-workflow/
 (defun my/copy-idlink-to-clipboard()
