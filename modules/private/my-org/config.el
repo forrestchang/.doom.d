@@ -68,15 +68,24 @@
                  ((agenda "" ((org-super-agenda-groups
                                '((:name "Overdue"
                                         :deadline past)
+                                 (:name "Blocked"
+                                        :todo ("BLOCKED")
+                                        :order 9)
                                  (:name "Over Scheduled"
                                         :scheduled past)
+                                 (:name "Most Important"
+                                        :priority "A")
                                  (:name "Deadline Today"
                                         :deadline today)
                                  (:name "Scheduled Today"
-                                        :time-grid t
                                         :scheduled today)
+                                 (:name "Projects Due Soon"
+                                        :and (:tag "PROJ"
+                                                   :deadline future)
+                                        :order 10)
                                  (:name "Due in 2 Weeks"
-                                        :deadline future)
+                                        :deadline future
+                                        :order 11)
                                  (:discard (:anything))))
                               (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("DONE")))))
                   )))
