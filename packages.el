@@ -12,7 +12,6 @@
 (package! py-yapf)
 (package! calfw)
 (package! rfc-mode)
-(package! applescript-mode)
 (package! rainbow-identifiers)
 (package! keyfreq)
 (package! exec-path-from-shell)
