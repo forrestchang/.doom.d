@@ -65,7 +65,7 @@
        debugger
        docker
        editorconfig
-       ein
+       ;; ein
        eval
        (flycheck
         +childframe)
@@ -90,7 +90,7 @@
        assembly
        cc
        clojure
-       common-lisp
+       ;;common-lisp
        erlang
        elixir
        elm
@@ -115,7 +115,8 @@
         +ipython
         +protocol)
        php
-       (python +lsp)
+       ;; (python +lsp)
+       python
        scala
        sh
        web
@@ -148,5 +149,5 @@
        my-python
        )
 
- (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                           ("melpa" . "http://elpa.emacs-china.org/melpa/")))
+ ;;(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+ ;;                          ("melpa" . "http://elpa.emacs-china.org/melpa/")))
