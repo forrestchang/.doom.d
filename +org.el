@@ -226,8 +226,7 @@ killring."
 ;; Quick capture todo item to inbox
 (add-to-list 'org-capture-templates
              '("t" "Todo" entry (file "~/Dropbox/X_GTD/inbox.org")
-               "* TODO %?\nCREATED: %U\n")
-             )
+               (file "~/.doom.d/templates/new-todo-template.org")))
 
 ;; Projects
 (add-to-list 'org-capture-templates
