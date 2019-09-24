@@ -149,3 +149,14 @@
 
 ;; org-effectiveness
 (def-package! org-effectiveness)
+
+;; org-ql
+(def-package! org-ql
+  :config
+
+  (setq org-ql-views
+        (list
+         (cons "Recent entries" #'org-ql-view-recent-items)
+         ))
+
+  )
