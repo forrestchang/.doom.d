@@ -1,10 +1,9 @@
 * TODO %^{Project name} [0%] :PROJ:
 DEADLINE: %^t
 :PROPERTIES:
-:CREATED: %u
+:CREATED: %U
 :END:
 %^{OUTCOME}p
-%^{CATEGORY}p
 %?
 
 *Time Report*
