@@ -66,28 +66,22 @@
   (add-to-list 'org-agenda-custom-commands
                '("a" "Today Dashboard"
                  ((agenda "" ((org-super-agenda-groups
-                               '((:name "Overdue"
+                               '(
+                                 (:name "DONE"
+                                        :todo ("DONE" "CANCELLED")
+                                        :order 99)
+                                 (:name "In Progress (:3)"
+                                        :todo ("STARTED"))
+                                 (:name "Waiting (:3)"
+                                        :todo ("BLOCKED"))
+                                 (:name "Today Backlog (:5)"
+                                        :scheduled today
+                                        :deadline today
+                                        :scheduled past
                                         :deadline past)
-                                 (:name "Blocked"
-                                        :todo ("BLOCKED")
-                                        :order 9)
-                                 (:name "Over Scheduled"
-                                        :scheduled past)
-                                 (:name "Most Important"
-                                        :priority "A")
-                                 (:name "Deadline Today"
-                                        :deadline today)
-                                 (:name "Scheduled Today"
-                                        :scheduled today)
-                                 (:name "Projects Due Soon"
-                                        :and (:tag "PROJ"
-                                                   :deadline future)
-                                        :order 10)
-                                 (:name "Due in 2 Weeks"
-                                        :deadline future
-                                        :order 11)
                                  (:discard (:anything))))
-                              (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo '("DONE")))))
+                              (org-agenda-tag-filter-preset '("-PROJ"))
+                              ))
                   )))
 
   ;; Weekly Dashboard
