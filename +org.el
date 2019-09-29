@@ -279,7 +279,7 @@ killring."
 ;;; Org Refile
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-refile-use-outline-path 'file)
+(setq org-refile-use-outline-path 'buffer-name)
 
 (setq org-outline-path-complete-in-steps nil)
 
