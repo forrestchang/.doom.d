@@ -63,53 +63,46 @@
                                                        (:discard (:anything)))))))))
 
   ;; Today Dashboard
+  ;;
+  ;; 这个 agenda view 主要用来查看今天要做的事情，包括：
+  ;; 1. deadline today: 今天截止的任务，优先级 P1
+  ;; 2. over deadline：已经过期的任务，优先级 P0，一般来说，deadline 只设定
+  ;;    真正有具体截止日期的任务
+  ;; 3. scheduled today：安排到今天做的任务
+  ;; 4. over scheduled：过了安排的日期，这部分任务可以 reschedule
+  ;; 5. most important: 优先级高(A)的任务，优先做这部分内容
+  ;; 6. done: 已经完成的任务
+  ;;
+  ;; 每天的 workflow：
+  ;; 1. 查看 Today 视图，是否有 overdue 的任务，如果有，优先做 overdue 的任务
+  ;; 2. reschedule over scheduled 的任务
+  ;; 3. 从这周安排的任务中挑选出今天要做的任务，添加 scheduled time
+  ;; 4. 对于 schedule 的任务，添加优先级
   (add-to-list 'org-agenda-custom-commands
                '("a" "Today Dashboard"
                  ((agenda "" ((org-super-agenda-groups
                                '(
-                                 (:name "DONE"
+                                 (:name "Completed Today"
                                         :todo ("DONE" "CANCELLED")
                                         :order 99)
-                                 (:name "In Progress (:3)"
-                                        :todo ("STARTED"))
-                                 (:name "Waiting (:3)"
-                                        :todo ("BLOCKED"))
-                                 (:name "Today Backlog (:5)"
-                                        :scheduled today
-                                        :deadline today
-                                        :scheduled past
+                                 (:name "Overdue"
                                         :deadline past)
+                                 (:name "Most Important Tasks"
+                                        :priority "A")
+                                 (:name "Deadline Today"
+                                        :deadline today)
+                                 (:name "Over Scheduled"
+                                        :scheduled past)
+                                 (:name "Agenda View"
+                                        :time-grid t)
+                                 (:name "Scheduled Today"
+                                        :scheduled today)
+                                 (:name "Due Future"
+                                        :deadline future)
                                  (:discard (:anything))))
-                              (org-agenda-tag-filter-preset '("-PROJ"))
+                              ;; (org-agenda-tag-filter-preset '("-PROJ"))
                               ))
                   )))
-
-  ;; Weekly Dashboard
-  (add-to-list 'org-agenda-custom-commands
-               '("w" "Weekly Dashboard"
-                 ((todo "STARTED" ((org-super-agenda-groups
-                                    '((:name "In Progress"
-                                             :todo "STARTED")))))
-                  (tags-todo "this_week+SCHEDULED<\"<+0d>\"" ((org-super-agenda-groups
-                                                               '((:name "Delayed Projects"
-                                                                        :todo "PROJ")
-                                                                 (:name "Delayed Tasks"
-                                                                        :todo ("TODO" "STARTED" "HOLD" "WAITING"))))))
-                  (tags-todo "this_week" ((org-agenda-skip-function '(org-agenda-skip-entry-if 'scheduled))
-                                          (org-super-agenda-groups
-                                           '((:name "Projects Need to be Scheduled"
-                                                    :todo "PROJ")
-                                             (:name "Tasks Need to be Scheduled"
-                                                    :todo ("TODO" "STARTED" "HOLD" "WAITING"))))))
-                  (tags-todo "this_week" ((org-agenda-skip-function '(org-agenda-skip-entry-if 'notscheduled))
-                                          (org-agenda-sorting-strategy '(time-up category-keep priority-down))
-                                          (org-super-agenda-groups
-                                           '((:name "Projects Scheduled This Week"
-                                                    :todo "PROJ")
-                                             (:name "Tasks Scheduled This Week"
-                                                    :todo ("TODO" "STARTED" "HOLD" "WAITING"))))))
-                  )))
-
 
   )
 
