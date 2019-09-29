@@ -319,6 +319,9 @@ killring."
 (add-to-list 'org-capture-templates
              '("!l" "Link" entry (file "~/Dropbox/X_GTD/inbox.org")
                "* TODO 阅读：%:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
+(add-to-list 'org-capture-templates
+             '("!t" "Quick Capture" entry (file "~/Dropbox/X_GTD/inbox.org")
+               (file "~/.doom.d/templates/new-quick-capture-template.org") :immediate-finish t))
 
 ;; Quick note for clocking item
 (add-to-list 'org-capture-templates
