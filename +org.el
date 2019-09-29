@@ -48,6 +48,79 @@
 ;;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Org non-standard faces.
+(defface leuven-org-deadline-overdue
+  '((t :foreground "#F22659"))
+  "Face used to highlight tasks whose due date is in the past.")
+
+(defface leuven-org-deadline-today
+  '((t :weight bold :foreground "#4F4A3D" :background "#FFFFCC"))
+  "Face used to highlight tasks whose due date is today.")
+
+(defface leuven-org-deadline-tomorrow
+  '((t :foreground "#40A80B"))
+  "Face used to highlight tasks whose due date is tomorrow.")
+
+(defface leuven-org-deadline-future
+  '((t :foreground "#40A80B"))
+  "Face used to highlight tasks whose due date is for later.")
+
+;; Org non-standard faces.
+(defface leuven-org-created-kwd
+  '((t :weight bold :box (:line-width 1 :color "#1F8DD6")
+       :foreground "#1F8DD6" :background "#FFEE62"))
+  "Face used to display state NEW.")
+(defface leuven-org-in-progress-kwd
+  '((t :weight bold :box (:line-width 1 :color "#D9D14A")
+       :foreground "#D9D14A" :background "#FCFCDC"))
+  "Face used to display state STRT.")
+(defface leuven-org-waiting-for-kwd
+  '((t :weight bold :box (:line-width 1 :color "#89C58F")
+       :foreground "#89C58F" :background "#E2FEDE"))
+  "Face used to display state WAIT.")
+(defface leuven-org-someday-kwd
+  '((t :weight bold :box (:line-width 1 :color "#9EB6D4")
+       :foreground "#9EB6D4" :background "#E0EFFF"))
+  "Face used to display state SDAY.")
+
+(defface leuven-org-quote-kwd
+  '((t :weight bold :box (:line-width 1 :color "#FC5158")
+       :foreground "#FC5158" :background "#FED5D7"))
+  "Face used to display .")
+(defface leuven-org-quoted-kwd
+  '((t :weight bold :box (:line-width 1 :color "#55BA80")
+       :foreground "#55BA80" :background "#DFFFDF"))
+  "Face used to display .")
+(defface leuven-org-approved-kwd
+  '((t :weight bold :box (:line-width 1 :color "#969696")
+       :foreground "#969696" :background "#F2F2EE"))
+  "Face used to display .")
+(defface leuven-org-rejected-kwd
+  '((t :weight bold :box (:line-width 1 :color "#42B5FF")
+       :foreground "#42B5FF" :background "#D3EEFF"))
+  "Face used to display state REJECTED.")
+
+(defface leuven-org-openpo-kwd
+  '((t :weight bold :box (:line-width 1 :color "#FC5158")
+       :foreground "#FC5158" :background "#FED5D7"))
+  "Face used to display OPEN purchase order.")
+(defface leuven-org-closedpo-kwd
+  '((t :weight bold :box (:line-width 1 :color "#969696")
+       :foreground "#969696" :background "#F2F2EE"))
+  "Face used to display CLOSED purchase order.")
+
+
+(setq org-agenda-deadline-faces
+      '((1.0001 . leuven-org-deadline-overdue)
+        (0.9999 . leuven-org-deadline-today)
+        (0.8571 . leuven-org-deadline-tomorrow) ; = 6/7, see `org-deadline-warning-days'
+        (0.0000 . leuven-org-deadline-future)))
+
+(setq org-priority-faces
+      '((?A . (:foreground "#CC0000" :background "#FFE3E3"))
+        (?B . (:foreground "#64992C" :background "#EBF4DD"))
+        (?C . (:foreground "#64992C" :background "#FFFFFF"))))
+
 ;; Org headlines face
 (dolist (face '(org-level-1
                 org-level-2 org-level-3
@@ -63,12 +136,14 @@
 
 ;; Org todo keywords face
 (setq org-todo-keyword-faces
-      (quote (
-              ("TODO" :foreground "#47e4bb" :weight bold)
-              ("STARTED" :foreground "#fec771" :weight bold)
-              ("BLOCKED" :foreground "#ab72c0" :weight bold)
-              ("MAYBE" :foreground "#fae3d9" :weight bold)
-              )))
+      '(
+        ("TODO" . org-todo)
+        ("STARTED" . leuven-org-in-progress-kwd)
+        ("BLOCKED" . leuven-org-waiting-for-kwd)
+        ("SOMEDAY" . leuven-org-someday-kwd)
+        ("DONE" . org-done)
+        ("CANCELLED" . org-done)
+        ))
 
 ;; Org tags face
 (setq org-tag-faces
