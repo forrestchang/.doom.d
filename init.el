@@ -9,24 +9,24 @@
         +childframe)
 
        :ui
-       nav-flash
-       deft
+       ;; nav-flash
+       ;; deft
        doom
        doom-dashboard
        doom-quit
        ;; fill-column
        hl-todo
-       indent-guides
+       ;; indent-guides
        modeline
        ;; nav-flash
        ;; neotree
        ;; ophints
-       (popup
-        +all
-        +defaults)
-       treemacs
+       ;; (popup
+       ;;  +all
+       ;;  +defaults)
+       ;; treemacs
        unicode
-       vc-gutter
+       ;; vc-gutter
        vi-tilde-fringe
        (window-select
         +switch-window
@@ -36,7 +36,7 @@
        :editor
        (evil
         +everywhere)
-       file-templates
+       ;; file-templates
        fold
        format
        ;; lispy
@@ -52,58 +52,58 @@
         ;; +ranger
         ;; +icons
         )
-       electric
+       ;; electric
        vc
 
        :term
-       eshell
-       term
+       ;; eshell
+       ;; term
        vterm
 
        :tools
-       ansible
-       debugger
-       docker
-       editorconfig
+       ;; ansible
+       ;; debugger
+       ;; docker
+       ;; editorconfig
        ;; ein
        eval
        (flycheck
         +childframe)
        flyspell
-       gist
-       (lookup
-        +docsets)
+       ;; gist
+       ;; (lookup
+       ;;  +docsets)
        lsp
        macos
        magit
-       make
-       pdf
-       prodigy
-       rgb
-       terraform
-       tmux
-       upload
+       ;; make
+       ;; pdf
+       ;; prodigy
+       ;; rgb
+       ;; terraform
+       ;; tmux
+       ;; upload
        wakatime
 
        :lang
        (rust +lsp)
-       assembly
-       cc
-       clojure
+       ;; assembly
+       ;; cc
+       ;; clojure
        ;;common-lisp
-       erlang
-       elixir
-       elm
+       ;; erlang
+       ;; elixir
+       ;; elm
        emacs-lisp
-       ess
+       ;; ess
        go
-       haskell
-       java
-       javascript
-       julia
-       kotlin
+       ;; haskell
+       ;; java
+       ;; javascript
+       ;; julia
+       ;; kotlin
        latex
-       lua
+       ;; lua
        markdown
        (org
         +attach
@@ -114,16 +114,16 @@
         +present
         +ipython
         +protocol)
-       php
+       ;; php
        ;; (python +lsp)
        python
-       scala
+       ;; scala
        sh
        web
 
        :email
-       (mu4e
-        +gmail)
+       ;; (mu4e
+       ;;  +gmail)
        ;; notmuch
        ;; wanderlust
 
