@@ -18,7 +18,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-Iosvkem)
+(setq doom-theme 'doom-one-light)
 
 ;; Wakatime
 (setq +wakatime-hid-filenames t)
