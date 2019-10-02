@@ -7,7 +7,6 @@
   (setq racer-rust-src-path "/Users/jiayuan/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
   )
 
-(load! "+ui")
 (load! "+bindings")
 (load! "+editor")
 
@@ -17,6 +16,9 @@
       user-mail-address "forrestchang7@gmail.com")
 
 (setq confirm-kill-emacs nil)
+
+;; Theme
+(setq doom-theme 'doom-Iosvkem)
 
 ;; Wakatime
 (setq +wakatime-hid-filenames t)
