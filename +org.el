@@ -72,7 +72,7 @@
   "Face used to display state NEW.")
 (defface leuven-org-in-progress-kwd
   '((t :weight bold :box (:line-width 1 :color "#D9D14A")
-       :foreground "#D9D14A" :background "#FCFCDC"))
+       :foreground "#FFFFFF" :background "#E6AC00"))
   "Face used to display state STRT.")
 (defface leuven-org-waiting-for-kwd
   '((t :weight bold :box (:line-width 1 :color "#89C58F")
