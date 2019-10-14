@@ -21,9 +21,9 @@
        ;; nav-flash
        ;; neotree
        ;; ophints
-       ;; (popup
-       ;;  +all
-       ;;  +defaults)
+       (popup
+        +all
+        +defaults)
        ;; treemacs
        unicode
        vc-gutter
@@ -31,7 +31,7 @@
        (window-select
         +switch-window
         +numbers)
-       workspaces
+       ;; workspaces
 
        :editor
        (evil
@@ -67,8 +67,8 @@
        ;; editorconfig
        ;; ein
        eval
-       (flycheck
-        +childframe)
+       ;; (flycheck
+       ;;  +childframe)
        flyspell
        ;; gist
        ;; (lookup
