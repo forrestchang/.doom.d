@@ -273,14 +273,16 @@ killring."
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
 ;; Warning 30 days before deadline
-(setq org-deadline-warning-days 14)
+(setq org-deadline-warning-days 7)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Refile
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq org-refile-use-outline-path 'buffer-name)
+(setq org-refile-use-outline-path 'file)
+
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 (setq org-outline-path-complete-in-steps nil)
 
