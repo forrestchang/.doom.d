@@ -182,7 +182,7 @@
                                :todo "BLOCKED")
                         (:name "DONE"
                                :todo "DONE"))
-      ))
+        )))
   )
 
 (defun current-week-range ()
