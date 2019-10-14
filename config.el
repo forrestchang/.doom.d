@@ -18,7 +18,8 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-one-light)
+(setq doom-theme 'doom-one)
+
 
 ;; Wakatime
 (setq +wakatime-hid-filenames t)
