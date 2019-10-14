@@ -20,6 +20,9 @@
 ;; Theme
 (setq doom-theme 'doom-one)
 
+(setq evil-normal-state-cursor '(box "#FF6F65")
+      evil-insert-state-cursor '(bar "#FF6F65")
+      evil-visual-state-cursor '(hollow "#FF6F65"))
 
 ;; Wakatime
 (setq +wakatime-hid-filenames t)
