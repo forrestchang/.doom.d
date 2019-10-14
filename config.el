@@ -237,6 +237,11 @@ unwanted space when exporting org-mode to hugo markdown."
   :load-path "~/.doom.d/site-lisp/snails"
   )
 
+;; Beancount
+(def-package! beancount
+  :load-path "~/.doom.d/site-lisp/beancount"
+  )
+
 ;; Reload file from disk without confirm
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confimation"
