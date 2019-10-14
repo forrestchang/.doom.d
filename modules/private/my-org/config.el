@@ -103,4 +103,110 @@
          (cons "Recent entries" #'org-ql-view-recent-items)
          ))
 
+  ;; Most Importants Tasks
+  ;; - Show priority A tasks in 7 days
+  (defun custom-ql-most-important-thins ()
+    (interactive)
+    (org-ql-search (org-agenda-files)
+      '(and (todo "TODO" "STARTED" "BLOCKED")
+            (priority >= "A")
+            (or (deadline auto)
+                (scheduled :to today)))
+      :title "Most Important Tasks"
+      :sort '(deadline priority)
+      :super-groups '((:name "Deadline"
+                             :deadline past
+                             :deadline today)
+                      (:name "Scheduled"
+                             :scheduled past
+                             :deadline today))))
+
+  ;; Work Related Tasks Scheduled or Deadline today
+  (defun custom-ql-work-related-tasks ()
+    (interactive)
+    (org-ql-search (org-agenda-files)
+      '(and (or (scheduled :to today)
+                (deadline :to today))
+            (todo "TODO" "STARTED" "BLOCKED")
+            (not (tags "PROJ"))
+            (category "iqiyi" "pingduck" "workflow" "talk" "blog" "open-source" "programming"))
+      :title "Work Related Tasks"
+      :sort '(priority deadline scheduled)
+      :super-groups '((:name "STARTED"
+                             :todo "STARTED")
+                      (:name "Deadline"
+                             :deadline past
+                             :deadline today)
+                      (:name "Scheduled"
+                             :scheduled past
+                             :scheduled today)))
+    )
+
+  ;; Non-Work Related Tasks Scheduled or Deadline today
+  (defun custom-ql-non-work-related-tasks ()
+    (interactive)
+    (org-ql-search (org-agenda-files)
+      '(and (or (scheduled :to today)
+                (deadline :to today))
+            (todo "TODO" "STARTED" "BLOCKED")
+            (not (tags "PROJ"))
+            (not (category "iqiyi" "pingduck" "workflow" "talk" "blog" "open-source" "programming")))
+      :title "Non-Work Related Tasks"
+      :sort '(priority deadline scheduled)
+      :super-groups '((:name "STARTED"
+                             :todo "STARTED")
+                      (:name "Deadline"
+                             :deadline past
+                             :deadline today)
+                      (:name "Scheduled"
+                             :scheduled past
+                             :scheduled today))))
+
+  ;; Weekly Review
+  (defun custom-ql-weekly-review ()
+    (interactive)
+    (let* ((ts-default-format "%Y-%m-%d")
+           (beg (ts-format (car (current-week-range))))
+           (end (ts-format (cdr (current-week-range)))))
+      (org-ql-search (org-agenda-files)
+        `(and (todo "TODO" "STARTED" "BLOCKED" "DONE")
+              (tags "PROJ")
+              (or (deadline :from ,beg :to ,end)
+                  (closed :from ,beg :to ,end)))
+        :title "Weekly Review"
+        :super-groups '((:name "STARTED"
+                               :todo "STARTED")
+                        (:name "TODO"
+                               :todo "TODO")
+                        (:name "BLOCKED"
+                               :todo "BLOCKED")
+                        (:name "DONE"
+                               :todo "DONE"))
+      ))
   )
+
+(defun current-week-range ()
+  "Return timestamps (BEG . END) spanning current calendar week."
+  (let* (;; Bind `now' to the current timestamp to ensure all calculations
+         ;; begin from the same timestamp.  (In the unlikely event that
+         ;; the execution of this code spanned from one day into the next,
+         ;; that would cause a wrong result.)
+         (now (ts-now))
+         ;; We start by calculating the offsets for the beginning and
+         ;; ending timestamps using the current day of the week.  Note
+         ;; that the `ts-dow' slot uses the "%w" format specifier, which
+         ;; counts from Sunday to Saturday as a number from 0 to 6.
+         (adjust-beg-day (- 1 (ts-dow now)))
+         (adjust-end-day (- 7 (ts-dow now)))
+         ;; Make beginning/end timestamps based on `now', with adjusted
+         ;; day and hour/minute/second values.  These functions return
+         ;; new timestamps, so `now' is unchanged.
+         (beg (thread-last now
+                ;; `ts-adjust' makes relative adjustments to timestamps.
+                (ts-adjust 'day adjust-beg-day)
+                ;; `ts-apply' applies absolute values to timestamps.
+                (ts-apply :hour 0 :minute 0 :second 0)))
+         (end (thread-last now
+                (ts-adjust 'day adjust-end-day)
+                (ts-apply :hour 23 :minute 59 :second 59))))
+    (cons beg end)))

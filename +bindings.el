@@ -23,6 +23,11 @@
       :desc "Expand region"                            "<" #'er/expand-region
       :desc "Toggle popup window"                      "`" #'+popup/toggle
       :desc "Reload buffer from disc"                  "R" #'revert-buffer-no-confirm
+      :desc "Switch last buffer"                       "TAB" #'jiayuan/alternate-buffer
+      :desc "Custom org-ql: Most Important Tasks"      "1" #'custom-ql-most-important-thins
+      :desc "Custom org-ql: Work Related Tasks"        "2" #'custom-ql-work-related-tasks
+      :desc "Custom org-ql: Non-Work Related Tasks"    "3" #'custom-ql-non-work-related-tasks
+      :desc "Custom org-ql: Weekly Review"             "4" #'custom-ql-weekly-review
       )
 
 (map!
