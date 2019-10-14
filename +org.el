@@ -164,10 +164,11 @@
     ("^\\*Org Agenda"    :size 0.5 :select t :ttl nil :modeline t)
     ("^\\*Org Src"       :size 0.4 :quit nil :select t :autosave t :ttl nil)
     ("^CAPTURE.*\\.org$" :size 0.4 :quit nil :select t :autosave t)
-    ("^\\*Org*" :size 0.5 :select t)))
+    ("^\\*Org*" :size 0.5 :select t)
+    ))
 
 ;; Show modeline in popup windows
-(remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
+;; (remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Misc
