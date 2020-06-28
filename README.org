@@ -2,4 +2,4 @@
 #+DATE:    July 4, 2019
 #+STARTUP: inlineimages
 
-This is just my personal Doom Emacs config, so be careful to use it.
+Personal doom emacs config.
