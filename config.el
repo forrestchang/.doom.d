@@ -18,7 +18,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-city-lights)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -95,7 +95,7 @@ unwanted space when exporting org-mode to hugo markdown."
 
 ;; Deft
 (after! deft
-  (setq deft-directory "~/Dropbox/X_GTD/notes")
+  (setq deft-directory "~/Dropbox/Org/Note")
   )
 
 ;; Rust
@@ -260,5 +260,13 @@ unwanted space when exporting org-mode to hugo markdown."
   (start-process (concat "open " link) nil "open"
                  (concat "x-devonthink-item:" link))
   )
+
+;; Bear link support
+(org-add-link-type "bear" 'org-bear-open)
+
+(defun org-bear-open (link)
+  "Open the bear link"
+  (start-process (concat "open " link) nil "open"
+                 (concat "bear:" link)))
 
 (def-package! org-analyzer)

@@ -48,101 +48,17 @@
 ;;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Org non-standard faces.
-(defface leuven-org-deadline-overdue
-  '((t :foreground "#F22659"))
-  "Face used to highlight tasks whose due date is in the past.")
-
-(defface leuven-org-deadline-today
-  '((t :weight bold :foreground "#4F4A3D" :background "#FFFFCC"))
-  "Face used to highlight tasks whose due date is today.")
-
-(defface leuven-org-deadline-tomorrow
-  '((t :foreground "#40A80B"))
-  "Face used to highlight tasks whose due date is tomorrow.")
-
-(defface leuven-org-deadline-future
-  '((t :foreground "#40A80B"))
-  "Face used to highlight tasks whose due date is for later.")
-
-;; Org non-standard faces.
-(defface leuven-org-created-kwd
-  '((t :weight bold :box (:line-width 1 :color "#1F8DD6")
-       :foreground "#1F8DD6" :background "#FFEE62"))
-  "Face used to display state NEW.")
-(defface leuven-org-in-progress-kwd
-  '((t :weight bold :box (:line-width 1 :color "#D9D14A")
-       :foreground "#FFFFFF" :background "#E6AC00"))
-  "Face used to display state STRT.")
-(defface leuven-org-waiting-for-kwd
-  '((t :weight bold :box (:line-width 1 :color "#89C58F")
-       :foreground "#89C58F" :background "#E2FEDE"))
-  "Face used to display state WAIT.")
-(defface leuven-org-someday-kwd
-  '((t :weight bold :box (:line-width 1 :color "#9EB6D4")
-       :foreground "#9EB6D4" :background "#E0EFFF"))
-  "Face used to display state SDAY.")
-
-(defface leuven-org-quote-kwd
-  '((t :weight bold :box (:line-width 1 :color "#FC5158")
-       :foreground "#FC5158" :background "#FED5D7"))
-  "Face used to display .")
-(defface leuven-org-quoted-kwd
-  '((t :weight bold :box (:line-width 1 :color "#55BA80")
-       :foreground "#55BA80" :background "#DFFFDF"))
-  "Face used to display .")
-(defface leuven-org-approved-kwd
-  '((t :weight bold :box (:line-width 1 :color "#969696")
-       :foreground "#969696" :background "#F2F2EE"))
-  "Face used to display .")
-(defface leuven-org-rejected-kwd
-  '((t :weight bold :box (:line-width 1 :color "#42B5FF")
-       :foreground "#42B5FF" :background "#D3EEFF"))
-  "Face used to display state REJECTED.")
-
-(defface leuven-org-openpo-kwd
-  '((t :weight bold :box (:line-width 1 :color "#FC5158")
-       :foreground "#FC5158" :background "#FED5D7"))
-  "Face used to display OPEN purchase order.")
-(defface leuven-org-closedpo-kwd
-  '((t :weight bold :box (:line-width 1 :color "#969696")
-       :foreground "#969696" :background "#F2F2EE"))
-  "Face used to display CLOSED purchase order.")
-
-
-(setq org-agenda-deadline-faces
-      '((1.0001 . leuven-org-deadline-overdue)
-        (0.9999 . leuven-org-deadline-today)
-        (0.8571 . leuven-org-deadline-tomorrow) ; = 6/7, see `org-deadline-warning-days'
-        (0.0000 . leuven-org-deadline-future)))
-
-(setq org-priority-faces
-      '((?A . (:foreground "#CC0000" :background "#FFE3E3"))
-        (?B . (:foreground "#64992C" :background "#EBF4DD"))
-        (?C . (:foreground "#64992C" :background "#FFFFFF"))))
-
-;; Org headlines face
-(dolist (face '(org-level-1
-                org-level-2 org-level-3
-                org-level-4 org-level-5
-                org-level-6 org-level-7
-                org-level-8))
-  (set-face-attribute face nil :weight 'normal))
 
 ;; Set todo Keyworkds
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "BLOCKED(b@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               )))
 
-;; Org todo keywords face
 (setq org-todo-keyword-faces
-      '(
-        ("TODO" . org-todo)
-        ("STARTED" . leuven-org-in-progress-kwd)
-        ("BLOCKED" . leuven-org-waiting-for-kwd)
-        ("SOMEDAY" . leuven-org-someday-kwd)
-        ("DONE" . org-done)
-        ("CANCELLED" . org-done)
+      '(("TODO" . "green")
+        ("STARTED" . "yellow")
+        ("MAYBE" . "gray")
+        ("BLOCKED" . "pink")
         ))
 
 ;; Org tags face
@@ -152,11 +68,6 @@
          (:weight bold :slant italic
                   :foreground "#E6AC00"))
         ))
-
-(custom-set-faces
- '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "DeepPink2"))))
- '(org-scheduled-today ((t (:foreground "#b0e0a8"))))
- '(org-warning ((t (:foreground "#ee5a5a")))))
 
 ;; Popup rules
 (set-popup-rules!
@@ -175,7 +86,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-default-notes-file
-(setq org-default-notes-file "~/Dropbox/X_GTD/inbox.org")
+(setq org-default-notes-file "~/Dropbox/Org/GTD/inbox.org")
 
 ;; Export ignore `_`
 (setq org-export-with-sub-superscripts nil)
@@ -244,12 +155,9 @@ killring."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq org-agenda-files '(
-                         "~/Dropbox/X_GTD/inbox.org"
-                         "~/Dropbox/X_GTD/todo.org"
-                         "~/Dropbox/X_GTD/someday.org"
-                         "~/Dropbox/X_GTD/calendar.org"
-                         "~/Dropbox/X_GTD/archive.org"
-                         "~/Documents/personal-site/blog/content-org/post.org"
+                         "~/Dropbox/Org/GTD/inbox.org"
+                         "~/Dropbox/Org/GTD/todo.org"
+                         "~/Dropbox/Org/GTD/someday.org"
                          ))
 
 (setq org-agenda-span '1)
@@ -306,24 +214,24 @@ killring."
 
 ;; Quick capture todo item to inbox
 (add-to-list 'org-capture-templates
-             '("t" "Todo" entry (file "~/Dropbox/X_GTD/inbox.org")
+             '("t" "Todo" entry (file "~/Dropbox/Org/GTD/inbox.org")
                (file "~/.doom.d/templates/new-todo-template.org")))
 
 ;; Projects
 (add-to-list 'org-capture-templates
-             '("p" "Project" entry (file "~/Dropbox/X_GTD/inbox.org")
+             '("p" "Project" entry (file "~/Dropbox/Org/GTD/inbox.org")
                (file "~/.doom.d/templates/new-project-template.org")))
 
 ;; Protocal
 (add-to-list 'org-capture-templates '("!" "Protocal"))
 (add-to-list 'org-capture-templates
-             '("!h" "Highlight" entry (file "~/Dropbox/X_GTD/inbox.org")
+             '("!h" "Highlight" entry (file "~/Dropbox/Org/GTD/inbox.org")
                "* 摘录：%:description\n%:link\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!l" "Link" entry (file "~/Dropbox/X_GTD/inbox.org")
-               "* TODO 阅读：%:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
+             '("!l" "Link" entry (file "~/Dropbox/Org/GTD/inbox.org")
+               "* TODO %:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!t" "Quick Capture" entry (file "~/Dropbox/X_GTD/inbox.org")
+             '("!t" "Quick Capture" entry (file "~/Dropbox/Org/GTD/inbox.org")
                (file "~/.doom.d/templates/new-quick-capture-template.org") :immediate-finish t))
 
 ;; Quick note for clocking item
@@ -419,7 +327,7 @@ killring."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Set default column view headings: Task Effort Clock_Summary
-(setq org-columns-default-format "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
+(setq org-columns-default-format "%64ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM %16TIMESTAMP_IA")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

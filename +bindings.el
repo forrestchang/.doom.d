@@ -27,7 +27,8 @@
       :desc "Custom org-ql: Most Important Tasks"      "1" #'custom-ql-most-important-thins
       :desc "Custom org-ql: Work Related Tasks"        "2" #'custom-ql-work-related-tasks
       :desc "Custom org-ql: Non-Work Related Tasks"    "3" #'custom-ql-non-work-related-tasks
-      :desc "Custom org-ql: Weekly Review"             "4" #'custom-ql-weekly-review
+      :desc "Custom org-ql: Today Log"                 "4" #'custom-ql-today-log
+      :desc "Custom org-ql: Weekly Review"             "5" #'custom-ql-weekly-review
       )
 
 (map!

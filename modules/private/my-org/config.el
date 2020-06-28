@@ -74,7 +74,7 @@
 ;; Org journal
 (def-package! org-journal
   :custom
-  (org-journal-dir "~/Dropbox/X_GTD/journal/")
+  (org-journal-dir "~/Dropbox/Org/Journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
@@ -119,7 +119,7 @@
                              :deadline today)
                       (:name "Scheduled"
                              :scheduled past
-                             :deadline today))))
+                             :scheduled today))))
 
   ;; Work Related Tasks Scheduled or Deadline today
   (defun custom-ql-work-related-tasks ()
@@ -162,6 +162,18 @@
                              :scheduled past
                              :scheduled today))))
 
+  ;; Today log
+  (defun custom-ql-today-log ()
+    (interactive)
+    (org-ql-search (org-agenda-files)
+      '(and (todo "DONE")
+            (closed :on today))
+      :title "Today log"
+      :sort '(date)
+      :super-groups '((:name "Projects"
+                             :tag "PROJ")))
+    )
+
   ;; Weekly Review
   (defun custom-ql-weekly-review ()
     (interactive)
@@ -169,12 +181,18 @@
            (beg (ts-format (car (current-week-range))))
            (end (ts-format (cdr (current-week-range)))))
       (org-ql-search (org-agenda-files)
-        `(and (todo "TODO" "STARTED" "BLOCKED" "DONE")
+        `(and (todo "TODO" "STARTED" "BLOCKED")
               (tags "PROJ")
-              (or (deadline :from ,beg :to ,end)
-                  (closed :from ,beg :to ,end)))
+              (or (scheduled :from ,beg :to ,end)
+                  (deadline :from ,beg :to ,end)
+                  (scheduled :to ,beg)
+                  (deadline :to ,beg)))
         :title "Weekly Review"
-        :super-groups '((:name "STARTED"
+        :super-groups '((:name "Overdue"
+                               :deadline past)
+                        (:name "Over Scheduled"
+                               :scheduled past)
+                        (:name "STARTED"
                                :todo "STARTED")
                         (:name "TODO"
                                :todo "TODO")

@@ -1,4 +1,4 @@
-* TODO %^{Project name} [0%] :PROJ:
+* TODO %^{Project name} [0%]                                              :PROJ:
 DEADLINE: %^t
 :PROPERTIES:
 :CREATED: %U
@@ -14,7 +14,7 @@ DEADLINE: %^t
 | *Total time* | *0:00* |
 #+END:
 
-** TODO 项目初始化 [0/5]
+** TODO 项目初始化 [0/3]
 SCHEDULED: %^t
 
 - [ ] 设定项目的截止时间
