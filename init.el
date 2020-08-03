@@ -69,7 +69,6 @@
        eval
        ;; (flycheck
        ;;  +childframe)
-       flyspell
        ;; gist
        ;; (lookup
        ;;  +docsets)
@@ -83,7 +82,7 @@
        ;; terraform
        ;; tmux
        ;; upload
-       wakatime
+       ;; wakatime
 
        :lang
        (rust +lsp)
@@ -145,8 +144,8 @@
        ;; literate
 
        :private
-       my-org
-       my-python
+       ;; my-org
+       ;; my-python
        )
 
  ;;(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
