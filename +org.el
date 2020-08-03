@@ -86,7 +86,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-default-notes-file
-(setq org-default-notes-file "~/Dropbox/Org/GTD/inbox.org")
+(setq org-default-notes-file "~/Dropbox/Org/inbox.org")
 
 ;; Export ignore `_`
 (setq org-export-with-sub-superscripts nil)
@@ -155,9 +155,9 @@ killring."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq org-agenda-files '(
-                         "~/Dropbox/Org/GTD/inbox.org"
-                         "~/Dropbox/Org/GTD/todo.org"
-                         "~/Dropbox/Org/GTD/someday.org"
+                         "~/Dropbox/Org/inbox.org"
+                         "~/Dropbox/Org/todo.org"
+                         "~/Dropbox/Org/someday.org"
                          ))
 
 (setq org-agenda-span '1)
@@ -214,24 +214,24 @@ killring."
 
 ;; Quick capture todo item to inbox
 (add-to-list 'org-capture-templates
-             '("t" "Todo" entry (file "~/Dropbox/Org/GTD/inbox.org")
+             '("t" "Todo" entry (file "~/Dropbox/Org/inbox.org")
                (file "~/.doom.d/templates/new-todo-template.org")))
 
 ;; Projects
 (add-to-list 'org-capture-templates
-             '("p" "Project" entry (file "~/Dropbox/Org/GTD/inbox.org")
+             '("p" "Project" entry (file "~/Dropbox/Org/inbox.org")
                (file "~/.doom.d/templates/new-project-template.org")))
 
 ;; Protocal
 (add-to-list 'org-capture-templates '("!" "Protocal"))
 (add-to-list 'org-capture-templates
-             '("!h" "Highlight" entry (file "~/Dropbox/Org/GTD/inbox.org")
+             '("!h" "Highlight" entry (file "~/Dropbox/Org/inbox.org")
                "* 摘录：%:description\n%:link\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!l" "Link" entry (file "~/Dropbox/Org/GTD/inbox.org")
+             '("!l" "Link" entry (file "~/Dropbox/Org/inbox.org")
                "* TODO %:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!t" "Quick Capture" entry (file "~/Dropbox/Org/GTD/inbox.org")
+             '("!t" "Quick Capture" entry (file "~/Dropbox/Org/inbox.org")
                (file "~/.doom.d/templates/new-quick-capture-template.org") :immediate-finish t))
 
 ;; Quick note for clocking item
