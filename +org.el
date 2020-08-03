@@ -102,7 +102,7 @@
 ;;             (visual-line-mode 1)))
 
 ;; Enable org-checklist
-(def-package! org-checklist)
+(use-package! org-checklist)
 
 ;; Block tasks when have not done subtasks
 (setq org-enforce-todo-dependencies t)

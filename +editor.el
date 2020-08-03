@@ -85,7 +85,7 @@
   )
 
 ;; Ace-pinyin
-(def-package! ace-pinyin
+(use-package! ace-pinyin
   :init
   (ace-pinyin-global-mode +1)
   )

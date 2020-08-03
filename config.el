@@ -55,7 +55,7 @@
       '((t . eh-ivy-cregexp)))
 
 ;; calfw
-(def-package! calfw)
+(use-package! calfw)
 
 ;; Web mode
 (setq flycheck-javascript-eslint-executable "/usr/local/bin/eslint")
@@ -65,11 +65,11 @@
             (flycheck-add-next-checker 'javascript-eslint)))
 
 ;; Rainbow identifiers
-(def-package! rainbow-identifiers
+(use-package! rainbow-identifiers
   :config (add-hook 'prog-mode-hook 'rainbow-identifiers-mode))
 
 ;; Key frequences
-(def-package! keyfreq
+(use-package! keyfreq
   :config (progn (keyfreq-mode 1)
                  (keyfreq-autosave-mode 1)))
 
@@ -155,7 +155,7 @@ unwanted space when exporting org-mode to hugo markdown."
 
 
 ;; Anki
-(def-package! anki-editor)
+(use-package! anki-editor)
 
 ;; Copy file path to clipboard
 (defun my-put-file-name-on-clipboard ()
@@ -226,23 +226,23 @@ unwanted space when exporting org-mode to hugo markdown."
 
 
 ;; Leetcode
-(def-package! leetcode
+(use-package! leetcode
   :init
   (setq leetcode-prefer-language "python3"
         leetcode-prefer-sql "mysql")
   )
 
 ;; Smart align
-(def-package! smart-align
+(use-package! smart-align
   :load-path "~/.doom.d/site-lisp/smart-align"
   )
 
-(def-package! snails
+(use-package! snails
   :load-path "~/.doom.d/site-lisp/snails"
   )
 
 ;; Beancount
-(def-package! beancount
+(use-package! beancount
   :load-path "~/.doom.d/site-lisp/beancount"
   )
 
@@ -269,4 +269,4 @@ unwanted space when exporting org-mode to hugo markdown."
   (start-process (concat "open " link) nil "open"
                  (concat "bear:" link)))
 
-(def-package! org-analyzer)
+(use-package! org-analyzer)

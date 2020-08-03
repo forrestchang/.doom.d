@@ -13,7 +13,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Org pomodoro
-(def-package! org-pomodoro
+(use-package! org-pomodoro
   :init (setq org-pomodoro-length '50
               org-pomodoro-short-break-length '10)
   :config
@@ -47,7 +47,7 @@
   )
 
 ;; Org Super Agenda
-(def-package! org-super-agenda
+(use-package! org-super-agenda
   :config
   (org-super-agenda-mode)
 
@@ -64,38 +64,38 @@
   )
 
 ;; Hugo blog
-(def-package! ox-hugo
+(use-package! ox-hugo
   :after ox
   )
 
 ;; Org hugo auto export mode
-(def-package! org-hugo-auto-export-mode)
+(use-package! org-hugo-auto-export-mode)
 
 ;; Org journal
-(def-package! org-journal
+(use-package! org-journal
   :custom
   (org-journal-dir "~/Dropbox/Org/Journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
 ;; Org attach screenshot
-(def-package! org-attach-screenshot
+(use-package! org-attach-screenshot
   :config
   (setq org-attach-screenshot-command-line "screencapture -i %f")
   )
 
 ;; org-mru-clock
-(def-package! org-mru-clock
+(use-package! org-mru-clock
   :init
   (setq org-mru-clock-how-many 100
         org-mru-clock-completing-read #'ivy-completing-read)
   )
 
 ;; org-effectiveness
-(def-package! org-effectiveness)
+(use-package! org-effectiveness)
 
 ;; org-ql
-(def-package! org-ql
+(use-package! org-ql
   :config
 
   (setq org-ql-views

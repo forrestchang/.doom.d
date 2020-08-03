@@ -1,10 +1,10 @@
 ;;; private/my-vue/config.el -*- lexical-binding: t; -*-
 
-(def-package! vue-mode
+(use-package! vue-mode
   :config
   (setq mmm-submode-decoration-level 0)
   )
 
-(def-package! lsp-vue
+(use-package! lsp-vue
   :hook (vue-mode . lsp)
   )
