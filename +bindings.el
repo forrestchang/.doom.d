@@ -83,7 +83,8 @@
         )
 
       (:prefix ("c" . "code")
-        :desc "Comment line or region"      "l" #'evil-commentary-line
+        :desc "Comment line or region"      :gn "l" #'evilnc-comment-or-uncomment-lines
+        :desc "Comment line or region"      :v  "l" #'evilnc-comment-operator
         )
 
       (:prefix ("i" . "insert")
