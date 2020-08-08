@@ -74,7 +74,7 @@
 ;; Org journal
 (use-package! org-journal
   :custom
-  (org-journal-dir "~/Dropbox/Org/Journal/")
+  (org-journal-dir "~/Dropbox/Org/journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
