@@ -1,42 +1,37 @@
 ;;; private/my-python/config.el -*- lexical-binding: t; -*-
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Package Definition
 ;;;
 ;;; - flycheck-pychecker
 ;;; - lsp-python-ms
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; (use-package! flycheck-pycheckers
-  ; :after flycheck
-  ; :config
-  ; (setq flycheck-pycheckers-checkers '(flake8 pylint mypy3)
-        ; flycheck-pycheckers-max-line-length 120
-        ; flycheck-pycheckers-venv-root (expand-file-name "~/venv/"))
-  ; (add-hook 'flycheck-mode-hook #'flycheck-pycheckers-setup))
-
-
-; (use-package! lsp-python-ms
-  ; :hook (python-mode . (lambda ()
-                         ; (require 'lsp-python-ms)
-                         ; (lsp-deferred)))
-  ; :init
-  ; (setq lsp-python-executable-cmd "python3")
-  ; (setq lsp-python-ms-extra-paths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
-                                    ; "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api"
-                                    ; "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job"
-                                    ; "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src"
-                                    ; "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/api"
-                                    ; "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/job"
-                                    ; "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/wap"
-                                    ; ))
-  ; )
+(use-package! flycheck-pycheckers
+  :after flycheck
+  :config
+  (setq flycheck-pycheckers-checkers '(flake8 pylint mypy3)
+        flycheck-pycheckers-max-line-length 120
+        flycheck-pycheckers-venv-root (expand-file-name "~/venv/"))
+  (add-hook 'flycheck-mode-hook #'flycheck-pycheckers-setup))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package! lsp-python-ms
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-python-ms)
+                         (lsp-deferred)))
+  :init
+  (setq lsp-python-executable-cmd "python3")
+  (setq lsp-python-ms-extra-paths '("/Users/jiayuan/Developer/iqiyi/topic_admin/backend"
+                                    "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/api"
+                                    "/Users/jiayuan/Developer/iqiyi/topic_admin/backend/app/job"
+                                    "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src"
+                                    "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/api"
+                                    "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/job"
+                                    "/Users/jiayuan/Developer/iqiyi/xiu_main_flask/src/app/wap"
+                                    ))
+  )
+
+
 ;;; Basic configs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Init python setup
 (defun init-python-setup ()
@@ -84,9 +79,7 @@
   )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Hacks
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Use format-all to format python code
 ;;
