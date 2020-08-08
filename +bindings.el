@@ -47,14 +47,6 @@
         :desc "Instant rename tag"                        "r" #'instant-rename-tag
         ))
 
-;; python-mode
-(map! :map python-mode-map
-      :localleader
-      :desc "Sort import"               "o" #'py-isort-buffer
-      :desc "Import missing package"    "i" #'pyimport-insert-missing
-      :desc "Remove unused imports"     "r" #'pyimport-remove-unused
-      )
-
 ;; Prefix map
 (map! :leader
       (:prefix ("b" . "buffer")
