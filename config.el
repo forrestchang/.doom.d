@@ -10,6 +10,9 @@
 (load! "+bindings")
 (load! "+editor")
 
+;; Set org directory before loading org
+(setq org-directory "~/Dropbox/Org/")
+
 (after! org (load! "+org"))
 
 (setq user-full-name "Jiayuan Zhang"
