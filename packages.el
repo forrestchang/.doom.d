@@ -20,3 +20,4 @@
 (package! pyim)
 (package! ace-pinyin)
 (package! org-analyzer)
+(package! evil-pinyin)

@@ -270,3 +270,9 @@ unwanted space when exporting org-mode to hugo markdown."
                  (concat "bear:" link)))
 
 (use-package! org-analyzer)
+
+(use-package! evil-pinyin
+  :init
+  (setq evil-pinyin-with-search-rule 'always)
+  :config
+  (global-evil-pinyin-mode))
