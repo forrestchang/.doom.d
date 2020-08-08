@@ -45,14 +45,28 @@
         company-box-enable-icon nil))
 
 ;; Swiper search
+;; (defun eh-ivy-cregexp (str)
+;;   (concat
+;;    (ivy--regex-plus str)
+;;    "\\|"
+;;    (pyim-cregexp-build-1 str)))
 (defun eh-ivy-cregexp (str)
-  (concat
-   (ivy--regex-plus str)
-   "\\|"
-   (pyim-cregexp-build str)))
-
+  (let ((x (ivy--regex-plus str))
+        (case-fold-search nil))
+    (if (listp x)
+        (mapcar (lambda (y)
+                  (if (cdr y)
+                      (list (if (equal (car y) "")
+                                ""
+                              (pyim-cregexp-build-1 (car y)))
+                            (cdr y))
+                    (list (pyim-cregexp-build-1 (car y)))))
+                x)
+      (pyim-cregexp-build-1 x))))
 (setq ivy-re-builders-alist
       '((t . eh-ivy-cregexp)))
+
+
 
 ;; calfw
 (use-package! calfw)
