@@ -12,24 +12,24 @@
 (global-set-key "\C-cG" 'org-clock-goto)
 
 (map! (:map org-mode-map
-        :localleader
-        :desc "Org clock in"                        "i" #'org-clock-in
-        :desc "Org clock out"                       "o" #'org-clock-out
-        :desc "Org clock goto"                      "g" #'org-clock-goto
-        :desc "Org pomodoro"                        "p" #'org-pomodoro
-        :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
-        :desc "Org unfocus subtree"                 "F" #'widen
-        :desc "Org clock report"                    "R" #'org-clock-report
-        :desc "Org set effort"                      "e" #'org-set-effort
-        :desc "Generage Hugo blog post"             "h" #'org-hugo-export-wim-to-md
-        :desc "Org attach image"                    "c" #'org-attach-screenshot
-        :desc "Org add note"                        "n" #'org-add-note
-        :desc "Org archive default"                 "a" #'org-archive-subtree-default
-        )
+       :localleader
+       :desc "Org clock in"                        "i" #'org-clock-in
+       :desc "Org clock out"                       "o" #'org-clock-out
+       :desc "Org clock goto"                      "g" #'org-clock-goto
+       :desc "Org pomodoro"                        "p" #'org-pomodoro
+       :desc "Org focus subtree"                   "f" #'org-narrow-to-subtree
+       :desc "Org unfocus subtree"                 "F" #'widen
+       :desc "Org clock report"                    "R" #'org-clock-report
+       :desc "Org set effort"                      "e" #'org-set-effort
+       :desc "Generage Hugo blog post"             "h" #'org-hugo-export-wim-to-md
+       :desc "Org attach image"                    "c" #'org-attach-screenshot
+       :desc "Org add note"                        "n" #'org-add-note
+       :desc "Org archive default"                 "a" #'org-archive-subtree-default
+       )
       (:map org-super-agenda-header-map
-        "j" #'evil-next-line
-        "k" #'evil-previous-line
-        )
+       "j" #'evil-next-line
+       "k" #'evil-previous-line
+       )
       )
 
 ;; Org agenda key bindings, see:
@@ -66,7 +66,7 @@
       '(
         ("PROJ"
          (:weight bold :slant italic
-                  :foreground "#E6AC00"))
+          :foreground "#E6AC00"))
         ))
 
 ;; Popup rules
@@ -156,8 +156,6 @@ killring."
 
 (setq org-agenda-files '(
                          "~/Dropbox/Org/inbox.org"
-                         "~/Dropbox/Org/todo.org"
-                         "~/Dropbox/Org/someday.org"
                          ))
 
 (setq org-agenda-span '1)
@@ -216,11 +214,6 @@ killring."
 (add-to-list 'org-capture-templates
              '("t" "Todo" entry (file "~/Dropbox/Org/inbox.org")
                (file "~/.doom.d/templates/new-todo-template.org")))
-
-;; Projects
-(add-to-list 'org-capture-templates
-             '("p" "Project" entry (file "~/Dropbox/Org/inbox.org")
-               (file "~/.doom.d/templates/new-project-template.org")))
 
 ;; Protocal
 (add-to-list 'org-capture-templates '("!" "Protocal"))
