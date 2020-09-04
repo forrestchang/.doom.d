@@ -50,6 +50,11 @@
        lsp
        macos
        magit
+       (lookup
+        +dictionary
+        +offline
+        +docsets
+        )
 
        :lang
        emacs-lisp
@@ -66,7 +71,11 @@
         +protocol
         +roam)
        ;; php
-       (python +lsp)
+       (python
+        +pyright
+        +lsp)
+       (go
+        +lsp)
        ;; scala
        sh
 

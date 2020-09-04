@@ -293,3 +293,12 @@ unwanted space when exporting org-mode to hugo markdown."
   (setq evil-pinyin-with-search-rule 'always)
   :config
   (global-evil-pinyin-mode))
+
+(use-package! wakatime-mode
+  :config
+  (global-wakatime-mode))
+
+
+(use-package! lsp-pyright
+  :config
+  (setq lsp-pyright-python-executable-cmd "~/.pyenv/versions/3.8.5/envs/default-3.8.5/bin/python"))
