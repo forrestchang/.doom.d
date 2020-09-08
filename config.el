@@ -11,7 +11,7 @@
 (load! "+editor")
 
 ;; Set org directory before loading org
-(setq org-directory "~/Dropbox/Org/")
+(setq org-directory "~/iCloud/org/")
 
 (after! org (load! "+org"))
 
@@ -26,9 +26,6 @@
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
       evil-visual-state-cursor '(hollow "#FF6F65"))
-
-;; Wakatime
-(setq +wakatime-hid-filenames t)
 
 ;; Auto-generate custom variable definitions.
 (setq custom-file (expand-file-name "custom.el" "~/.doom.d/"))
@@ -112,7 +109,7 @@ unwanted space when exporting org-mode to hugo markdown."
 
 ;; Deft
 (after! deft
-  (setq deft-directory "~/Dropbox/Org/Note")
+  (setq deft-directory "~/iCloud/org/note")
   )
 
 ;; Rust
@@ -250,18 +247,18 @@ unwanted space when exporting org-mode to hugo markdown."
   )
 
 ;; Smart align
-(use-package! smart-align
-  :load-path "~/.doom.d/site-lisp/smart-align"
-  )
+;; (use-package! smart-align
+;;   :load-path "~/.doom.d/site-lisp/smart-align"
+;;   )
 
-(use-package! snails
-  :load-path "~/.doom.d/site-lisp/snails"
-  )
+;; (use-package! snails
+;;   :load-path "~/.doom.d/site-lisp/snails"
+;;   )
 
 ;; Beancount
-(use-package! beancount
-  :load-path "~/.doom.d/site-lisp/beancount"
-  )
+;; (use-package! beancount
+;;   :load-path "~/.doom.d/site-lisp/beancount"
+;;   )
 
 ;; Reload file from disk without confirm
 (defun revert-buffer-no-confirm ()
@@ -293,11 +290,6 @@ unwanted space when exporting org-mode to hugo markdown."
   (setq evil-pinyin-with-search-rule 'always)
   :config
   (global-evil-pinyin-mode))
-
-(use-package! wakatime-mode
-  :config
-  (global-wakatime-mode))
-
 
 (use-package! lsp-pyright
   :config

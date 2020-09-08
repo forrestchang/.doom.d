@@ -15,13 +15,10 @@
  '(doom-big-font-mode nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 5) ((control)))))
- '(org-journal-dir "~/Dropbox/Org/Journal/")
+ '(org-journal-dir "~/iCloud/org/journal/")
  '(org-journal-file-format "%Y-%m-%d.org")
  '(org-treat-S-cursor-todo-selection-as-state-change nil)
- '(pyim-isearch-mode t nil (pyim))
- '(wakatime-api-key "e871f2f3-27db-43a6-9861-c157315e3e24")
- '(wakatime-cli-path "/usr/local/bin/wakatime")
- '(wakatime-python-bin nil))
+ '(pyim-isearch-mode t nil (pyim)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

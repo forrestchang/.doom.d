@@ -96,7 +96,7 @@
          +smartparens)
 
        :private
-       ;; my-org
+       my-org
        ;; my-python
        )
 

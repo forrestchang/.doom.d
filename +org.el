@@ -86,7 +86,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-default-notes-file
-(setq org-default-notes-file "~/Dropbox/Org/inbox.org")
+(setq org-default-notes-file "~/iCloud/org/inbox.org")
 
 ;; Export ignore `_`
 (setq org-export-with-sub-superscripts nil)
@@ -155,7 +155,7 @@ killring."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq org-agenda-files '(
-                         "~/Dropbox/Org/inbox.org"
+                         "~/iCloud/org/inbox.org"
                          ))
 
 (setq org-agenda-span '1)
@@ -212,19 +212,19 @@ killring."
 
 ;; Quick capture todo item to inbox
 (add-to-list 'org-capture-templates
-             '("t" "Todo" entry (file "~/Dropbox/Org/inbox.org")
+             '("t" "Todo" entry (file "~/iCloud/org/inbox.org")
                (file "~/.doom.d/templates/new-todo-template.org")))
 
 ;; Protocal
 (add-to-list 'org-capture-templates '("!" "Protocal"))
 (add-to-list 'org-capture-templates
-             '("!h" "Highlight" entry (file "~/Dropbox/Org/inbox.org")
+             '("!h" "Highlight" entry (file "~/iCloud/org/inbox.org")
                "* 摘录：%:description\n%:link\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!l" "Link" entry (file "~/Dropbox/Org/inbox.org")
+             '("!l" "Link" entry (file "~/iCloud/org/inbox.org")
                "* TODO %:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!t" "Quick Capture" entry (file "~/Dropbox/Org/inbox.org")
+             '("!t" "Quick Capture" entry (file "~/iCloud/org/inbox.org")
                (file "~/.doom.d/templates/new-quick-capture-template.org") :immediate-finish t))
 
 ;; Quick note for clocking item

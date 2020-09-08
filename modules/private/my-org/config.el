@@ -63,18 +63,10 @@
                                                        (:discard (:anything)))))))))
   )
 
-;; Hugo blog
-(use-package! ox-hugo
-  :after ox
-  )
-
-;; Org hugo auto export mode
-(use-package! org-hugo-auto-export-mode)
-
 ;; Org journal
 (use-package! org-journal
   :custom
-  (org-journal-dir "~/Dropbox/Org/journal/")
+  (org-journal-dir "~/iCloud/org/journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
