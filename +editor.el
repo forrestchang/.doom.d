@@ -77,7 +77,7 @@
   (setq evil-escape-key-sequence "fd"))
 
 ;; Ligatures
-(mac-auto-operator-composition-mode)
+;; (mac-auto-operator-composition-mode)
 
 ;; Magit todo prefix
 (after! magit
