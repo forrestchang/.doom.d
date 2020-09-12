@@ -63,7 +63,7 @@
         )
 
       (:prefix ("w" . "window")
-        :desc "Delete window or workspace"  "d" #'+workspace/close-window-or-workspace
+        :desc "Delete window or workspace"  "d" #'delete-window
         :desc "Maximize window"             "m" #'doom/window-maximize-buffer
         :desc "Other window"                "w" #'other-window
         :desc "Split window right"          "|" #'split-window-right
@@ -130,3 +130,7 @@
           )
         )
       )
+
+;; org-roam
+(global-set-key (kbd "C-c r i") 'org-roam-insert)
+(global-set-key (kbd "C-c r I") 'org-roam-insert-immediate)
