@@ -2,16 +2,11 @@
 
 ;; Place your private configuration here
 
-;; Load system environment variables
-(after! racer
-  (setq racer-rust-src-path "/Users/jiayuan/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src")
-  )
-
 (load! "+bindings")
 (load! "+editor")
 
 ;; Set org directory before loading org
-(setq org-directory "~/iCloud/org/")
+(setq org-directory "~/org/")
 
 (after! org (load! "+org"))
 
@@ -109,7 +104,7 @@ unwanted space when exporting org-mode to hugo markdown."
 
 ;; Deft
 (after! deft
-  (setq deft-directory "~/iCloud/org/note")
+  (setq deft-directory "~/org/roam/")
   )
 
 ;; Rust

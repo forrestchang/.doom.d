@@ -15,7 +15,7 @@
  '(doom-big-font-mode nil)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 5) ((control)))))
- '(org-journal-dir "~/iCloud/org/journal/")
+ '(org-journal-dir "~/org/journal/")
  '(org-journal-file-format "%Y-%m-%d.org")
  '(org-treat-S-cursor-todo-selection-as-state-change nil)
  '(pyim-isearch-mode t nil (pyim)))

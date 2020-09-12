@@ -66,7 +66,7 @@
 ;; Org journal
 (use-package! org-journal
   :custom
-  (org-journal-dir "~/iCloud/org/journal/")
+  (org-journal-dir "~/org/journal/")
   (org-journal-file-format "%Y-%m-%d.org")
   )
 
