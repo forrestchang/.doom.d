@@ -52,6 +52,7 @@
 ;; Set todo Keyworkds
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "BLOCKED(b@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+              (sequence "PROJ(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               )))
 
 (setq org-todo-keyword-faces
