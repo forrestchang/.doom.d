@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-city-lights)
+(setq doom-theme 'doom-one)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
