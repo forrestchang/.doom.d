@@ -69,6 +69,8 @@
         +present
         ;; +ipython
         +protocol
+        +dragndrop
+        +pomodoro
         +roam)
        ;; php
        (python
