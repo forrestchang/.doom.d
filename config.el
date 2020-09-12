@@ -26,11 +26,11 @@
 (setq custom-file (expand-file-name "custom.el" "~/.doom.d/"))
 (load custom-file 'no-error 'no-message)
 
-(after! text-mode
-  (set-company-backend! 'text-mode 'company-yasnippet))
+;; (after! text-mode
+;;   (set-company-backend! 'text-mode 'company-yasnippet))
 
 (after! org
-  (set-company-backend! 'org-mode 'company-yasnippet)
+  (set-company-backend! 'org-mode '(company-org-roam company-yasnippet))
   )
 
 ;; Company
@@ -289,3 +289,29 @@ unwanted space when exporting org-mode to hugo markdown."
 (use-package! lsp-pyright
   :config
   (setq lsp-pyright-python-executable-cmd "~/.pyenv/versions/3.8.5/envs/default-3.8.5/bin/python"))
+
+
+;; Current time and date
+(defvar current-date-time-format "%a %b %d %H:%M:%S %Z %Y"
+  "Format of date to insert with `insert-current-date-time' func
+See help of `format-time-string' for possible replacements")
+
+(defvar current-time-format "%H:%M"
+  "Format of date to insert with `insert-current-time' func.
+Note the weekly scope of the command's precision.")
+
+(defun insert-current-date-time ()
+  "insert the current date and time into current buffer.
+Uses `current-date-time-format' for the formatting the date/time."
+       (interactive)
+       (insert (format-time-string current-date-time-format (current-time)))
+       )
+
+(defun insert-current-time ()
+  "insert the current time (1-week scope) into the current buffer."
+       (interactive)
+       (insert (format-time-string current-time-format (current-time)))
+       )
+
+(global-set-key (kbd "C-c i d") 'insert-current-date-time)
+(global-set-key (kbd "C-c i t") 'insert-current-time)
