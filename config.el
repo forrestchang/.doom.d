@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -303,15 +303,21 @@ Note the weekly scope of the command's precision.")
 (defun insert-current-date-time ()
   "insert the current date and time into current buffer.
 Uses `current-date-time-format' for the formatting the date/time."
-       (interactive)
-       (insert (format-time-string current-date-time-format (current-time)))
-       )
+  (interactive)
+  (insert (format-time-string current-date-time-format (current-time)))
+  )
 
 (defun insert-current-time ()
   "insert the current time (1-week scope) into the current buffer."
-       (interactive)
-       (insert (format-time-string current-time-format (current-time)))
-       )
+  (interactive)
+  (insert (format-time-string current-time-format (current-time)))
+  )
 
 (global-set-key (kbd "C-c d") 'insert-current-date-time)
 (global-set-key (kbd "C-c t") 'insert-current-time)
+
+(use-package! cnfonts
+  :config
+  (cnfonts-enable)
+  (setq cnfonts-personal-fontnames
+        '(("iA Writer Mono S" "iA Writer Duo S" "iA Writer Duospace" "iA Writer Quattro S" "Fira Code"))))

@@ -21,3 +21,4 @@
 (package! ace-pinyin)
 (package! org-analyzer)
 (package! evil-pinyin)
+(package! cnfonts)
