@@ -157,6 +157,8 @@ killring."
 
 (setq org-agenda-files '(
                          "~/org/roam/gtd/inbox.org"
+                         "~/org/roam/gtd/inbox_beorg.org"
+                         "~/org/roam/gtd/inbox_alfred.org"
                          "~/org/roam/gtd/todo.org"
                          ))
 
