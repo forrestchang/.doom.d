@@ -313,5 +313,5 @@ Uses `current-date-time-format' for the formatting the date/time."
        (insert (format-time-string current-time-format (current-time)))
        )
 
-(global-set-key (kbd "C-c i d") 'insert-current-date-time)
-(global-set-key (kbd "C-c i t") 'insert-current-time)
+(global-set-key (kbd "C-c d") 'insert-current-date-time)
+(global-set-key (kbd "C-c t") 'insert-current-time)
