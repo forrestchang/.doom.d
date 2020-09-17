@@ -6,7 +6,7 @@
 (load! "+editor")
 
 ;; Set org directory before loading org
-(setq org-directory "~/org/")
+(setq org-directory "~/Dropbox/Org")
 
 (after! org (load! "+org"))
 
@@ -104,7 +104,7 @@ unwanted space when exporting org-mode to hugo markdown."
 
 ;; Deft
 (after! deft
-  (setq deft-directory "~/org/roam/")
+  (setq deft-directory "~/Dropbox/Org/Roam/")
   )
 
 ;; Rust
@@ -316,8 +316,10 @@ Uses `current-date-time-format' for the formatting the date/time."
 (global-set-key (kbd "C-c d") 'insert-current-date-time)
 (global-set-key (kbd "C-c t") 'insert-current-time)
 
-(use-package! cnfonts
-  :config
-  (cnfonts-enable)
-  (setq cnfonts-personal-fontnames
-        '(("iA Writer Mono S" "iA Writer Duo S" "iA Writer Duospace" "iA Writer Quattro S" "Fira Code"))))
+;; (use-package! cnfonts
+;;   :config
+;;   (cnfonts-enable)
+;;   (setq cnfonts-personal-fontnames
+;;         '(("iA Writer Mono S" "iA Writer Duo S" "iA Writer Duospace" "iA Writer Quattro S" "Fira Code"))))
+
+(setq org-roam-directory "~/Dropbox/Org/Roam")

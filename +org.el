@@ -7,7 +7,6 @@
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cI" 'jiayuan/org-clock-in)
 (global-set-key "\C-cO" 'org-clock-out)
 (global-set-key "\C-cG" 'org-clock-goto)
 
@@ -60,14 +59,6 @@
         ("STARTED" . "yellow")
         ("MAYBE" . "gray")
         ("BLOCKED" . "pink")
-        ))
-
-;; Org tags face
-(setq org-tag-faces
-      '(
-        ("PROJ"
-         (:weight bold :slant italic
-          :foreground "#E6AC00"))
         ))
 
 ;; Popup rules
@@ -173,19 +164,19 @@
 
 ;; Quick capture todo item to inbox
 (add-to-list 'org-capture-templates
-             '("t" "Todo" entry (file "~/org/roam/gtd/inbox.org")
+             '("t" "Todo" entry (file "~/Dropbox/Org/Roam/inbox.org")
                (file "~/.doom.d/templates/new-todo-template.org")))
 
 ;; Protocal
 (add-to-list 'org-capture-templates '("!" "Protocal"))
 (add-to-list 'org-capture-templates
-             '("!h" "Highlight" entry (file "~/org/roam/gtd/inbox.org")
+             '("!h" "Highlight" entry (file "~/Dropbox/Org/Roam/inbox.org")
                "* 摘录：%:description\n%:link\n\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!l" "Link" entry (file "~/org/roam/gtd/inbox.org")
+             '("!l" "Link" entry (file "~/Dropbox/Org/Roam/inbox.org")
                "* TODO %:description\nCaptured On: %U\n\n%:link" :immediate-finish t))
 (add-to-list 'org-capture-templates
-             '("!t" "Quick Capture" entry (file "~/org/roam/gtd/inbox.org")
+             '("!t" "Quick Capture" entry (file "~/Dropbox/Org/Roam/inbox.org")
                (file "~/.doom.d/templates/new-quick-capture-template.org") :immediate-finish t))
 
 ;; Quick note for clocking item
@@ -210,10 +201,10 @@
 (setq org-clock-history-length 25)
 
 ;; Separate drawers for clocking and logs
-(setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
+;; (setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
 
 ;; Save clock data and state changes to LOGBOOK drawer
-(setq org-clock-into-drawer t)
+;; (setq org-clock-into-drawer t)
 
 ;; Remove zero clock records
 (setq org-clock-out-remove-zero-time-clocks t)
@@ -256,11 +247,11 @@
     (beginning-of-line 0)
     (org-remove-empty-drawer-at (point))))
 
-(add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
+;; (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
 
 ;; Add an effort estimate on the fly when clocking in
-(add-hook 'org-clock-in-prepare-hook
-          'my-org-mode-ask-effort)
+;; (add-hook 'org-clock-in-prepare-hook
+;;           'my-org-mode-ask-effort)
 
 (defun my-org-mode-ask-effort ()
   "Ask for an effort estimate when clocking in."
