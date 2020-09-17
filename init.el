@@ -48,13 +48,15 @@
        :tools
        eval
        lsp
-       macos
        magit
        (lookup
         +dictionary
         +offline
         +docsets
         )
+
+       :os
+       macos
 
        :lang
        emacs-lisp
