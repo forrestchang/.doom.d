@@ -79,28 +79,18 @@
     ("^\\*Org*" :size 0.5 :select t)
     ))
 
-;; Show modeline in popup windows
-;; (remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Misc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-default-notes-file
-(setq org-default-notes-file "~/org/roam/gtd/inbox.org")
+(setq org-default-notes-file "~/Dropbox/Org/Roam/inbox.org")
 
 ;; Export ignore `_`
 (setq org-export-with-sub-superscripts nil)
 
 ;; Org resize image
 (setq org-image-actual-width '(650))
-
-;; Auto wrap line
-;; (remove-hook 'org-mode-hook 'auto-fill-mode)
-;; (add-hook 'org-mode-hook
-;;           (lambda ()
-;;             (setq truncate-lines nil)
-;;             (visual-line-mode 1)))
 
 ;; Enable org-checklist
 (use-package! org-checklist)
@@ -111,55 +101,22 @@
 ;; Block tasks when have not done checkobx
 (setq org-enforce-todo-checkbox-dependencies t)
 
-;; Remove hack in chinese layer: remove blanks when export
-;; (advice-remove! 'org-html-paragraph '+chinese*org-html-paragraph)
-
-;; org-checklist
-(add-to-list 'org-modules 'org-checklist)
-
 ;; org-buttlets
 (setq org-bullets-bullet-list '("◉" "⋆" "○" "‣"))
-
-;; The notes will be ordered according to time
-(setq org-log-states-order-reversed nil)
 
 ;; Using unique ID's for links in Org-mode
 (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
       org-clone-delete-id t)
-
-;; Exclude some tags inheritance
-(setq org-tags-exclude-from-inheritance '("PROJ"))
-
-;; Copy org item link in org agenda mode
-;; Source: https://koenig-haunstetten.de/2018/02/17/improving-my-orgmode-workflow/
-(defun my/copy-idlink-to-clipboard()
-  "Copy an ID link with the headline to killring, if no ID is there then create
-a new unique ID. This function works only in org-mode or org-agenda buffers.
-
-The purpose of this function is to easily construct id:-links to org-mode items.
-If its assigned to a key it saves you marking the text and copying to the
-killring."
-  (interactive)
-  (when (eq major-mode 'org-agenda-mode) ;switch to orgmode
-    (org-agenda-show)
-    (org-agenda-goto))
-  (when (eq major-mode 'org-mode)       ; do this only in org-mode buffers
-    (setq mytmphead (nth 4 (org-heading-components)))
-    (setq mytmpid (funcall 'org-id-get-create))
-    (setq mytmplink (format "[[id:%s][%s]]" mytmpid mytmphead))
-    (kill-new mytmplink)
-    (message "Copied %s to killring (clipboard)" mytmplink)
-    ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq org-agenda-files '(
-                         "~/org/roam/gtd/inbox.org"
-                         "~/org/roam/gtd/inbox_beorg.org"
-                         "~/org/roam/gtd/inbox_alfred.org"
-                         "~/org/roam/gtd/todo.org"
+                         "~/Dropbox/Org/Roam/inbox.org"
+                         "~/Dropbox/Org/Roam/inbox_beorg.org"
+                         "~/Dropbox/Org/Roam/inbox_alfred.org"
+                         "~/Dropbox/Org/Roam/todo.org"
                          ))
 
 (setq org-agenda-span '1)
@@ -285,15 +242,11 @@ killring."
       '(("Effort_ALL" .
          "0:15 0:30 0:45 1:00 2:00 3:00 4:00 5:00 6:00 7:00")))
 
-(defun jiayuan/org-clock-in ()
-  (interactive)
-  (org-clock-in '(4)))
-
 ;; Set org clock report time format
 (setq org-duration-format (quote h:mm))
 
 ;; Clock mode line
-(setq org-clock-mode-line-total 'auto)
+(setq org-clock-mode-line-total 'current)
 
 ;; Remove empty logbook drawers
 ;; https://michael.englehorn.com/config.html
