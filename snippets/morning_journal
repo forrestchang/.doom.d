@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: Morning Journal
+# uuid:
+# key: mjo
+# condition: t
+# --
+
+* Morning Journal
+** Review Yesterday
+*** 昨天的睡眠情况怎么样
+[[file:20200920110624-daily_sleeping.org][Daily Sleeping]]
+
+*** 昨天最成功的的 3 件事是什么
+[[file:20200920110654-daily_success.org][Daily Success]]
+
+*** 昨天有哪 3 件事是可以改进的
+[[file:20200920110718-daily_refactoring.org][Daily Refactoring]]
+
+*** 昨天阅读了吗
+[[file:20200920111101-daily_reading.org][Daily Reading]]
+
+*** 昨天记账了吗
+[[file:20200920111111-daily_finance.org][Daily Finance]]
+
+*** 昨天有哪些值得记录的生活小事
+[[file:20200920111116-daily_life.org][Daily Life]]
+
+** Plan Today
+*** 今天最重要的 3 件事是什么

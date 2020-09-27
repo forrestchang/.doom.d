@@ -24,6 +24,7 @@
        (window-select
         +switch-window
         +numbers)
+       deft
 
        :editor
        (evil

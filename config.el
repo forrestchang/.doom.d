@@ -105,6 +105,13 @@ unwanted space when exporting org-mode to hugo markdown."
 ;; Deft
 (after! deft
   (setq deft-directory "~/Dropbox/Org/Roam/")
+  (setq deft-extensions '("txt" "tex" "org" "md"))
+  (setq deft-strip-summary-regexp
+        (concat "\\("
+                  "[\n\t]" ;; blank
+                  "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
+                  "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
+                  "\\)"))
   )
 
 ;; Rust
