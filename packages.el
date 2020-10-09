@@ -22,3 +22,4 @@
 (package! org-analyzer)
 (package! evil-pinyin)
 (package! cnfonts)
+(package! org-roam-server)

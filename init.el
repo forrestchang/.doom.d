@@ -70,6 +70,7 @@
         +capture
         +export
         +present
+        +hugo
         ;; +ipython
         +protocol
         +dragndrop
@@ -98,7 +99,8 @@
        ;; config. Use it as a reference for your own modules.
        (default
          +bindings
-         +smartparens)
+         ;; +smartparens
+         )
 
        :private
        my-org

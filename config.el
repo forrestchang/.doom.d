@@ -330,3 +330,20 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;         '(("iA Writer Mono S" "iA Writer Duo S" "iA Writer Duospace" "iA Writer Quattro S" "Fira Code"))))
 
 (setq org-roam-directory "~/Dropbox/Org/Roam")
+
+(use-package org-roam-server
+  :config
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8899
+        org-roam-server-authenticate nil
+        org-roam-server-export-inline-images t
+        org-roam-server-serve-files nil
+        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+        org-roam-server-network-poll t
+        org-roam-server-network-arrows nil
+        org-roam-server-network-label-truncate t
+        org-roam-server-network-label-truncate-length 60
+        org-roam-server-network-label-wrap-length 20))
+
+(unless (server-running-p)
+  (org-roam-server-mode))
