@@ -102,13 +102,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq org-agenda-files '(
-                         "~/Dropbox/Org/Roam/inbox.org"
-                         "~/Dropbox/Org/Roam/inbox_beorg.org"
-                         "~/Dropbox/Org/Roam/inbox_alfred.org"
-                         "~/Dropbox/Org/Roam/todo.org"
-                         ))
+(setq org-agenda-files '("~/Dropbox/Org/Roam"))
 
 (setq org-agenda-span '1)
 (setq org-agenda-start-on-weekday nil)
