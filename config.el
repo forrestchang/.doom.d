@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-vibrant)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
