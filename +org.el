@@ -244,8 +244,8 @@
 ;; (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
 
 ;; Add an effort estimate on the fly when clocking in
-;; (add-hook 'org-clock-in-prepare-hook
-;;           'my-org-mode-ask-effort)
+(add-hook 'org-clock-in-prepare-hook
+          'my-org-mode-ask-effort)
 
 (defun my-org-mode-ask-effort ()
   "Ask for an effort estimate when clocking in."
