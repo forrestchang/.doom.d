@@ -23,3 +23,4 @@
 (package! evil-pinyin)
 (package! cnfonts)
 (package! org-roam-server)
+(package! org-download)
