@@ -279,3 +279,10 @@
 (org-element-update-syntax)
 ;; 规定上下标必须加 {}，否则中文使用下划线时它会以为是两个连着的下标
 (setq org-use-sub-superscripts "{}")
+
+(use-package! org-download
+  :init
+  (setq org-download-heading-lvl nil)
+  (setq org-download-image-dir "~/Dropbox/Org/Roam/Asset")
+  (setq org-download-image-org-width 400)
+  (setq org-download-image-html-width 400))

@@ -73,7 +73,7 @@
         +hugo
         ;; +ipython
         +protocol
-        +dragndrop
+        ;; +dragndrop
         +pomodoro
         +roam)
        ;; php
