@@ -55,10 +55,11 @@
               )))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . "green")
-        ("STARTED" . "yellow")
-        ("MAYBE" . "gray")
-        ("BLOCKED" . "pink")
+      '(("TODO" . "#008891")
+        ("STARTED" . "#ff9642")
+        ("MAYBE" . "#cdc9c3")
+        ("BLOCKED" . "#d7385e")
+        ("PROJ" . "#7579e7")
         ))
 
 ;; Popup rules

@@ -109,4 +109,5 @@
                         ((org-ql-block-header "Blocked Tasks")))
           (org-ql-block '(and (todo "PROJ"))
                         ((org-ql-block-header "Projects")))
-          (agenda)))))
+          (agenda)))
+        ))

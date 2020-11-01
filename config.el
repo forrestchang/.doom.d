@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-one)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -108,10 +108,10 @@ unwanted space when exporting org-mode to hugo markdown."
   (setq deft-extensions '("txt" "tex" "org" "md"))
   (setq deft-strip-summary-regexp
         (concat "\\("
-                  "[\n\t]" ;; blank
-                  "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
-                  "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
-                  "\\)"))
+                "[\n\t]" ;; blank
+                "\\|^#\\+[[:upper:]_]+:.*$" ;; org-mode metadata
+                "\\|^#\\+[[:alnum:]_]+:.*$" ;; org-mode metadata
+                "\\)"))
   )
 
 ;; Rust
@@ -258,9 +258,9 @@ unwanted space when exporting org-mode to hugo markdown."
 ;;   )
 
 ;; Beancount
-;; (use-package! beancount
-;;   :load-path "~/.doom.d/site-lisp/beancount"
-;;   )
+(use-package! beancount
+  :load-path "~/.doom.d/site-lisp/beancount"
+  )
 
 ;; Reload file from disk without confirm
 (defun revert-buffer-no-confirm ()
