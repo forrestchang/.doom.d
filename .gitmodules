@@ -4,3 +4,6 @@
 [submodule "site-lisp/smart-align"]
 	path = site-lisp/smart-align
 	url = https://github.com/manateelazycat/smart-align.git
+[submodule "site-lisp/org-transclusion"]
+	path = site-lisp/org-transclusion
+	url = git@github.com:nobiot/org-transclusion.git
