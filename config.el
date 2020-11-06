@@ -329,7 +329,35 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;;   (setq cnfonts-personal-fontnames
 ;;         '(("iA Writer Mono S" "iA Writer Duo S" "iA Writer Duospace" "iA Writer Quattro S" "Fira Code"))))
 
-(setq org-roam-directory "~/Dropbox/Org/Roam")
+
+;; Ref: https://github.com/jethrokuan/dots/blob/master/.doom.d/config.el
+(use-package! org-roam
+  :commands (org-roam-insert org-roam-file-file org-roam-switch-to-buffer org-roam)
+  :init
+  (map! :leader
+        :prefix "n"
+        :desc "org-roam" "l" #'org-roam
+        :desc "org-roam-insert" "i" #'org-roam-insert
+        :desc "org-roam-switch-to-buffer" "b" #'org-roam-switch-to-buffer
+        :desc "org-roam-find-file" "f" #'org-roam-find-file
+        :desc "org-roam-show-graph" "g" #'org-roam-show-graph
+        :desc "org-roam-capture" "c" #'org-roam-capture)
+  (setq org-roam-directory (file-truename "~/Dropbox/Org/Roam/")
+        org-roam-db-gc-threshold most-positive-fixnum
+        org-roam-tag-sources '(prop last-directory)
+        org-id-link-to-org-use-id t)
+  :config
+  (set-company-backend! 'org-mode '(company-capf))
+  )
+
+;; (use-package! org-roam-protocol
+;;   :after org-protocol)
+
+(after! (org-roam)
+  (winner-mode +1)
+  (map! :map winner-mode-map
+        "<M-right>" #'winner-redo
+        "<M-left>" #'winner-undo))
 
 (use-package org-roam-server
   :config
@@ -339,6 +367,7 @@ Uses `current-date-time-format' for the formatting the date/time."
         org-roam-server-export-inline-images t
         org-roam-server-serve-files nil
         org-roam-server-network-label-truncate-length 60
+        org-roam-server-serve-files t
         org-roam-server-network-label-wrap-length 20)
   (defun org-roam-server-open ()
     "Ensure the server is active, then open the roam graph"
