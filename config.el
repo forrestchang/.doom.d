@@ -349,3 +349,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 (unless (server-running-p)
   (org-roam-server-mode))
+
+(use-package! wakatime-mode
+  :init
+  (global-wakatime-mode))

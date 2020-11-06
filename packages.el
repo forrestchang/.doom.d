@@ -24,3 +24,4 @@
 (package! cnfonts)
 (package! org-roam-server)
 (package! org-download)
+(package! wakatime-mode)
