@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-nord-light)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -320,8 +320,8 @@ Uses `current-date-time-format' for the formatting the date/time."
   (insert (format-time-string current-time-format (current-time)))
   )
 
-(global-set-key (kbd "C-c d") 'insert-current-date-time)
-(global-set-key (kbd "C-c t") 'insert-current-time)
+(global-set-key (kbd "C-c r d") 'insert-current-date-time)
+(global-set-key (kbd "C-c r t") 'insert-current-time)
 
 ;; (use-package! cnfonts
 ;;   :config

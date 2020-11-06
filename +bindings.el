@@ -134,8 +134,7 @@
       )
 
 ;; org-roam
-(global-set-key (kbd "C-c r i") 'org-roam-insert)
-(global-set-key (kbd "C-c r I") 'org-roam-insert-immediate)
+(global-set-key (kbd "C-c i") 'org-roam-insert-immediate)
 
 (after! org
   (global-set-key (kbd "C-c r r") 'org-download-clipboard)

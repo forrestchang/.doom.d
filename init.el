@@ -80,8 +80,7 @@
        (python
         +pyright
         +lsp)
-       (go
-        +lsp)
+       (go +lsp)
        ;; scala
        sh
 
