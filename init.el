@@ -100,10 +100,6 @@
          +bindings
          ;; +smartparens
          )
-
-       :private
-       my-org
-       ;; my-python
        )
 
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")

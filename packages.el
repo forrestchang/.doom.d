@@ -25,3 +25,13 @@
 (package! org-roam-server)
 (package! org-download)
 (package! wakatime-mode)
+
+;; org-mode
+(package! org-pomodoro)
+(package! org-gcal)
+(package! org-super-agenda)
+(package! ox-hugo)
+(package! org-journal)
+(package! org-attach-screenshot)
+(package! org-mru-clock)
+(package! org-ql)
