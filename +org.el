@@ -50,7 +50,7 @@
 
 ;; Set todo Keyworkds
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "BLOCKED(b@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+      (quote ((sequence "TODO(t)" "STARTED(s)" "MAYBE(m)" "WAITING(w@/!)" "BLOCKED(b@/!)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               (sequence "PROJ(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               )))
 
@@ -58,6 +58,7 @@
       '(("TODO" . "#008891")
         ("STARTED" . "#ff9642")
         ("MAYBE" . "#cdc9c3")
+        ("WAITING" . "#9088d4")
         ("BLOCKED" . "#d7385e")
         ("PROJ" . "#7579e7")
         ))
