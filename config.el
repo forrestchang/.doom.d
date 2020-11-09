@@ -353,12 +353,6 @@ Uses `current-date-time-format' for the formatting the date/time."
 ;; (use-package! org-roam-protocol
 ;;   :after org-protocol)
 
-(after! (org-roam)
-  (winner-mode +1)
-  (map! :map winner-mode-map
-        "<M-right>" #'winner-redo
-        "<M-left>" #'winner-undo))
-
 (use-package org-roam-server
   :config
   (setq org-roam-server-host "127.0.0.1"
