@@ -35,3 +35,5 @@
 (package! org-attach-screenshot)
 (package! org-mru-clock)
 (package! org-ql)
+
+(unpin! org-roam company-org-roam company-go)

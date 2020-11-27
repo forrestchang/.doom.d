@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-nord-light)
+(setq doom-theme 'doom-Iosvkem)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -343,6 +343,7 @@ Uses `current-date-time-format' for the formatting the date/time."
         :desc "org-roam-show-graph" "g" #'org-roam-show-graph
         :desc "org-roam-capture" "c" #'org-roam-capture)
   (setq org-roam-directory (file-truename "~/Dropbox/Org/Roam/")
+        org-roam-dailies-directory "Daily/"
         org-roam-db-gc-threshold most-positive-fixnum
         org-roam-tag-sources '(prop last-directory)
         org-id-link-to-org-use-id t)
@@ -370,9 +371,27 @@ Uses `current-date-time-format' for the formatting the date/time."
     (browse-url-default-browser (format "http://localhost:%d" org-roam-server-port)))
   )
 
-(unless (server-running-p)
-  (org-roam-server-mode))
-
 (use-package! wakatime-mode
   :init
   (global-wakatime-mode))
+
+(defun arrayify (start end quote)
+  "Turn strings on newlines into a QUOTEd, comma-separated one-liner."
+  (interactive "r\nMQuote: ")
+  (let ((insertion
+         (mapconcat
+          (lambda (x) (format "%s%s%s" quote x quote))
+          (split-string (buffer-substring start end)) ", ")))
+    (delete-region start end)
+    (insert insertion)))
+
+
+(defun prelude-copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))

@@ -104,7 +104,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org Agenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq org-agenda-files '("~/Dropbox/Org/Roam"))
+(setq org-agenda-files '(
+                         "~/Dropbox/Org/Roam/inbox.org"
+                         "~/Dropbox/Org/Roam/inbox_beorg.org"
+                         "~/Dropbox/Org/Roam/inbox_alfred.org"
+                         "~/Dropbox/Org/Roam/todo.org"
+                         "~/Dropbox/Org/Roam/project.org"
+                         "~/Dropbox/Org/Roam/20200908201236-tiktok.org"
+                         "~/Dropbox/Org/Roam/20201127172427-family.org"
+                         "~/Dropbox/Org/Roam/20201127172419-personal.org"
+                         ))
 
 (setq org-agenda-span '1)
 (setq org-agenda-start-on-weekday nil)
