@@ -389,5 +389,9 @@
                         ((org-ql-block-header "Blocked Tasks")))
           (org-ql-block '(and (todo "PROJ"))
                         ((org-ql-block-header "Projects")))
+          (org-ql-block '(and (closed :on -1))
+                        ((org-ql-block-header "Yesterday Done")))
           ))
         ))
+
+(setq org-log-reschedule (quote time))
