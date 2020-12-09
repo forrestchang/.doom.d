@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-Iosvkem)
+(setq doom-theme 'doom-flatwhite)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -258,9 +258,16 @@ unwanted space when exporting org-mode to hugo markdown."
 ;;   )
 
 ;; Beancount
+;; config.el
 (use-package! beancount
-  :load-path "~/.doom.d/site-lisp/beancount"
-  )
+  :defer t
+  :mode
+  ("\\.bean\\(?:count\\)?\\'" . beancount-mode)
+  :config
+  (setq beancount-accounts-files
+        (directory-files "~/Dropbox/Org/Beancount/account/"
+                         'full
+                         (rx ".beancount" eos))))
 
 ;; Reload file from disk without confirm
 (defun revert-buffer-no-confirm ()
@@ -395,3 +402,5 @@ Uses `current-date-time-format' for the formatting the date/time."
     (when filename
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+(setq doom-modeline-icon nil)

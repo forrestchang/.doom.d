@@ -24,8 +24,8 @@
       :desc "Toggle popup window"                      "`" #'+popup/toggle
       :desc "Reload buffer from disc"                  "R" #'revert-buffer-no-confirm
       :desc "Switch last buffer"                       "TAB" #'jiayuan/alternate-buffer
-      :desc "Jump to today's daily note"               "T" #'org-roam-dailies-today
-      :desc "Jump to yesterday's daily note"           "Y" #'org-roam-dailies-yesterday
+      :desc "Jump to today's daily note"               "T" #'org-roam-dailies-find-today
+      :desc "Jump to yesterday's daily note"           "Y" #'org-roam-dailies-find-yesterday
       :desc "Set priority"                             "P" #'org-priority
       )
 
@@ -44,6 +44,11 @@
        :localleader
        :desc "Instant rename tag"                        "r" #'instant-rename-tag
        ))
+
+(map! (:map org-mode-map
+       :leader
+       :desc "Org store link" "l s" #'org-store-link
+       :desc "Org insert link" "l i" #'org-insert-last-stored-link))
 
 ;; Prefix map
 (map! :leader
@@ -117,6 +122,11 @@
       (:prefix ("p" . "project")
        :desc "Find file in project"        "f" #'projectile-find-file
        )
+
+      (:prefix ("O" . "Quick Open")
+       :desc "TikTok"        "t" (lambda () (interactive) (find-file "~/Dropbox/Org/Roam/20200908201236-tiktok.org"))
+       )
+
 
       (:prefix ("g" . "git")
        (:when (featurep! :tools magit)

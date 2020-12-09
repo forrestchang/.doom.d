@@ -26,6 +26,10 @@
 (package! org-download)
 (package! wakatime-mode)
 
+;; beancount
+(package! beancount
+  :recipe (:host github :repo "cnsunyour/beancount.el"))
+
 ;; org-mode
 (package! org-pomodoro)
 (package! org-gcal)
