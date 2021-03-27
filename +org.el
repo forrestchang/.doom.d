@@ -110,6 +110,7 @@
                          "~/Dropbox/Org/Roam/inbox_alfred.org"
                          "~/Dropbox/Org/Roam/todo.org"
                          "~/Dropbox/Org/Roam/project.org"
+                         "~/Dropbox/Org/Roam/readinglist.org"
                          ))
 
 (setq org-agenda-span '1)
