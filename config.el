@@ -3,52 +3,157 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
-
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+;; References
+;; - https://tecosaur.github.io/emacs-config/config.html
 
 
-;; Here are some additional functions/macros that could help you configure Doom:
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
+;;;; Better defaults
+
+;; Simple settings
+
+(setq user-full-name "tisoga"
+      user-mail-address "forrestchang7@gmail.com")
+
+(setq-default delete-by-moving-to-trash t
+              window-combination-resize t
+              x-stretch-cursor t)
+
+(setq undo-limit 80000000
+      evil-want-fine-undo t
+      auto-save-default t
+      truncate-string-ellipsis "..."
+      password-cache-expiry nil
+      scroll-margin 2)
+
+(display-time-mode 1)
+
+(global-subword-mode 1)
+
+;; Better key bindings
+
+(map! :leader
+
+      :desc "M-x" "SPC"           #'execute-extended-command
+      :desc "Buffer Switch" "TAB" #'evil-switch-to-windows-last-buffer
+
+      (:desc "Code" :prefix "c"
+       :desc "Comment or uncomment lines" :gnv "l" #'evilnc-comment-or-uncomment-lines)
+
+      (:desc "Git" :prefix "g"
+       :desc "Magit status" "s" #'magit-status))
+
+(map!
+ (:when (featurep! :tools lookup)
+  :nv "gb" #'better-jumper-jump-backward
+  :nv "gf" #'better-jumper-jump-forward))
+
+;; Frame sizing
+
+(add-to-list 'default-frame-alist '(height . 24))
+(add-to-list 'default-frame-alist '(weight . 80))
+
+;; Auto-customisations
+
+(setq-default custom-file (expand-file-name ".custom.el" doom-private-dir))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+;; Windows
+
+(setq evil-vsplit-window-right t
+      evil-split-window-below t)
+
+(defadvice! prompt-for-buffer (&rest _)
+  :after '(evil-window-split evil-window-vsplit)
+  (+ivy/switch-buffer))
+
+(setq +ivy-buffer-preview t)
+
+(map! :map evil-window-map
+      "SPC"       #'rotate-layout
+      ;; Split
+      "/"         #'split-window-right
+      "-"         #'split-window-below
+      ;; Navigation
+      "<left>"    #'evil-window-left
+      "<down>"    #'evil-window-down
+      "<up>"      #'evil-window-up
+      "<right>"   #'evil-window-right
+      ;; Swapping windows
+      "C-<left>"  #'+evil/window-move-left
+      "C-<down>"  #'+evil/window-move-down
+      "C-<up>"    #'+evil/window-move-up
+      "C-<right>" #'+evil/window-move-right
+      )
+
+;; Buffer defaults
+
+(setq-default major-mode 'org-mode)
+
+;;;; Doom configuration
+
+;; Font
+
+(setq doom-font (font-spec :family "JetBrains Mono" :size 20)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 36))
+
+;; Theme and modeline
+
+(setq doom-theme 'doom-vibrant)
+(remove-hook 'window-setup-hook #'doom-init-theme-h)
+(add-hook 'after-init-hook #'doom-init-theme-h 'append)
+(delq! t custom-theme-load-path)
+
+(custom-set-faces!
+  '(doom-modeline-buffer-modified :foreground "orange"))
+
+(defun doom-modeline-conditional-buffer-encoding ()
+  "We expect the encoding to be LF UTF-8, so only show the modeline when this is not the case"
+  (setq-local doom-modeline-buffer-encoding
+              (unless (and (memq (plist-get (coding-system-plist buffer-file-coding-system) :category)
+                                 '(coding-category-undecided coding-category-utf-8))
+                           (not (memq (coding-system-eol-type buffer-file-coding-system) '(1 2))))
+                t)))
+
+(add-hook 'after-change-major-mode-hook #'doom-modeline-conditional-buffer-encoding)
+
+(setq doom-modeline-icon nil)
+
+;; Misc
+
+(setq display-line-numbers-type 'relative)
+
+;; Company
+
+(after! company
+  (setq company-idle-delay 0.5
+        company-minimum-prefix-length 2)
+  (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying
+
+(setq-default history-length 1000)
+(setq-default prescient-history-length 1000)
+
+;; Evil
+
+(after! evil
+  (setq evil-kill-on-visual-paste nil))
+
+;; Info colours
+
+(use-package! info-colors
+  :commands (info-colors-fontify-node))
+
+(add-hook 'Info-selection-hook 'info-colors-fontify-node)
+
+;; Which key
+(setq which-key-idle-delay 0.5)
+
+;;;; Language configuration
+
+;; Plaintext
+
+(after! text-mode
+  (add-hook! 'text-mode-hook
+             ;; Apply ANSI color codes
+             (with-silent-modifications
+               (ansi-color-apply-on-region (point-min) (point-max)))))
