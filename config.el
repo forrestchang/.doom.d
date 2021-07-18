@@ -16,7 +16,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; Theme
-(setq doom-theme 'doom-flatwhite)
+(setq doom-theme 'doom-dark+)
 
 (setq evil-normal-state-cursor '(box "#FF6F65")
       evil-insert-state-cursor '(bar "#FF6F65")
@@ -357,6 +357,7 @@ Uses `current-date-time-format' for the formatting the date/time."
   :config
   (set-company-backend! 'org-mode '(company-capf))
   )
+
 
 ;; (use-package! org-roam-protocol
 ;;   :after org-protocol)
