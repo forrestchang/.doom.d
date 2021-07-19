@@ -50,3 +50,7 @@
 ;(unpin! t)
 
 (package! info-colors)
+
+(package! evil-little-word
+ :recipe (:host github :repo "tarao/evil-plugins"
+          :files ("evil-little-word.el")))

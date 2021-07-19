@@ -27,8 +27,6 @@
 
 (display-time-mode 1)
 
-(global-subword-mode 1)
-
 ;; Better key bindings
 
 (map! :leader
@@ -46,6 +44,13 @@
  (:when (featurep! :tools lookup)
   :nv "gb" #'better-jumper-jump-backward
   :nv "gf" #'better-jumper-jump-forward))
+
+;; Some evil stuff
+(use-package! evil-little-word
+  :config
+  (map! :nov "w" #'evil-forward-little-word-begin
+        :nov "b" #'evil-backward-little-word-begin
+        :v "i w" #'evil-inner-little-word))
 
 ;; Frame sizing
 
@@ -99,7 +104,7 @@
 
 ;; Theme and modeline
 
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-plain)
 (remove-hook 'window-setup-hook #'doom-init-theme-h)
 (add-hook 'after-init-hook #'doom-init-theme-h 'append)
 (delq! t custom-theme-load-path)
