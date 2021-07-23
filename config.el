@@ -38,7 +38,10 @@
        :desc "Comment or uncomment lines" :gnv "l" #'evilnc-comment-or-uncomment-lines)
 
       (:desc "Git" :prefix "g"
-       :desc "Magit status" "s" #'magit-status))
+       :desc "Magit status" "s" #'magit-status)
+
+      (:desc "Project" :prefix "p"
+       :desc "Search project" "s" #'+ivy/project-search))
 
 (map!
  (:when (featurep! :tools lookup)
@@ -104,7 +107,7 @@
 
 ;; Theme and modeline
 
-(setq doom-theme 'doom-plain)
+(setq doom-theme 'doom-vibrant)
 (remove-hook 'window-setup-hook #'doom-init-theme-h)
 (add-hook 'after-init-hook #'doom-init-theme-h 'append)
 (delq! t custom-theme-load-path)
