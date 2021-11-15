@@ -102,7 +102,7 @@
 
 ;; Font
 
-(setq doom-font (font-spec :family "JetBrains Mono" :size 20)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 18)
       doom-big-font (font-spec :family "JetBrains Mono" :size 36))
 
 ;; Theme and modeline
@@ -134,8 +134,8 @@
 ;; Company
 
 (after! company
-  (setq company-idle-delay 0.5
-        company-minimum-prefix-length 2)
+  (setq company-idle-delay 0.2
+        company-minimum-prefix-length 3)
   (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying
 
 (setq-default history-length 1000)
@@ -165,3 +165,4 @@
              ;; Apply ANSI color codes
              (with-silent-modifications
                (ansi-color-apply-on-region (point-min) (point-max)))))
+
